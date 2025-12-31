@@ -12,8 +12,6 @@ The purpose of this repository is to help you set up the Truck Signs API Django 
 
 1. [Quickstart](#quickstart)
 2. [Usage](#usage)
-3. [Checklist](Checklist.pdf)
-4. [Dockerfile](Dockerfile)
 
 
 

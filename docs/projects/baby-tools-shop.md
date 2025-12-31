@@ -11,8 +11,6 @@
 2. [Quickstart](#quickstart)
 3. [Usage](#usage)
 4. [Modifying the Application](#modifying-the-application)
-5. [Checklist](babyshop_checklist.pdf)
-6. [Dockerfile](Dockerfile)
    
 
 ## Repository Description
@@ -68,13 +66,4 @@ This will get the Baby Tools Shop running in a Docker container on your local ma
 1. The WORKDIR in the Dockerfile is set to /app/your_app This is where the Django project files are located.
 1. If you want to change the working directory or the location of the project files, modify the WORKDIR and COPY instructions in the Dockerfile accordingly.
 1. The Docker container is configured to expose port 8025. If you wish to use a different port, change the EXPOSE instruction in the Dockerfile and adjust the docker run command accordingly (e.g., -p `<new_port>`:5000).
-
-
-
-### DA Hints
-
-This section will cover some hot tips when trying to interacting with this repository:
-
-- Settings & Configuration for Django can be found in `babyshop_app/babyshop/settings.py`
-- Routing: Routing information, such as available routes can be found from any `urls.py` file in `babyshop_app` and corresponding subdirectories
 

@@ -89,6 +89,7 @@ const config: Config = {
           position: 'left',
           label: 'Docs',
         },
+
         {
           href: 'https://github.com/Bodev13/devsecops-blog',
           label: 'Github',
@@ -115,26 +116,9 @@ const config: Config = {
               label: 'Stack Overflow',
               href: 'https://stackoverflow.com/questions/tagged/docusaurus',
             },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
-            },
           ],
         },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            },
-            ...(blogEnabled ? [{ label: 'Blog', to: '/blog' }] : []),
-          ],
-        },
+
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Bo. Built with Docusaurus and 💚.`,
     },

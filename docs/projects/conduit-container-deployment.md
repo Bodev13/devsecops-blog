@@ -75,7 +75,7 @@ It contains two services:
 
 ### Environments
 
-• Set up `.env` file and make sure it is added to the [.gitignore](./.gitignore). Just copy the `template.env` file to create your own `.env` by the following command
+• Set up `.env` file and make sure it is added to the `.gitignore`. Just copy the `template.env` file to create your own `.env` by the following command
 
 ```bash
 cp template.env .env
