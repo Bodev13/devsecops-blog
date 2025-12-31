@@ -1,7 +1,7 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-import {config as dotenvconfig}  from "dotenv";
+import { config as dotenvconfig } from "dotenv";
 
 dotenvconfig();
 
@@ -14,17 +14,17 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: process.env.DEPLOYMENT_URL ?? "https://spmse.github.io",
+  url: process.env.DEPLOYMENT_URL ?? "https://Bodev13.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: process.env.BASE_URL ?? "/",
+  baseUrl: process.env.BASE_URL ?? "/devsecops-blog/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: process.env.GITHUB_ORG, // Usually your GitHub org/user name.
-  projectName: process.env.GITHUB_PROJECT, // Usually your repo name.
+  organizationName: process.env.GITHUB_ORG ?? "Bodev13", // Usually your GitHub org/user name.
+  projectName: process.env.GITHUB_PROJECT ?? "devsecops-blog", // Usually your repo name.
 
-  deploymentBranch: process.env.DEPLOYMENT_BRANCH,
+  deploymentBranch: process.env.DEPLOYMENT_BRANCH ?? "gh-pages",
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -46,9 +46,10 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/spmse/dev-blog-template',
+            'https://github.com/Bodev13/devsecops-blog',
+
         },
-        blog: blogEnabled ? 
+        blog: blogEnabled ?
           {
             showReadingTime: true,
             feedOptions: {
@@ -89,7 +90,7 @@ const config: Config = {
           label: 'Docs',
         },
         {
-          href: 'https://github.com/spmse/dev-blog-template',
+          href: 'https://github.com/Bodev13/devsecops-blog',
           label: 'Github',
           position: 'right',
         },
@@ -131,14 +132,11 @@ const config: Config = {
               label: 'GitHub',
               href: 'https://github.com/facebook/docusaurus',
             },
-            ...blogEnabled && [{
-              label: 'Blog',
-              to: '/blog',
-            }],
+            ...(blogEnabled ? [{ label: 'Blog', to: '/blog' }] : []),
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Sven Patrick Meier (spmse). Built with Docusaurus and 💚.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Bo. Built with Docusaurus and 💚.`,
     },
     prism: {
       theme: prismThemes.github,
@@ -149,7 +147,7 @@ const config: Config = {
         {
           className: 'theme-code-block-highlighted-line',
           line: 'highlight-next-line',
-          block: {start: 'highlight-start', end: 'highlight-end'},
+          block: { start: 'highlight-start', end: 'highlight-end' },
         },
         {
           className: 'code-block-error-line',
@@ -162,7 +160,7 @@ const config: Config = {
 
 
 if (blogEnabled) {
-  (config.themeConfig.navbar as any).items.push({to: '/blog', label: 'Blog', position: 'left'});
+  (config.themeConfig.navbar as any).items.push({ to: '/blog', label: 'Blog', position: 'left' });
 }
 
 export default config;
