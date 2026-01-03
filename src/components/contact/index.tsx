@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Contact.module.css';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 const Contact = () => {
     return (
@@ -18,7 +19,7 @@ const Contact = () => {
                 <p>Looking forward to hearing from you!</p>
                 <div className={styles.contactItem}>
                     <span className={styles.icon}>📧</span>
-                    <a href="mailto:felix.wallke@gmail.com">felix.wallke@gmail.com</a>
+                    <a href="mailto:bo.test@gmail.com">bo.test@gmail.com</a>
                 </div>
                 <div className={styles.contactItem}>
                     <span className={styles.icon}>🔗</span>

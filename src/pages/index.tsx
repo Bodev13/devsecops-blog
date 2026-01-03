@@ -8,6 +8,7 @@ import Header from '../components/header';
 import Hero from '../components/hero';
 import Skills from '../components/skills';
 import Contact from '../components/contact';
+import Footer from '../components/footer';
 
 import styles from './index.module.css';
 
@@ -22,6 +23,7 @@ export default function Home(): JSX.Element {
       <Hero />
       <Skills />
       <Contact />
+      <Footer />
       <main>
         <HomepageFeatures />
       </main>
