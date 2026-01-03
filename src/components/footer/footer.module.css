@@ -1,5 +1,5 @@
 .siteFooter {
-    background: #2a3238;
+    background: #242b31;
     padding-top: 80px;
     padding-bottom: 40px;
     text-align: center;
@@ -17,7 +17,7 @@
     background: transparent;
     color: #ffffff;
 
-    font-size: 28px;
+    font-size: 24px;
     cursor: pointer;
     margin-bottom: 40px;
 }
