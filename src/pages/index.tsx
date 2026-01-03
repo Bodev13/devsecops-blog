@@ -5,6 +5,7 @@ import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
 import Header from '../components/header';
+import Hero from '../components/hero';
 
 import styles from './index.module.css';
 
@@ -16,6 +17,7 @@ export default function Home(): JSX.Element {
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
       <Header />
+      <Hero />
       <main>
         <HomepageFeatures />
       </main>
