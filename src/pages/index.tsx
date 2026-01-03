@@ -6,6 +6,7 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
 import Header from '../components/header';
 import Hero from '../components/hero';
+import Skills from '../components/skills';
 
 import styles from './index.module.css';
 
@@ -18,6 +19,7 @@ export default function Home(): JSX.Element {
       description="Description will go into a meta tag in <head />">
       <Header />
       <Hero />
+      <Skills />
       <main>
         <HomepageFeatures />
       </main>
