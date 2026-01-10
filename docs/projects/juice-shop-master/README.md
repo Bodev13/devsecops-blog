@@ -25,6 +25,12 @@ This repository contains documented solutions for selected OWASP Juice Shop chal
 * **Difficulty:** Easy
 * **Documentation:** `challenge-find-restricted-document/README.md`
 
+### Find Score Board
+
+* **Category:** Information Disclosure
+* **Difficulty:** Easy
+* **Documentation:** `challenge-find-score-board/README.md`
+
 
 **Risk Explanation:**
 Improper access control can allow unauthorized users to access internal files, leading to sensitive information disclosure.

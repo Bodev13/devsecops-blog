@@ -30,7 +30,7 @@ Broken Access Control / Directory Listing
 5. Accessed the `/ftp/` directory directly
 6. Browsed through the available folders and files
 7. Located and opened the restricted document
-8. The challenge was successfully solved
+
 
 ## Result
 
