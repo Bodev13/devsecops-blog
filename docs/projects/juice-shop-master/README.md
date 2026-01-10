@@ -75,3 +75,4 @@ All attacks were performed against an intentionally vulnerable application in a 
 
 Do not attempt to use these techniques on real systems without explicit authorization
 
+Video demonstration available in each challenge folder
