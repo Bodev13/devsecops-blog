@@ -24,7 +24,7 @@ This repository contains documented solutions for selected OWASP Juice Shop chal
 * **Category:** Broken Access Control
 * **Difficulty:** Easy
 * **Documentation:** `challenge-find-restricted-document/README.md`
-* **Video:** *(to be added)*
+
 
 **Risk Explanation:**
 Improper access control can allow unauthorized users to access internal files, leading to sensitive information disclosure.

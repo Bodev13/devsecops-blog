@@ -8,6 +8,10 @@ Find Restricted Document
 
 The objective of this challenge is to locate a restricted document within the OWASP Juice Shop application by analyzing publicly accessible links and manually manipulating URLs using a web browser
 
+## Recording of the challenge
+https://go.screenpal.com/watch/cOV6YAnrwvr
+
+
 ## Vulnerability Category
 
 Broken Access Control / Directory Listing
