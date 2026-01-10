@@ -1,41 +1,77 @@
 # Juice Shop Master
 
-This repository contains documented solutions for selected OWASP Juice Shop challenges. The project is intended **strictly for educational purposes** to demonstrate common web application security vulnerabilities and their exploitation in a controlled lab environment.
+This repository contains documentation for selected OWASP Juice Shop challenges.  
+The purpose of this project is to practice basic web application security testing techniques in a local and controlled environment.
 
 ## Table of Contents
 
-* [Quickstart](#quickstart)
-* [Challenges Overview](#challenges-overview)
+- [Prerequisites](#prerequisites)
+- [Quickstart](#quickstart)
+- [Usage](#usage)
+- [Challenges](#challenges)
+- [Disclaimer](#disclaimer)
 
-  * [Find Restricted Document](#find-restricted-document)
-  * [Find Score Board](#find-score-board)
-* [Legal & Ethical Notice](#legal--ethical-notice)
+## Prerequisites
+
+- Kali Linux
+- Mozilla Firefox
+- Node.js and npm installed
+- OWASP Juice Shop cloned locally
 
 ## Quickstart
 
-1. Open the existing Docusaurus project.
-2. Navigate to the `juice-shop-master` folder.
-3. Start OWASP Juice Shop locally (default: `http://127.0.0.1:3000`).
-4. Follow the linked challenge documentation for step-by-step instructions.
+1. Navigate to the project directory
 
-## Challenges Overview
+   ```bash
+   cd juice-shop-master
+   ```
+2. Make sure OWASP Juice Shop is running
+3. Go to Mozilla and enter
+
+```bash
+http://127.0.0.1:300
+```
+## Usage
+
+1. Install required packages
+
+```bash
+sudo apt update
+sudo apt install nodejs npm
+```
+
+2. Clone the OWASP Juice Shop repository
+
+```bash
+git clone https://github.com/juice-shop/juice-shop.git
+cd juice-shop
+```
+
+3. Start OWAS Juice Shop
+
+```bash
+npm start
+```
+
+4. Open the following URL in your browser
+
+```bash
+http://127.0.0.1:3000
+```
+
+## Challenges
 
 ### Find Restricted Document
-
-* **Category:** Broken Access Control
-* **Difficulty:** Easy
-* **Documentation:** `challenge-find-restricted-document/README.md`
+[Find Restricted Document](challenge-find-restricted-document/)
 
 ### Find Score Board
-
-* **Category:** Information Disclosure
-* **Difficulty:** Easy
-* **Documentation:** `challenge-find-score-board/README.md`
+[Find Score Board](challenge-find-score-board/)
 
 
-**Risk Explanation:**
-Improper access control can allow unauthorized users to access internal files, leading to sensitive information disclosure.
+## Disclaimer
+The vulnerabilities and techniques documented in this repository are demonstrated strictly for educational purposes
 
-## Legal & Ethical Notice
+All attacks were performed against an intentionally vulnerable application in a local test environment
 
-All techniques shown in this repository are used **for educational purposes only**. Attacks were performed exclusively against intentionally vulnerable applications in a local lab environment. Never test systems without explicit permission.
+Do not attempt to use these techniques on real systems without explicit authorization
+
