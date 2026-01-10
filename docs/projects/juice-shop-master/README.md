@@ -8,6 +8,7 @@ This repository contains documented solutions for selected OWASP Juice Shop chal
 * [Challenges Overview](#challenges-overview)
 
   * [Find Restricted Document](#find-restricted-document)
+  * [Find Score Board](#find-score-board)
 * [Legal & Ethical Notice](#legal--ethical-notice)
 
 ## Quickstart
