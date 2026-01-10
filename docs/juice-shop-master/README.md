@@ -23,7 +23,7 @@ This repository contains documented solutions for selected OWASP Juice Shop chal
 
 * **Category:** Broken Access Control
 * **Difficulty:** Easy
-* **Documentation:** `find-restricted-document/find-restricted-document.md`
+* **Documentation:** `challenge-find-restricted-document/README.md`
 * **Video:** *(to be added)*
 
 **Risk Explanation:**
