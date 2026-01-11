@@ -5,18 +5,64 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 type Skill = {
     name: string;
     icon: string;
+    description: string;
 };
 
 const skills: Skill[] = [
-    { name: "HTML", icon: "/img/portfolio/icons/html.png" },
-    { name: "CSS", icon: "img/portfolio/icons/css.png" },
-    { name: "Static site generator", icon: "img/portfolio/icons/docusaurus.png" },
-    { name: "Python", icon: "img/portfolio//icons/python.png" },
-    { name: "Shell scripting", icon: "img/portfolio/icons/shell_scripting.png" },
-    { name: "YAML", icon: "img/portfolio/icons/yaml.png" },
-    { name: "Container", icon: "img/portfolio/icons/docker.png" },
-    { name: "CI/CD with GitHub Actions", icon: "img/portfolio/icons/cicd.png" },
-    { name: "IT Security", icon: "img/portfolio/icons/security.png" },
+    {
+        name: "HTML",
+        icon: "/img/portfolio/icons/html.png",
+        description:
+            "Semantic markup, accessibility basics and clean document structure."
+    },
+    {
+        name: "CSS",
+        icon: "/img/portfolio/icons/css.png",
+        description:
+            "Modern layouts with Flexbox & Grid, responsive and clean UI design."
+    },
+    {
+        name: "Static Site Generator",
+        icon: "/img/portfolio/icons/docusaurus.png",
+        description:
+            "Building documentation and portfolio sites using Docusaurus."
+    },
+    {
+        name: "Python",
+        icon: "/img/portfolio/icons/python.png",
+        description:
+            "CLI tools, automation scripts and basic backend logic."
+    },
+    {
+        name: "Shell Scripting",
+        icon: "/img/portfolio/icons/shell_scripting.png",
+        description:
+            "Automation, system tasks and environment setup using Bash."
+    },
+    {
+        name: "YAML",
+        icon: "/img/portfolio/icons/yaml.png",
+        description:
+            "Configuration files for CI/CD pipelines and infrastructure."
+    },
+    {
+        name: "Container",
+        icon: "/img/portfolio/icons/docker.png",
+        description:
+            "Containerizing applications with Docker for local and CI usage."
+    },
+    {
+        name: "CI/CD",
+        icon: "/img/portfolio/icons/cicd.png",
+        description:
+            "Automated testing and deployment using GitHub Actions."
+    },
+    {
+        name: "IT Security",
+        icon: "/img/portfolio/icons/security.png",
+        description:
+            "Basic web security concepts and hands-on pentesting practice."
+    }
 ];
 
 const Skills: React.FC = () => {
@@ -26,14 +72,31 @@ const Skills: React.FC = () => {
 
             <div className={styles.skills__grid}>
                 {skills.map((skill) => (
-                    <div key={skill.name} className={styles.skills__card}>
-                        <img
-                            src={useBaseUrl(skill.icon)}
-                            alt={skill.name}
-                            className={styles.skills__icon}
-                        />
-                        <span className={styles.skills__label}>{skill.name}</span>
-                    </div>
+                    <article key={skill.name} className={styles.skills__card}>
+                        <div className={styles.skills__cardInner}>
+                            {/* FRONT */}
+                            <div className={styles.skills__cardFront}>
+                                <img
+                                    src={useBaseUrl(skill.icon)}
+                                    alt={skill.name}
+                                    className={styles.skills__icon}
+                                />
+                                <h3 className={styles.skills__label}>
+                                    {skill.name}
+                                </h3>
+                            </div>
+
+                            {/* BACK */}
+                            <div className={styles.skills__cardBack}>
+                                <h3 className={styles.skills__label}>
+                                    {skill.name}
+                                </h3>
+                                <p className={styles.skills__description}>
+                                    {skill.description}
+                                </p>
+                            </div>
+                        </div>
+                    </article>
                 ))}
             </div>
         </section>

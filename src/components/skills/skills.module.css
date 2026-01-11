@@ -5,9 +5,10 @@
 }
 
 .skills__title {
-    font-size: 40px;
+    font-size: 64px;
     font-weight: 700;
     margin-bottom: 40px;
+    font-family: var(--font-quick);
 }
 
 .skills__grid {
@@ -17,29 +18,86 @@
 }
 
 .skills__card {
+    perspective: 1000px;
+}
+
+.skills__cardInner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 220px;
+
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+}
+
+.skills__card:hover .skills__cardInner {
+    transform: rotateY(180deg);
+}
+
+.skills__cardFront,
+.skills__cardBack {
+    position: absolute;
+    inset: 0;
+
     background-color: #2f3941;
     border-radius: 16px;
-    padding: 32px 16px;
+    padding: 32px 20px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+
+    backface-visibility: hidden;
+
+    transition:
+        background-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(255, 255, 255, 0.03);
 }
 
-.skills__card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+.skills__cardFront {
+    gap: 12px;
+}
+
+.skills__cardBack {
+    transform: rotateY(180deg);
+    background-color: #36424c;
+}
+
+.skills__card:hover .skills__cardFront,
+.skills__card:hover .skills__cardBack {
+    box-shadow:
+        0 14px 32px rgba(0, 0, 0, 0.35),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
 .skills__icon {
-    width: 64px;
-    height: 64px;
-    margin-bottom: 16px;
+    width: 70px;
+    height: 80px;
+    transition: transform 0.25s ease;
+}
+
+.skills__card:hover .skills__icon {
+    transform: scale(1.08);
 }
 
 .skills__label {
-    font-size: 16px;
-    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-family: var(--font-red);
+}
+
+.skills__description {
+    font-size: 14px;
+    line-height: 1.5;
+    max-width: 220px;
     opacity: 0.9;
 }
