@@ -16,9 +16,7 @@ const Footer: React.FC = () => {
                 className={styles.toTopBtn}
                 onClick={scrollToTop}
                 aria-label="Scroll to top"
-            >
-                ↑
-            </button>
+            />
 
             <div className={styles.footerInfo}>
                 <p className={styles.footerCopy}>© Bo 2025</p>

@@ -68,36 +68,36 @@ const skills: Skill[] = [
 const Skills: React.FC = () => {
     return (
         <section className={styles.skills}>
-            <h2 className={styles.skills__title}>My skills</h2>
+            <div className={styles.skills__content}>
+                <h2 className={styles.skills__title}>My skills</h2>
 
-            <div className={styles.skills__grid}>
-                {skills.map((skill) => (
-                    <article key={skill.name} className={styles.skills__card}>
-                        <div className={styles.skills__cardInner}>
-                            {/* FRONT */}
-                            <div className={styles.skills__cardFront}>
-                                <img
-                                    src={useBaseUrl(skill.icon)}
-                                    alt={skill.name}
-                                    className={styles.skills__icon}
-                                />
-                                <h3 className={styles.skills__label}>
-                                    {skill.name}
-                                </h3>
-                            </div>
+                <div className={styles.skills__grid}>
+                    {skills.map((skill) => (
+                        <article key={skill.name} className={styles.skills__card}>
+                            <div className={styles.skills__cardInner}>
+                                <div className={styles.skills__cardFront}>
+                                    <img
+                                        src={useBaseUrl(skill.icon)}
+                                        alt={skill.name}
+                                        className={styles.skills__icon}
+                                    />
+                                    <h3 className={styles.skills__label}>
+                                        {skill.name}
+                                    </h3>
+                                </div>
 
-                            {/* BACK */}
-                            <div className={styles.skills__cardBack}>
-                                <h3 className={styles.skills__label}>
-                                    {skill.name}
-                                </h3>
-                                <p className={styles.skills__description}>
-                                    {skill.description}
-                                </p>
+                                <div className={styles.skills__cardBack}>
+                                    <h3 className={styles.skills__label}>
+                                        {skill.name}
+                                    </h3>
+                                    <p className={styles.skills__description}>
+                                        {skill.description}
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                ))}
+                        </article>
+                    ))}
+                </div>
             </div>
         </section>
     );
