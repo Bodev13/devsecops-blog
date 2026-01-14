@@ -14,9 +14,10 @@ export default function Hero() {
                     <h2 className={styles.hero__subtitle}>DevSecOps Engineer</h2>
 
                     <p className={styles.hero__text}>
-                        Write some information about yourself that is IT related.
-                        For example:<br />
-                        Lorum Ipsum
+                        I work with Linux-based systems and modern DevOps tooling, including Python, Git, CI/CD pipelines, GitHub Actions, Docker, and Nginx.
+
+                        <br />
+                        My focus is on building reliable, secure, and automated workflows, while continuously deepening my knowledge in monitoring and infrastructure automation.
                     </p>
 
                     <a href="#contact" className={styles.hero__button}>
