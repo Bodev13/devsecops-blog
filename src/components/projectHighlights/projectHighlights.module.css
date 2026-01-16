@@ -1,63 +1,46 @@
 .section {
     background-color: #266ad9;
-    padding-top: 72px;
-    padding-left: 120px;
-    padding-right: 120px;
-    gap: 64px;
-    height: 669px;
+    padding: 72px 120px 72px;
     color: #ffffff;
+
 }
 
 .container {
-    width: 1199px;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    max-width: 1200px;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    padding: 0;
+    gap: 30px;
 }
 
 .title {
     font-size: 64px;
     font-weight: 700;
-    font-family: var(--font-quick);
     margin: 0;
 }
 
 .content {
     display: flex;
-    width: 1202px;
-    height: 384px;
     gap: 64px;
     align-items: flex-start;
 }
 
 .nav {
+    width: 256px;
     display: flex;
     flex-direction: column;
     gap: 24px;
-    width: 256px;
-    height: 350px;
 }
 
 .navItem {
     background: none;
-    white-space: nowrap;
     border: none;
     color: #ffffff;
     font-size: 24px;
-    font-weight: 500;
-    font-family: var(--font-quick);
     text-align: left;
     cursor: pointer;
     opacity: 0.7;
-    letter-spacing: 0%;
-    height: 241px;
-    width: 208px;
+    white-space: nowrap;
 }
 
 .navItem:hover {
@@ -70,73 +53,82 @@
 }
 
 .more {
-
-    color: #ffffff;
-    height: 29px;
-    text-decoration: underline;
     font-size: 24px;
-    font-weight: 500;
-    font-family: var(--font-quick);
-    letter-spacing: 0%;
-
+    text-decoration: underline;
+    color: #ffffff;
 }
 
 .card {
-    background-color: #2f425f;
-    border-radius: 30px;
     width: 913px;
+    height: 384;
+    max-width: 880px;
+    background-color: #2f4563;
+    border-radius: 30px;
     padding: 32px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
-
+    gap: 32px;
 }
-
 
 .cardHeader {
     display: flex;
-    width: 837px;
-    height: 48px;
-    gap: 34px;
     justify-content: space-between;
     align-items: center;
-}
-
-.cardHeader h3 {
-    font-size: 40px;
     font-family: var(--font-quick);
-    font-weight: 700;
+    font-size: 14px;
+    font-weight: 500;
     line-height: 120%;
     letter-spacing: 0%;
 }
 
+.cardHeader h3 {
+    font-size: 64px;
+    font-family: var(--font-quick);
+    font-weight: 700;
+}
+
 .tags {
     display: flex;
-    gap: 4px;
+    gap: 8px;
 }
 
-.tag {
-    display: flex;
+.skillTag {
+    display: inline-flex;
     align-items: center;
-    gap: 4px;
-    background-color: #FFFFFF;
-    color: #262E34;
-    padding: 6px;
+    gap: 6px;
+    background-color: #ffffff;
+    padding: 6px 10px;
     border-radius: 10px;
-    font-size: 14px;
+    min-width: 83.81px;
+    height: 44px;
 }
 
-.tagIcon {
+.skillIcon {
     width: 32px;
     height: 32px;
-    display: block;
-    top: 17px;
-    left: 6px
+    flex-shrink: 0;
+}
+
+.skillText {
+    font-size: 14px;
+    color: #262e34;
+    font-family: var(--font-quick);
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: 0%;
+}
+
+.skillText.noWrap {
+    white-space: nowrap;
+}
+
+.skillText.wrap {
+    white-space: normal;
 }
 
 .cardBody {
     display: flex;
-    gap: 10px;
+    gap: 16px;
 }
 
 .imageBlock {
@@ -144,64 +136,34 @@
     height: 240px;
 }
 
-.imageTitle {
-    font-size: 16px;
-    margin-bottom: 8px;
-}
-
-.imageWrapper {
-    position: relative;
+.projectImage {
     width: 100%;
-}
-
-.baseImage {
-    width: 355px;
-    height: 240px;
-    border-radius: 30px;
-}
-
-.overlayImage {
-    position: absolute;
-    inset: 0;
-    width: 322px;
-    height: 67px;
-    top: 22px;
-    left: 14px;
+    height: 100%;
     border-radius: 30px;
 }
 
 .description {
-    flex: 1;
+    width: 440px;
     font-size: 20px;
-    font-weight: 400px;
-    font-family: var(--font-quick);
     line-height: 125%;
-    width: 456px;
-    height: 240px;
-    gap: 24px;
 }
 
 .actions {
     display: flex;
     justify-content: flex-end;
     gap: 16px;
-    margin-top: -130px;
 }
-
 
 .primary {
     background-color: #266ad9;
     color: #ffffff;
     width: 188px;
     height: 52px;
-    padding: 14px 20px;
-    font-size: 20px;
-    font-weight: 600;
-    font-family: var(--font-quick);
     border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
-    gap: 10px;
-    line-height: 120%;
 }
 
 .secondary {
@@ -209,13 +171,9 @@
     color: #ffffff;
     width: 105px;
     height: 52px;
-    padding: 14px 20px;
-
-    font-size: 19px;
-    font-weight: 600;
-    font-family: var(--font-quick);
-    line-height: 120%;
-    gap: 10px;
     border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
 }
