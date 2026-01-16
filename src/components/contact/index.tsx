@@ -8,12 +8,12 @@ const Contact = () => {
             <div className={styles.contactSection__content}>
                 <div className={styles.left}>
                     <h2>Contact me</h2>
-                    <p>Include the Information like:</p>
                     <ul>
-                        <li>Feel free to reach out with job offers or opportunities like…</li>
-                        <li>what role are you looking for?</li>
-                        <li>how you will contribute to the new team.</li>
-                        <li>Are you open for remote work or even relocate?</li>
+                        <li>Feel free to reach out with collaborations or interesting projects.</li>
+                        <li>I’m interested in DevOps and Linux System Administrator roles, including hybrid positions.</li>
+                        <li>I can contribute by supporting infrastructure and working with containers.</li>
+                        <li>I’m open to discussing different working arrangements depending on the opportunity.</li>
+
                     </ul>
                 </div>
 
