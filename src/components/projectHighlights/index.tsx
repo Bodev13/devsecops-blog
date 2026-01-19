@@ -6,7 +6,12 @@ type Skill =
     | "YAML"
     | "Shell scripting"
     | "IT Security"
-    | "Container";
+    | "Container"
+    | "Python"
+    | "CI/CD"
+
+
+
 
 type Project = {
     id: number;
@@ -31,14 +36,20 @@ const skillConfig: Record<Skill, { icon: string }> = {
     Container: {
         icon: "/img/portfolio/icons/propContainer.png",
     },
+    Python: {
+        icon: "/img/portfolio/icons/python2.png"
+    },
+    "CI/CD": {
+        icon: "/img/portfolio/icons/cd.png"
+    }
 };
 
 const projects: Project[] = [
     {
-        id: 1, title: "Baby Tools",
-        description: "This project showcases a containerized Django web application deployed using Docker, with a focus on reproducible environments and simplified local and VM-based execution. It demonstrates building and running a Python/Django service inside a Docker container, environment-based configuration, and basic container networking.",
-        image: "/img/portfolio/icons/babyTools.png",
-        skills: ["Container"],
+        id: 1, title: "Conduit Deployment",
+        description: "This project demonstrates a containerized fullstack web application with a Python backend and an Angular frontend, orchestrated using Docker Compose. It highlights automated CI/CD deployment with GitHub Actions, including image building, registry publishing, and deployment to a cloud virtual machine.",
+        image: "/img/portfolio/icons/conduit_fullstack.png",
+        skills: ["Container", "Python", "CI/CD"],
         documentationUrl: "#",
         githubUrl: "#"
     },
@@ -48,7 +59,9 @@ const projects: Project[] = [
 
         description: "This project demonstrates deploying a Django REST API together with a PostgreSQL database using Docker, running both services in separate containers on the same network. It focuses on containerized backend services, environment-based configuration, database integration, and deployment on a virtual server.",
         image: "/img/portfolio/icons/truckSigns.png",
-        skills: ["Container"], documentationUrl: "#", githubUrl: "#"
+        skills: ["Container", "Python"],
+        documentationUrl: "#",
+        githubUrl: "#"
     },
 
     {
@@ -65,7 +78,7 @@ const projects: Project[] = [
         description:
             "This project demonstrates deploying a Minecraft Java Edition server using Docker and Docker Compose, focusing on containerized services, configuration via environment variables, and persistent data storage.",
         image: "/img/portfolio/icons/minecraft.png",
-        skills: ["YAML", "Shell scripting", "IT Security", "Container"],
+        skills: ["YAML", "Shell scripting", "Container"],
         documentationUrl: "#",
         githubUrl: "#",
     },
@@ -79,7 +92,7 @@ const projects: Project[] = [
     },
 ];
 
-export default function ProjectHighlights(): JSX.Element {
+export default function ProjectHighlights() {
     const [activeProject, setActiveProject] = useState<Project>(projects[3]);
 
     return (
