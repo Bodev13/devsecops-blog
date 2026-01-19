@@ -71,6 +71,9 @@
 }
 
 .cardHeader {
+    width: 837.33px;
+    height: 48px;
+    gap: 34px;
     display: flex;
     justify-content: space-between;
     align-items: center;
