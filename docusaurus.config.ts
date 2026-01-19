@@ -81,6 +81,47 @@ const config: Config = {
         },
       ],
     },
+    footer: {
+      style: 'dark',
+      links: [
+        {
+          title: 'Docs',
+          items: [
+            {
+              label: 'Tutorial',
+              to: '/docs/guides/intro',
+            },
+          ],
+        },
+        {
+          title: 'Community',
+          items: [
+            {
+              label: 'Stack Overflow',
+              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+            },
+            {
+              label: 'Discord',
+              href: 'https://discordapp.com/invite/docusaurus',
+            },
+            {
+              label: 'Twitter',
+              href: 'https://twitter.com/docusaurus',
+            },
+          ],
+        },
+        {
+          title: 'More',
+          items: [
+            {
+              label: 'GitHub',
+              href: 'https://github.com/facebook/docusaurus',
+            }
+          ],
+        },
+      ],
+      copyright: `Copyright © ${new Date().getFullYear()} Sven Patrick Meier (spmse). Built with Docusaurus and 💚.`,
+    },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
@@ -103,6 +144,12 @@ const config: Config = {
 
 if (blogEnabled) {
   (config.themeConfig.navbar as any).items.push({ to: '/blog', label: 'Blog', position: 'left' });
+  (
+    config.themeConfig.footer as any
+  ).links[2].items.push({
+    to: '/blog',
+    label: 'Blog',
+  });
 }
 
 export default config;
