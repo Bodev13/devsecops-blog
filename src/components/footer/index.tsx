@@ -4,26 +4,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 const Footer: React.FC = () => {
     const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     return (
         <footer className={styles.siteFooter}>
-            <button
-                className={styles.toTopBtn}
-                onClick={scrollToTop}
-                aria-label="Scroll to top"
-            />
-
+            <button className={styles.toTopBtn} onClick={scrollToTop} aria-label="Scroll to top" />
             <div className={styles.footerInfo}>
                 <p className={styles.footerCopy}>© Bo 2025</p>
-                <a
-                    className={styles.footerLegal}
-                    href={useBaseUrl('/legal-notice')}
-                >
+                <a className={styles.footerLegal} href={useBaseUrl('/legal-notice')}>
                     Legal notice
                 </a>
             </div>
