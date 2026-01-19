@@ -19,14 +19,14 @@ const skillConfig: Record<Skill, { icon: string }> = {
     "Shell scripting": { icon: "/img/portfolio/icons/propShell.png" },
     "IT Security": { icon: "/img/portfolio/icons/propITSec.png" },
     Container: { icon: "/img/portfolio/icons/propContainer.png" },
-    Python: { icon: "/img/portfolio/icons/python2.png" },
-    "CI/CD": { icon: "/img/portfolio/icons/cd.png" },
+    Python: { icon: "/img/portfolio/icons/python.png" },
+    "CI/CD": { icon: "/img/portfolio/icons/cicd.png" },
 };
 
 const projects: Project[] = [
     {
         id: 1,
-        title: "Conduit Deployment",
+        title: "Conduit",
         description: "This project demonstrates a containerized fullstack web application with a Python backend and an Angular frontend, orchestrated using Docker Compose.",
         image: "/img/portfolio/icons/conduit_fullstack.png",
         skills: ["Container", "Python", "CI/CD"],
@@ -37,7 +37,7 @@ const projects: Project[] = [
         id: 2,
         title: "Truck Signs API",
         description: "This project demonstrates deploying a Django REST API together with a PostgreSQL database using Docker.",
-        image: "/img/portfolio/icons/truckSigns.png",
+        image: "/img/portfolio/icons/trucks.png",
         skills: ["Container", "Python"],
         documentationUrl: "#",
         githubUrl: "#",
