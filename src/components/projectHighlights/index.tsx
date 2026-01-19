@@ -34,9 +34,31 @@ const skillConfig: Record<Skill, { icon: string }> = {
 };
 
 const projects: Project[] = [
-    { id: 1, title: "Baby Tools", description: "", image: "", skills: [], documentationUrl: "#", githubUrl: "#" },
-    { id: 2, title: "Truck Signs API", description: "", image: "", skills: [], documentationUrl: "#", githubUrl: "#" },
-    { id: 3, title: "Juice Shop Meister", description: "", image: "", skills: [], documentationUrl: "#", githubUrl: "#" },
+    {
+        id: 1, title: "Baby Tools",
+        description: "This project showcases a containerized Django web application deployed using Docker, with a focus on reproducible environments and simplified local and VM-based execution. It demonstrates building and running a Python/Django service inside a Docker container, environment-based configuration, and basic container networking.",
+        image: "/img/portfolio/icons/babyTools.png",
+        skills: ["Container"],
+        documentationUrl: "#",
+        githubUrl: "#"
+    },
+
+    {
+        id: 2, title: "Truck Signs API",
+
+        description: "This project demonstrates deploying a Django REST API together with a PostgreSQL database using Docker, running both services in separate containers on the same network. It focuses on containerized backend services, environment-based configuration, database integration, and deployment on a virtual server.",
+        image: "/img/portfolio/icons/truckSigns.png",
+        skills: ["Container"], documentationUrl: "#", githubUrl: "#"
+    },
+
+    {
+        id: 3, title: "Juice Shop Meister",
+        description: "This project documents selected OWASP Juice Shop challenges performed in a local test environment to practice fundamental web application security testing techniques. It focuses on identifying common vulnerabilities in an intentionally vulnerable application for educational and training purposes.",
+        image: "/img/portfolio/icons/juiceShop.png",
+        skills: ["IT Security"],
+        documentationUrl: "#",
+        githubUrl: "#"
+    },
     {
         id: 4,
         title: "Minecraft",
@@ -47,7 +69,14 @@ const projects: Project[] = [
         documentationUrl: "#",
         githubUrl: "#",
     },
-    { id: 5, title: "WordPress hosten", description: "", image: "", skills: [], documentationUrl: "#", githubUrl: "#" },
+    {
+        id: 5, title: "WordPress hosten",
+        description: "This project demonstrates deploying a WordPress website with a MariaDB database using Docker and Docker Compose. It focuses on container orchestration, environment-based configuration, and running a complete CMS stack in a reproducible local or cloud environment.",
+        image: "/img/portfolio/icons/wordpress.png",
+        skills: ["Container", "Shell scripting"],
+        documentationUrl: "#",
+        githubUrl: "#"
+    },
 ];
 
 export default function ProjectHighlights(): JSX.Element {
@@ -89,8 +118,8 @@ export default function ProjectHighlights(): JSX.Element {
                                         />
                                         <span
                                             className={`${styles.skillText} ${skill === "Shell scripting"
-                                                    ? styles.wrap
-                                                    : styles.noWrap
+                                                ? styles.wrap
+                                                : styles.noWrap
                                                 }`}
                                         >
                                             {skill}
