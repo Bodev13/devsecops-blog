@@ -105,3 +105,29 @@
     max-width: 220px;
     opacity: 0.9;
 }
+
+@media (max-width: 1024px) {
+    .skills__content {
+        width: 100%;
+    }
+
+    .skills__grid {
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .skills {
+        padding: 72px 24px;
+    }
+
+    .skills__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills__card {
+        width: 100%;
+        max-width: 360px;
+    }
+}

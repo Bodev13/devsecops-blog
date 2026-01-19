@@ -90,6 +90,7 @@
     font-weight: 700;
 }
 
+
 .tags {
     display: flex;
     gap: 8px;
@@ -179,4 +180,65 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 72px 24px;
+    }
+
+    .content {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .nav {
+        width: 100%;
+        flex-direction: row;
+        gap: 16px;
+        overflow-x: auto;
+    }
+
+    .navItem {
+        font-size: 18px;
+        white-space: nowrap;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .cardHeader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .cardHeader h3 {
+        font-size: 40px;
+    }
+
+    .cardBody {
+        flex-direction: column;
+    }
+
+    .imageBlock {
+        width: 100%;
+        height: auto;
+    }
+
+    .projectImage {
+        width: 100%;
+        height: auto;
+    }
+
+    .description {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .actions {
+        justify-content: center;
+    }
 }

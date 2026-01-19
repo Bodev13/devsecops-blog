@@ -76,3 +76,14 @@
         height: 80px;
     }
 }
+
+@media (max-width: 768px) {
+    .toTopBtn {
+        height: 80px;
+    }
+
+    .siteFooter {
+        padding-top: 60px;
+        padding-bottom: 32px;
+    }
+}
