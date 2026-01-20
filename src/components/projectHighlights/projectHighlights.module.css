@@ -59,11 +59,16 @@
     white-space: nowrap;
 }
 
-.navItem:hover,
-.navItem.active {
-    opacity: 1;
-    color: #262E34;
+.navItem:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
 }
+
+.navItem.active {
+    color: #262E34;
+    font-weight: 600;
+}
+
 
 
 .active {
