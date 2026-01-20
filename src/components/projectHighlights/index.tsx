@@ -56,7 +56,7 @@ const projects: Project[] = [
         title: "Juice Shop Meister",
         description:
             "This project documents selected OWASP Juice Shop challenges performed in a local test environment.",
-        image: "/img/portfolio/test.png",
+        image: "/img/portfolio/icons/juiceShop.png",
         skills: ["IT Security"],
         documentationUrl: "/projects/juice-shop-master",
         githubUrl: "https://github.com/Bodev13/devsecops-blog/tree/juice-shop-master",
