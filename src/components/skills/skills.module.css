@@ -40,7 +40,6 @@
     height: 100%;
 }
 
-/* FRONT / BACK */
 
 .skills__cardFront,
 .skills__cardBack {
@@ -57,7 +56,6 @@
     text-align: center;
 }
 
-/* FRONT */
 
 .skills__cardFront {
     background-color: #2f3941;
@@ -95,7 +93,6 @@
     opacity: 1;
 }
 
-/* CONTENT */
 
 .skills__icon {
     width: 70px;
@@ -130,7 +127,6 @@
 
 }
 
-/* RESPONSIVE */
 
 @media (max-width: 1024px) {
     .skills__content {

@@ -9,15 +9,15 @@ type Skill = {
 };
 
 const skills: Skill[] = [
-    { name: "HTML", icon: "/img/portfolio/icons/html.png", description: "Semantic markup, accessibility basics and clean document structure." },
-    { name: "CSS", icon: "/img/portfolio/icons/css.png", description: "Modern layouts with Flexbox & Grid, responsive and clean UI design." },
-    { name: "Static Site Generator", icon: "/img/portfolio/icons/docusaurus.png", description: "Building documentation and portfolio sites using Docusaurus." },
-    { name: "Python", icon: "/img/portfolio/icons/python.png", description: "CLI tools, automation scripts and basic backend logic." },
-    { name: "Shell Scripting", icon: "/img/portfolio/icons/shell_scripting.png", description: "Automation, system tasks and environment setup using Bash." },
-    { name: "YAML", icon: "/img/portfolio/icons/yaml.png", description: "Configuration files for CI/CD pipelines and infrastructure." },
-    { name: "Container", icon: "/img/portfolio/icons/docker.png", description: "Containerizing applications with Docker for local and CI usage." },
-    { name: "CI/CD", icon: "/img/portfolio/icons/cicd.png", description: "Automated testing and deployment using GitHub Actions." },
-    { name: "IT Security", icon: "/img/portfolio/icons/security.png", description: "Basic web security concepts and hands-on pentesting practice." },
+    { name: "HTML", icon: "/img/portfolio/icons/html.png", description: "Building pages by hand, caring about structure, semantics, accessibility" },
+    { name: "CSS", icon: "/img/portfolio/icons/css.png", description: "Turning layouts into responsive interfaces with Flexbox and Grid" },
+    { name: "Static Site Generator", icon: "/img/portfolio/icons/docusaurus.png", description: "Using Docusaurus to assemble documentation and small personal websites" },
+    { name: "Python", icon: "/img/portfolio/icons/python.png", description: "Solving small problems with scripts and simple backend logic" },
+    { name: "Shell Scripting", icon: "/img/portfolio/icons/shell_scripting.png", description: "Automating routine tasks with Bash instead of doing them manually" },
+    { name: "YAML", icon: "/img/portfolio/icons/yaml.png", description: "Wiring configurations together for pipelines and project setups" },
+    { name: "Container", icon: "/img/portfolio/icons/docker.png", description: "Packing applications into Docker containers to run anywhere" },
+    { name: "CI/CD", icon: "/img/portfolio/icons/cicd.png", description: "Letting GitHub Actions handle builds, tests, and deployments" },
+    { name: "IT Security", icon: "/img/portfolio/icons/security.png", description: "Exploring web vulnerabilities through OWASP Juice Shop challenges" },
 ];
 
 const Skills: React.FC = () => {
