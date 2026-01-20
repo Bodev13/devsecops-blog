@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import styles from "./projectHighlights.module.css";
+import Link from "@docusaurus/Link";
 
 type Skill =
     | "YAML"
@@ -108,9 +109,12 @@ export default function ProjectHighlights() {
                                 </button>
                             ))}
 
-                            <a className={styles.more} href="#">
+                            <Link to="/docs/projects/conduit-container-deployment" className={styles.more}>
                                 → see more projects
-                            </a>
+                            </Link>
+
+
+
                         </nav>
 
                         <div className={styles.card}>
