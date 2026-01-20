@@ -73,10 +73,21 @@
 
 .more {
     font-size: 24px;
+    font-family: var(--font-quick);
+    font-weight: 500;
     text-decoration: underline;
     margin-top: 24px;
-    color: #ffffff;
+    color: #FFFFFF !important;
 }
+
+.more:hover,
+.more:active,
+.more:focus {
+    color: #FFFFFF !important;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
 
 .card {
     min-width: 0;
