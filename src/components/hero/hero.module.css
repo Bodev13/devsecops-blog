@@ -91,12 +91,18 @@
 
 @media (max-width: 768px) {
     .hero {
-        padding: calc(80px + 109px) 24px 80px;
+        padding: 80px 24px;
     }
 
-    .hero__imageWrapper {
-        margin-bottom: 32px;
+    @media (max-width: 768px) {
+        .hero {
+            padding-top: 140px;
+            padding-left: 24px;
+            padding-right: 24px;
+            padding-bottom: 72px;
+        }
     }
+
 
     .hero__container {
         flex-direction: column;
@@ -110,42 +116,32 @@
         max-width: 100%;
         display: flex;
         flex-direction: column;
-    }
-
-    .hero__intro {
-        font-size: 24px;
-        order: 1;
-    }
-
-    .hero__title {
-        font-size: 56px;
-        order: 2;
-    }
-
-    .hero__subtitle {
-        font-size: 24px;
-        order: 3;
+        text-align: left;
     }
 
     .hero__imageWrapper {
-        order: 4;
         width: 100%;
-        display: flex;
-        justify-content: flex-start;
+        max-width: 420px;
+        margin: 24px 0;
     }
 
     .hero__image {
-        width: 260px;
-        height: 260px;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        border-radius: 24px;
+        object-fit: cover;
     }
 
-    .hero__text {
-        font-size: 18px;
-        order: 5;
-    }
 
     .hero__button {
-        align-self: flex-start;
-        order: 6;
+        height: 47px;
+        padding: 14px 20px;
+        border-radius: 30px;
+        gap: 10px;
+        margin: 0 auto;
+        width: fit-content;
     }
+
+
 }
