@@ -164,3 +164,11 @@
         display: flex;
     }
 }
+
+@media (max-width: 768px) {
+    .header__content {
+        max-width: 420px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+}
