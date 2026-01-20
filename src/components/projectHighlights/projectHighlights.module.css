@@ -7,7 +7,9 @@
 .container {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 24px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     width: 100%;
 }
 
@@ -17,6 +19,7 @@
     margin: 0;
 }
 
+
 .content {
     display: flex;
     gap: 64px;
@@ -25,7 +28,7 @@
 
 
 .nav {
-    width: 256px;
+    width: 280px;
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -34,7 +37,13 @@
 .navItem {
     background: none;
     border: none;
+    font-family: var(--font-quick);
+    margin-bottom: 16px;
+    line-height: 26px;
+    font-weight: 500;
     color: #ffffff;
+    border-radius: 12px;
+    padding: 8px 12px;
     font-size: 24px;
     text-align: left;
     cursor: pointer;
@@ -54,19 +63,21 @@
 .more {
     font-size: 24px;
     text-decoration: underline;
+    margin-top: 24px;
     color: #ffffff;
 }
 
 .card {
     min-width: 0;
     flex: 1;
-    min-height: 384px;
+    height: fit-content;
     background-color: #2f4563;
     border-radius: 30px;
     padding: 32px;
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
-    gap: 24px;
+    gap: 16px;
 }
 
 .cardHeader {
@@ -117,8 +128,9 @@
 .cardBody {
     display: flex;
     gap: 24px;
-    align-items: stretch;
+    align-items: flex-start;
 }
+
 
 .imageBlock {
     width: 355px;
@@ -135,16 +147,19 @@
 .description {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    height: 240px;
     font-size: 20px;
     line-height: 125%;
 }
 
+
 .actions {
+    margin-top: auto;
     display: flex;
     justify-content: flex-end;
     gap: 16px;
 }
+
 
 .primary {
     background-color: #266ad9;
