@@ -21,6 +21,16 @@ type Project = {
     githubUrl: string;
 };
 
+type ResolvedSkill = {
+    name: Skill;
+    icon: string;
+};
+
+type ResolvedProject = Omit<Project, "skills" | "image"> & {
+    image: string;
+    skills: ResolvedSkill[];
+};
+
 const skillConfig: Record<Skill, string> = {
     YAML: "/img/portfolio/icons/propYaml.png",
     "Shell scripting": "/img/portfolio/icons/propShell.png",
@@ -59,7 +69,8 @@ const projects: Project[] = [
         image: "/img/portfolio/icons/juiceShop.png",
         skills: ["IT Security"],
         documentationUrl: "/projects/juice-shop-master",
-        githubUrl: "https://github.com/Bodev13/devsecops-blog/tree/juice-shop-master",
+        githubUrl:
+            "https://github.com/Bodev13/devsecops-blog/tree/juice-shop-master",
     },
     {
         id: 4,
@@ -74,10 +85,28 @@ const projects: Project[] = [
 ];
 
 export default function ProjectHighlights() {
-    const [activeProjectId, setActiveProjectId] = useState<number>(projects[0].id);
+    /* ✅ hook exactly once */
+    const baseUrl = useBaseUrl("/");
+
+    const resolve = (path: string) => `${baseUrl}${path.replace(/^\//, "")}`;
+
+    /* ✅ normalize data once */
+    const resolvedProjects: ResolvedProject[] = projects.map((project) => ({
+        ...project,
+        image: resolve(project.image),
+        skills: project.skills.map((skill) => ({
+            name: skill,
+            icon: resolve(skillConfig[skill]),
+        })),
+    }));
+
+    const [activeProjectId, setActiveProjectId] = useState<number>(
+        resolvedProjects[0].id,
+    );
 
     const activeProject =
-        projects.find((project) => project.id === activeProjectId) ?? projects[0];
+        resolvedProjects.find((p) => p.id === activeProjectId) ??
+        resolvedProjects[0];
 
     return (
         <section id="projects" className={styles.section}>
@@ -87,7 +116,7 @@ export default function ProjectHighlights() {
 
                     <div className={styles.content}>
                         <nav className={styles.nav}>
-                            {projects.map((project) => (
+                            {resolvedProjects.map((project) => (
                                 <button
                                     key={project.id}
                                     type="button"
@@ -100,7 +129,7 @@ export default function ProjectHighlights() {
                             ))}
 
                             <Link
-                                to={projects[0].documentationUrl}
+                                to={resolvedProjects[0].documentationUrl}
                                 className={styles.more}
                             >
                                 → see more projects
@@ -113,13 +142,13 @@ export default function ProjectHighlights() {
 
                                 <div className={styles.tags}>
                                     {activeProject.skills.map((skill) => (
-                                        <span key={skill} className={styles.skillTag}>
+                                        <span key={skill.name} className={styles.skillTag}>
                                             <img
-                                                src={useBaseUrl(skillConfig[skill])}
-                                                alt={skill}
+                                                src={skill.icon}
+                                                alt={skill.name}
                                                 className={styles.skillIcon}
                                             />
-                                            <span className={styles.skillText}>{skill}</span>
+                                            <span className={styles.skillText}>{skill.name}</span>
                                         </span>
                                     ))}
                                 </div>
@@ -128,7 +157,7 @@ export default function ProjectHighlights() {
                             <div className={styles.cardBody}>
                                 <div className={styles.imageBlock}>
                                     <img
-                                        src={useBaseUrl(activeProject.image)}
+                                        src={activeProject.image}
                                         alt={activeProject.title}
                                         className={styles.projectImage}
                                     />
@@ -144,6 +173,7 @@ export default function ProjectHighlights() {
                                         >
                                             Documentation
                                         </Link>
+
                                         <a
                                             href={activeProject.githubUrl}
                                             className={styles.secondary}
@@ -159,7 +189,7 @@ export default function ProjectHighlights() {
                     </div>
 
                     <div className={styles.projectsMobile}>
-                        {projects.map((project) => (
+                        {resolvedProjects.map((project) => (
                             <div key={project.id} className={styles.card}>
                                 <div className={styles.cardHeader}>
                                     <h3>
@@ -168,13 +198,13 @@ export default function ProjectHighlights() {
 
                                     <div className={styles.tags}>
                                         {project.skills.map((skill) => (
-                                            <span key={skill} className={styles.skillTag}>
+                                            <span key={skill.name} className={styles.skillTag}>
                                                 <img
-                                                    src={useBaseUrl(skillConfig[skill])}
-                                                    alt={skill}
+                                                    src={skill.icon}
+                                                    alt={skill.name}
                                                     className={styles.skillIcon}
                                                 />
-                                                <span className={styles.skillText}>{skill}</span>
+                                                <span className={styles.skillText}>{skill.name}</span>
                                             </span>
                                         ))}
                                     </div>
@@ -183,7 +213,7 @@ export default function ProjectHighlights() {
                                 <div className={styles.cardBody}>
                                     <div className={styles.imageBlock}>
                                         <img
-                                            src={useBaseUrl(project.image)}
+                                            src={project.image}
                                             alt={project.title}
                                             className={styles.projectImage}
                                         />
@@ -199,6 +229,7 @@ export default function ProjectHighlights() {
                                             >
                                                 Documentation
                                             </Link>
+
                                             <a
                                                 href={project.githubUrl}
                                                 className={styles.secondary}
@@ -214,7 +245,7 @@ export default function ProjectHighlights() {
                         ))}
 
                         <Link
-                            to={projects[0].documentationUrl}
+                            to={resolvedProjects[0].documentationUrl}
                             className={styles.more}
                         >
                             → see more projects
