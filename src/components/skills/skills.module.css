@@ -5,8 +5,6 @@
 }
 
 .skills__content {
-    width: 1199px;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -19,19 +17,16 @@
     line-height: 120%;
 }
 
-/* GRID */
-
 .skills__grid {
     display: grid;
-    grid-template-columns: repeat(3, 377px);
+    grid-template-columns: repeat(3, minmax(420px, 1fr));
     gap: 34px;
 }
 
-/* CARD */
-
 .skills__card {
-    width: 377px;
-    height: 200px;
+    width: 100%;
+    max-width: 520px;
+    height: 260px;
 }
 
 .skills__cardInner {
@@ -40,50 +35,36 @@
     height: 100%;
 }
 
-
 .skills__cardFront,
 .skills__cardBack {
     position: absolute;
     inset: 0;
-
     border-radius: 30px;
-    padding: 42px 71px;
-
+    padding: 56px 71px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
 
-
 .skills__cardFront {
     background-color: #2f3941;
-    gap: 12px;
-
     opacity: 1;
     z-index: 2;
-
     box-shadow:
         0 8px 20px rgba(0, 0, 0, 0.25),
         0 0 0 1px rgba(255, 255, 255, 0.03);
 }
 
-
 .skills__cardBack {
     background-color: #79B8FF80;
-    gap: 16px;
-
     opacity: 0;
     z-index: 1;
-
-    color: #FFFFFF;
-
+    color: #ffffff;
     box-shadow:
         0 14px 32px rgba(0, 0, 0, 0.35),
         0 0 0 1px rgba(255, 255, 255, 0.2);
 }
-
 
 .skills__card:hover .skills__cardFront {
     opacity: 0;
@@ -93,6 +74,12 @@
     opacity: 1;
 }
 
+.skills__cardContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
 
 .skills__icon {
     width: 70px;
@@ -100,42 +87,27 @@
 }
 
 .skills__label {
-    .skills__label {
-        font-family: var(--font-quick);
-        font-weight: 500;
-        font-size: 24px;
-        line-height: 120%;
-        letter-spacing: 0;
-        color: #ffffff;
-        width: 323px;
-        height: 29px;
-    }
-
+    font-family: var(--font-quick);
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: 0;
+    color: #ffffff;
 }
 
 .skills__description {
-    .skills__description {
-        font-family: var(--font-quick);
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 120%;
-        letter-spacing: 0;
-        color: #ffffff;
-
-        max-width: 220px;
-    }
-
+    font-family: var(--font-quick);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: 0;
+    color: #ffffff;
+    max-width: 320px;
 }
 
-
 @media (max-width: 1024px) {
-    .skills__content {
-        width: 100%;
-    }
-
     .skills__grid {
-        grid-template-columns: repeat(2, 1fr);
-        justify-items: center;
+        grid-template-columns: repeat(2, minmax(380px, 1fr));
     }
 }
 
@@ -149,7 +121,12 @@
     }
 
     .skills__card {
-        width: 100%;
-        max-width: 360px;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .skills__cardFront,
+    .skills__cardBack {
+        padding: 48px 32px;
     }
 }
