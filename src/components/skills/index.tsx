@@ -1,60 +1,88 @@
 import React from "react";
 import styles from "./skills.module.css";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/pagination";
 
 type Skill = {
     name: string;
     icon: string;
-    description: string;
+    items: string[];
 };
 
 const skills: Skill[] = [
     {
         name: "HTML",
         icon: "/img/portfolio/icons/html.png",
-        description: "Building pages by hand, caring about structure, semantics, accessibility",
+        items: [
+            "User-friendly navigation menus",
+            "Responsive web design",
+            "Contact forms and login pages",
+            "Transitions, animations and hover effect",
+        ],
     },
     {
         name: "CSS",
         icon: "/img/portfolio/icons/css.png",
-        description: "Turning layouts into responsive interfaces with Flexbox and Grid",
+        items: [
+            "User-friendly navigation menus",
+            "Responsive web design",
+            "Contact forms and login pages",
+            "Transitions, animations and hover effect",
+        ],
     },
     {
-        name: "Static Site Generator",
+        name: "Static site",
         icon: "/img/portfolio/icons/docusaurus.png",
-        description: "Using Docusaurus to assemble documentation and small personal websites",
+        items: [
+            "search functionality",
+            "static website and customization",
+            "tags, categories, and RSS feeds",
+            "translation",
+        ],
     },
     {
         name: "Python",
         icon: "/img/portfolio/icons/python.png",
-        description: "Solving small problems with scripts and simple backend logic",
+        items: ["Scripts and simple backend logic"],
     },
     {
-        name: "Shell Scripting",
+        name: "Shell scripting",
         icon: "/img/portfolio/icons/shell_scripting.png",
-        description: "Automating routine tasks with Bash instead of doing them manually",
+        items: ["Automation with Bash"],
     },
     {
         name: "YAML",
         icon: "/img/portfolio/icons/yaml.png",
-        description: "Wiring configurations together for pipelines and project setups",
+        items: ["Pipeline and config wiring"],
     },
     {
         name: "Container",
         icon: "/img/portfolio/icons/docker.png",
-        description: "Packing applications into Docker containers to run anywhere",
+        items: ["Docker containers"],
     },
     {
         name: "CI/CD",
         icon: "/img/portfolio/icons/cicd.png",
-        description: "Letting GitHub Actions handle builds, tests, and deployments",
+        items: ["GitHub Actions pipelines"],
     },
     {
         name: "IT Security",
         icon: "/img/portfolio/icons/security.png",
-        description: "Exploring web vulnerabilities through OWASP Juice Shop challenges",
+        items: ["OWASP Juice Shop practice"],
     },
 ];
+
+const chunk = <T,>(arr: T[], size: number): T[][] =>
+    arr.reduce((acc, _, i) => {
+        if (i % size === 0) acc.push(arr.slice(i, i + size));
+        return acc;
+    }, [] as T[][]);
+
+const groupedSkills = chunk(skills, 3);
 
 const Skills: React.FC = () => {
     return (
@@ -84,14 +112,60 @@ const Skills: React.FC = () => {
                                         <h3 className={styles.skills__label}>
                                             {skill.name}
                                         </h3>
-                                        <p className={styles.skills__description}>
-                                            {skill.description}
-                                        </p>
+                                        <ul className={styles.skills__description}>
+                                            {skill.items.map((item, i) => (
+                                                <li key={i}>{item}</li>
+                                            ))}
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
                         </article>
                     ))}
+                </div>
+
+                <div className={styles.skills__mobile}>
+                    <Swiper
+                        modules={[Pagination]}
+                        slidesPerView={1}
+                        spaceBetween={24}
+                        pagination={{
+                            el: `.${styles.skills__pagination}`,
+                            clickable: true,
+                        }}
+                    >
+                        {groupedSkills.map((group, index) => (
+                            <SwiperSlide key={index}>
+                                <div className={styles.skills__mobileCard}>
+                                    {group.map((skill) => (
+                                        <div
+                                            key={skill.name}
+                                            className={styles.skills__mobileItem}
+                                        >
+                                            <div className={styles.skills__mobileIconBlock}>
+                                                <img
+                                                    src={useBaseUrl(skill.icon)}
+                                                    alt={skill.name}
+                                                    className={styles.skills__icon}
+                                                />
+                                                <h3 className={styles.skills__label}>
+                                                    {skill.name}
+                                                </h3>
+                                            </div>
+
+                                            <ul className={styles.skills__description}>
+                                                {skill.items.map((item, i) => (
+                                                    <li key={i}>{item}</li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    ))}
+                                </div>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+
+                    <div className={styles.skills__pagination}></div>
                 </div>
             </div>
         </section>

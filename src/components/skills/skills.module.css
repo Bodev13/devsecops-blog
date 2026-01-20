@@ -54,10 +54,9 @@
 }
 
 .skills__cardBack {
-    background-color: #79B8FF80;
+    background-color: #79b8ff80;
     opacity: 0;
     z-index: 1;
-    color: #ffffff;
 }
 
 .skills__card:hover .skills__cardFront {
@@ -107,32 +106,91 @@
 
 /* MOBILE */
 
+.skills__mobile {
+    display: none;
+}
+
 @media (max-width: 768px) {
     .skills {
-        padding: 72px 24px;
+        padding: 48px 16px;
     }
 
     .skills__grid {
-        grid-template-columns: 1fr;
-    }
-
-    .skills__card {
-        height: auto;
-        max-width: 100%;
-    }
-
-    .skills__cardInner {
-        position: static;
-    }
-
-    .skills__cardFront,
-    .skills__cardBack {
-        position: static;
-        opacity: 1;
-        padding: 40px 32px;
-    }
-
-    .skills__cardBack {
         display: none;
     }
+
+    .skills__mobile {
+        display: block;
+        position: relative;
+        padding-bottom: 56px;
+    }
+
+    .skills__icon {
+        width: 39.7px;
+        height: 45px;
+        flex-shrink: 0;
+    }
+
+    .skills__label {
+        font-size: 14px;
+        text-align: center;
+        line-height: 1.2;
+    }
+
+    .skills__description {
+        margin-top: 2px;
+    }
+}
+
+.skills__mobileCard {
+    background-color: rgba(41, 154, 217, 0.1);
+    border-radius: 30px;
+    width: 100%;
+    max-width: 420px;
+    padding: 16px 8px 16px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.skills__mobileItem {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.skills__mobileIconBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    min-width: 56px;
+}
+
+/* PAGINATION */
+
+.skills__pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.skills__pagination :global(.swiper-pagination-bullet) {
+    width: 10px;
+    height: 10px;
+    border-radius: 50px;
+    background-color: #738398;
+    opacity: 1;
+    transition: width 0.2s ease;
+}
+
+.skills__pagination :global(.swiper-pagination-bullet-active) {
+    width: 18px;
+    height: 10px;
+    border-radius: 50px;
+    background-color: #ffffff;
 }

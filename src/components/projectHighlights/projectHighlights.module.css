@@ -62,6 +62,7 @@
 .navItem:hover {
     color: #FFFFFF;
     text-decoration: underline;
+    font-weight: 600;
 }
 
 .navItem.active {
