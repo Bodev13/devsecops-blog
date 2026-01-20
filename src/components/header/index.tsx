@@ -4,8 +4,6 @@ import styles from "./header.module.css";
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
 
-    const closeMenu = () => setMenuOpen(false);
-
     return (
         <header className={styles.header}>
             <div className={styles.header__content}>
@@ -17,7 +15,7 @@ export default function Header() {
                 </nav>
 
                 <button
-                    className={styles.burger}
+                    className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ""}`}
                     onClick={() => setMenuOpen((prev) => !prev)}
                     aria-label="Toggle menu"
                 >
@@ -31,19 +29,11 @@ export default function Header() {
                 className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ""
                     }`}
             >
-                <button
-                    className={styles.closeButton}
-                    onClick={closeMenu}
-                    aria-label="Close menu"
-                >
-                    ✕
-                </button>
-
                 <nav className={styles.mobileNav}>
-                    <a href="#about" onClick={closeMenu}>About me</a>
-                    <a href="#skills" onClick={closeMenu}>My skills</a>
-                    <a href="#projects" onClick={closeMenu}>My projects</a>
-                    <a href="#contact" onClick={closeMenu}>Contact</a>
+                    <a href="#about" onClick={() => setMenuOpen(false)}>About me</a>
+                    <a href="#skills" onClick={() => setMenuOpen(false)}>My skills</a>
+                    <a href="#projects" onClick={() => setMenuOpen(false)}>My projects</a>
+                    <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
                 </nav>
             </div>
         </header>
