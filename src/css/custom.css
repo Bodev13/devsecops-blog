@@ -76,3 +76,21 @@ h6 {
 .main-wrapper {
   padding-top: 0 !important;
 }
+
+.layout {
+  width: 100%;
+}
+
+.contentLayout {
+  width: 100%;
+  padding-left: 120px;
+  padding-right: 120px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .contentLayout {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}

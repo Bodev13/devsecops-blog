@@ -1,16 +1,11 @@
 .contactSection {
-    display: flex;
-    justify-content: space-between;
     background-color: #242b31;
     color: #ffffff;
     padding: 40px 120px;
-    gap: 20px;
     box-sizing: border-box;
 }
 
 .contactSection__content {
-    width: 1200px;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     gap: 280px;
@@ -35,22 +30,22 @@
 }
 
 .right {
-    font-family: var(--font-quick);
-    font-weight: 500;
-    font-size: 24px;
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 20px;
+    font-family: var(--font-quick);
+    font-weight: 500;
+    font-size: 24px;
     line-height: 120%;
 }
 
 .contactItem {
     display: flex;
-    font-size: 18px;
     align-items: center;
     gap: 10px;
+    font-size: 18px;
 }
 
 .contactItem a {
@@ -76,7 +71,6 @@
     }
 
     .contactSection__content {
-        width: 100%;
         flex-direction: column;
         gap: 40px;
     }

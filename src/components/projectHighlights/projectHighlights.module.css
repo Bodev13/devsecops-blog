@@ -1,16 +1,14 @@
 .section {
     background-color: #266ad9;
-    padding: 72px 120px 72px;
+    padding: 72px 120px;
     color: #ffffff;
-
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 30px;
+    width: 100%;
 }
 
 .title {
@@ -22,8 +20,9 @@
 .content {
     display: flex;
     gap: 64px;
-    align-items: flex-start;
+    width: 100%;
 }
+
 
 .nav {
     width: 256px;
@@ -59,21 +58,18 @@
 }
 
 .card {
-    width: 913px;
-    height: 384;
-    max-width: 880px;
+    min-width: 0;
+    flex: 1;
+    min-height: 384px;
     background-color: #2f4563;
     border-radius: 30px;
     padding: 32px;
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 24px;
 }
 
 .cardHeader {
-    width: 837.33px;
-    height: 48px;
-    gap: 34px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -81,7 +77,6 @@
     font-size: 14px;
     font-weight: 500;
     line-height: 120%;
-    letter-spacing: 0%;
 }
 
 .cardHeader h3 {
@@ -89,7 +84,6 @@
     font-family: var(--font-quick);
     font-weight: 700;
 }
-
 
 .tags {
     display: flex;
@@ -103,7 +97,6 @@
     background-color: #ffffff;
     padding: 6px 10px;
     border-radius: 10px;
-    min-width: 83.81px;
     height: 44px;
 }
 
@@ -119,25 +112,18 @@
     font-family: var(--font-quick);
     font-weight: 500;
     line-height: 120%;
-    letter-spacing: 0%;
-}
-
-.skillText.noWrap {
-    white-space: nowrap;
-}
-
-.skillText.wrap {
-    white-space: normal;
 }
 
 .cardBody {
     display: flex;
-    gap: 16px;
+    gap: 24px;
+    align-items: stretch;
 }
 
 .imageBlock {
     width: 355px;
     height: 240px;
+    flex-shrink: 0;
 }
 
 .projectImage {
@@ -147,7 +133,9 @@
 }
 
 .description {
-    width: 440px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     font-size: 20px;
     line-height: 125%;
 }
@@ -188,6 +176,7 @@
     }
 
     .content {
+        width: 100%;
         flex-direction: column;
         gap: 40px;
     }
@@ -201,12 +190,11 @@
 
     .navItem {
         font-size: 18px;
-        white-space: nowrap;
     }
 
     .card {
         width: 100%;
-        max-width: 100%;
+        min-height: auto;
     }
 
     .cardHeader {
@@ -229,12 +217,10 @@
     }
 
     .projectImage {
-        width: 100%;
         height: auto;
     }
 
     .description {
-        width: 100%;
         font-size: 18px;
     }
 
