@@ -71,16 +71,6 @@ const projects: Project[] = [
         documentationUrl: "/projects/minecraft-server",
         githubUrl: "https://github.com/Bodev13/Minecraft",
     },
-    {
-        id: 5,
-        title: "WordPress hosten",
-        description:
-            "This project demonstrates deploying a WordPress website with a MariaDB database using Docker and Docker Compose.",
-        image: "/img/portfolio/icons/wordpress.png",
-        skills: ["Container", "Shell scripting"],
-        documentationUrl: "/projects/wordpress",
-        githubUrl: "https://github.com/Bodev13/wordpress",
-    },
 ];
 
 export default function ProjectHighlights() {
@@ -101,9 +91,7 @@ export default function ProjectHighlights() {
                                 <button
                                     key={project.id}
                                     type="button"
-                                    className={`${styles.navItem} ${project.id === activeProjectId
-                                            ? styles.active
-                                            : ""
+                                    className={`${styles.navItem} ${project.id === activeProjectId ? styles.active : ""
                                         }`}
                                     onClick={() => setActiveProjectId(project.id)}
                                 >
@@ -131,14 +119,7 @@ export default function ProjectHighlights() {
                                                 alt={skill}
                                                 className={styles.skillIcon}
                                             />
-                                            <span
-                                                className={`${styles.skillText} ${skill === "Shell scripting"
-                                                        ? styles.wrap
-                                                        : styles.noWrap
-                                                    }`}
-                                            >
-                                                {skill}
-                                            </span>
+                                            <span className={styles.skillText}>{skill}</span>
                                         </span>
                                     ))}
                                 </div>
@@ -175,6 +156,69 @@ export default function ProjectHighlights() {
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <div className={styles.projectsMobile}>
+                        {projects.map((project) => (
+                            <div key={project.id} className={styles.card}>
+                                <div className={styles.cardHeader}>
+                                    <h3>
+                                        {project.id}. {project.title}
+                                    </h3>
+
+                                    <div className={styles.tags}>
+                                        {project.skills.map((skill) => (
+                                            <span key={skill} className={styles.skillTag}>
+                                                <img
+                                                    src={useBaseUrl(skillConfig[skill])}
+                                                    alt={skill}
+                                                    className={styles.skillIcon}
+                                                />
+                                                <span className={styles.skillText}>{skill}</span>
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                <div className={styles.cardBody}>
+                                    <div className={styles.imageBlock}>
+                                        <img
+                                            src={useBaseUrl(project.image)}
+                                            alt={project.title}
+                                            className={styles.projectImage}
+                                        />
+                                    </div>
+
+                                    <div className={styles.description}>
+                                        <p>{project.description}</p>
+
+                                        <div className={styles.actions}>
+                                            <Link
+                                                to={project.documentationUrl}
+                                                className={styles.primary}
+                                            >
+                                                Documentation
+                                            </Link>
+                                            <a
+                                                href={project.githubUrl}
+                                                className={styles.secondary}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                GitHub
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+
+                        <Link
+                            to={projects[0].documentationUrl}
+                            className={styles.more}
+                        >
+                            → see more projects
+                        </Link>
                     </div>
                 </div>
             </div>
