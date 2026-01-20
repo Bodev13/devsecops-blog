@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import styles from "./projectHighlights.module.css";
 import Link from "@docusaurus/Link";
+import styles from "./projectHighlights.module.css";
 
 type Skill =
     | "YAML"
@@ -38,7 +38,7 @@ const projects: Project[] = [
             "This project demonstrates a containerized fullstack web application with a Python backend and an Angular frontend, orchestrated using Docker Compose.",
         image: "/img/portfolio/icons/conduit_fullstack.png",
         skills: ["Container", "Python", "CI/CD"],
-        documentationUrl: "docs/projects/conduit-container-deployment",
+        documentationUrl: "/projects/conduit-container-deployment",
         githubUrl: "https://github.com/Bodev13/conduit-fullstack-app",
     },
     {
@@ -48,7 +48,7 @@ const projects: Project[] = [
             "This project demonstrates deploying a Django REST API together with a PostgreSQL database using Docker.",
         image: "/img/portfolio/icons/trucks.png",
         skills: ["Container", "Python"],
-        documentationUrl: "docs/projects/truck-signs-api",
+        documentationUrl: "/projects/truck-signs-api",
         githubUrl: "https://github.com/Bodev13/truck_signs_api",
     },
     {
@@ -56,9 +56,9 @@ const projects: Project[] = [
         title: "Juice Shop Meister",
         description:
             "This project documents selected OWASP Juice Shop challenges performed in a local test environment.",
-        image: "/img/portfolio/icons/juiceShop.png",
+        image: "/img/portfolio/test.png",
         skills: ["IT Security"],
-        documentationUrl: "docs/projects/juice-shop-master",
+        documentationUrl: "/projects/juice-shop-master",
         githubUrl: "https://github.com/Bodev13/devsecops-blog/tree/juice-shop-master",
     },
     {
@@ -68,7 +68,7 @@ const projects: Project[] = [
             "This project demonstrates deploying a Minecraft Java Edition server using Docker and Docker Compose.",
         image: "/img/portfolio/icons/minecraft.png",
         skills: ["YAML", "Shell scripting", "Container"],
-        documentationUrl: "docs/projects/minecraft-server",
+        documentationUrl: "/projects/minecraft-server",
         githubUrl: "https://github.com/Bodev13/Minecraft",
     },
     {
@@ -78,7 +78,7 @@ const projects: Project[] = [
             "This project demonstrates deploying a WordPress website with a MariaDB database using Docker and Docker Compose.",
         image: "/img/portfolio/icons/wordpress.png",
         skills: ["Container", "Shell scripting"],
-        documentationUrl: "docs/projects/wordpress",
+        documentationUrl: "/projects/wordpress",
         githubUrl: "https://github.com/Bodev13/wordpress",
     },
 ];
@@ -101,7 +101,9 @@ export default function ProjectHighlights() {
                                 <button
                                     key={project.id}
                                     type="button"
-                                    className={`${styles.navItem} ${project.id === activeProject.id ? styles.active : ""
+                                    className={`${styles.navItem} ${project.id === activeProjectId
+                                            ? styles.active
+                                            : ""
                                         }`}
                                     onClick={() => setActiveProjectId(project.id)}
                                 >
@@ -109,12 +111,12 @@ export default function ProjectHighlights() {
                                 </button>
                             ))}
 
-                            <Link to="/docs/projects/conduit-container-deployment" className={styles.more}>
+                            <Link
+                                to={projects[0].documentationUrl}
+                                className={styles.more}
+                            >
                                 → see more projects
                             </Link>
-
-
-
                         </nav>
 
                         <div className={styles.card}>
@@ -131,8 +133,8 @@ export default function ProjectHighlights() {
                                             />
                                             <span
                                                 className={`${styles.skillText} ${skill === "Shell scripting"
-                                                    ? styles.wrap
-                                                    : styles.noWrap
+                                                        ? styles.wrap
+                                                        : styles.noWrap
                                                     }`}
                                             >
                                                 {skill}
@@ -155,15 +157,17 @@ export default function ProjectHighlights() {
                                     <p>{activeProject.description}</p>
 
                                     <div className={styles.actions}>
-                                        <a
-                                            href={activeProject.documentationUrl}
+                                        <Link
+                                            to={activeProject.documentationUrl}
                                             className={styles.primary}
                                         >
                                             Documentation
-                                        </a>
+                                        </Link>
                                         <a
                                             href={activeProject.githubUrl}
                                             className={styles.secondary}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
                                         >
                                             GitHub
                                         </a>
