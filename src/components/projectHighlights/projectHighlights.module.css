@@ -265,3 +265,15 @@
         justify-content: center;
     }
 }
+
+.primary:hover {
+    background-color: #5696FF;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.secondary:hover {
+    background-color: rgba(255, 255, 255, 0.16);
+    color: #FFFFFF;
+    text-decoration: none;
+}
