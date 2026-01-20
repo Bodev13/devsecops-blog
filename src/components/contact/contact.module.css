@@ -48,6 +48,10 @@
     font-size: 18px;
 }
 
+.contactItem:hover .icon {
+    background-color: #5696FF;
+}
+
 .contactItem a {
     color: #ffffff;
     text-decoration: underline;
