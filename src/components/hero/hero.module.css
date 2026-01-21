@@ -42,6 +42,7 @@
     font-family: var(--font-quick);
     margin-bottom: 48px;
     line-height: 140%;
+    font-weight: 600;
 }
 
 .hero__button {
@@ -84,9 +85,9 @@
 }
 
 .hero__image {
-    width: 420px;
-    height: 420px;
-    border-radius: 32px;
+    width: 441px;
+    height: 479px;
+    border-radius: 30px;
     object-fit: cover;
 }
 
