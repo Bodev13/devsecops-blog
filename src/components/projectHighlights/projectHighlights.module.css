@@ -125,12 +125,14 @@
 
 .skillTag {
     display: inline-flex;
+    width: 122.5px;
+    height: 44px;
     align-items: center;
     gap: 6px;
     background-color: #ffffff;
-    padding: 6px 10px;
+    padding: 6px;
     border-radius: 10px;
-    height: 44px;
+
 }
 
 .skillIcon {
@@ -213,6 +215,18 @@
 @media (max-width: 768px) {
     .content {
         display: none;
+
+    }
+
+    .skillTag {
+        display: inline-flex;
+        width: 120px;
+        height: 44px;
+        align-items: center;
+        gap: 4px;
+        background-color: #ffffff;
+        padding: 6px;
+        border-radius: 10px;
 
     }
 
