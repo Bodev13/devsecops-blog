@@ -76,10 +76,28 @@
     }
 
     .left h2 {
-        font-size: 40px;
+        font-size: 32px;
+        font-family: var(--font-quick);
+        font-weight: 700;
+    }
+
+    .left ul {
+        font-family: var(--font-quick);
+        font-weight: 400;
+        padding-left: 16px;
     }
 
     .right {
-        font-size: 20px;
+        font-size: 18px;
+        font-family: var(--font-quick);
+        font-weight: 500;
+    }
+
+    .contactItem a {
+        color: #ffffff;
+        text-decoration: underline;
+        font-size: 16px;
+        font-weight: 500;
+        font-family: var(--font-quick);
     }
 }
