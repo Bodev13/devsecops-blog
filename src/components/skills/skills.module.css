@@ -103,6 +103,14 @@
 }
 
 @media (max-width: 768px) {
+    .skills__description {
+        font-family: var(--font-quick);
+        font-size: 16px;
+        font-weight: 400;
+    }
+}
+
+@media (max-width: 768px) {
     .skills {
         padding: 48px 0;
     }
@@ -114,6 +122,9 @@
     .skills__title {
         width: 100%;
         text-align: left;
+        font-size: 40px;
+        font-weight: 700;
+        font-family: var(--font-quick);
     }
 
     .skills__grid {
@@ -137,8 +148,8 @@
     }
 
     .skills__icon {
-        width: 70px;
-        height: 80px;
+        width: 39.7px;
+        height: 45px;
     }
 
     .skills__label {
@@ -150,6 +161,8 @@
 .skills__mobileCard {
     background-color: rgba(41, 154, 217, 0.1);
     border-radius: 30px;
+    width: 340px;
+    height: 388px;
     width: 100%;
     padding: 16px 12px;
     display: flex;
