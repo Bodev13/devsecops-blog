@@ -56,7 +56,7 @@ const projects: Project[] = [
         title: "Truck Signs API",
         description:
             "This project demonstrates deploying a Django REST API together with a PostgreSQL database using Docker.",
-        image: "/img/portfolio/icons/trucks.png",
+        image: "/img/portfolio/icons/truckSigns.png",
         skills: ["Container", "Python"],
         documentationUrl: "/projects/truck-signs-api",
         githubUrl: "https://github.com/Bodev13/truck_signs_api",

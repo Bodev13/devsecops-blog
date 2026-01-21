@@ -90,9 +90,16 @@ h6 {
   box-sizing: border-box;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1440px) {
   .contentContainer {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .contentContainer {
+    padding-left: 40px;
+    padding-right: 40px;
   }
 }
