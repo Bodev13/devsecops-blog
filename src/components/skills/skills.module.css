@@ -1,5 +1,5 @@
 .skills {
-    padding: 72px 120px;
+    padding: 72px 0;
     background-color: #242b31;
     color: #ffffff;
 }
@@ -16,8 +16,6 @@
     font-size: 64px;
     line-height: 120%;
 }
-
-/* DESKTOP GRID */
 
 .skills__grid {
     display: grid;
@@ -94,15 +92,11 @@
     max-width: 320px;
 }
 
-/* TABLET */
-
 @media (max-width: 1024px) {
     .skills__grid {
         grid-template-columns: repeat(2, minmax(360px, 1fr));
     }
 }
-
-/* MOBILE */
 
 .skills__mobile {
     display: none;
@@ -110,7 +104,7 @@
 
 @media (max-width: 768px) {
     .skills {
-        padding: 48px 16px;
+        padding: 48px 0;
     }
 
     .skills__content {
@@ -119,8 +113,6 @@
 
     .skills__title {
         width: 100%;
-        max-width: 420px;
-        margin: 0 auto;
         text-align: left;
     }
 
@@ -137,7 +129,6 @@
 
     .skills__mobile :global(.swiper) {
         width: 100%;
-        max-width: 420px;
     }
 
     .skills__mobile :global(.swiper-slide) {
@@ -156,13 +147,10 @@
     }
 }
 
-/* MOBILE CARD */
-
 .skills__mobileCard {
     background-color: rgba(41, 154, 217, 0.1);
     border-radius: 30px;
     width: 100%;
-    max-width: 420px;
     padding: 16px 12px;
     display: flex;
     flex-direction: column;
@@ -183,8 +171,6 @@
     gap: 8px;
     min-width: 56px;
 }
-
-/* PAGINATION */
 
 .skills__pagination {
     display: flex;

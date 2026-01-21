@@ -77,19 +77,20 @@ h6 {
   padding-top: 0 !important;
 }
 
-.layout {
+.layoutWrapper {
   width: 100%;
 }
 
-.contentLayout {
-  width: 100%;
+.contentContainer {
+  max-width: 1440px;
+  margin: 0 auto;
   padding-left: 120px;
   padding-right: 120px;
   box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
-  .contentLayout {
+  .contentContainer {
     padding-left: 24px;
     padding-right: 24px;
   }

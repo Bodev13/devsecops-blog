@@ -8,10 +8,7 @@
 }
 
 .header__content {
-    max-width: 1440px;
     height: 100%;
-    margin: 0 auto;
-    padding: 0 24px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -102,19 +99,7 @@
     cursor: pointer;
 }
 
-/* =========================
-   MOBILE ONLY
-========================= */
-
 @media (max-width: 768px) {
-
-    .header__content {
-        max-width: 420px;
-        margin: 0 auto;
-        padding: 0 24px;
-        justify-content: flex-end;
-    }
-
     .nav {
         display: none;
     }
@@ -134,7 +119,6 @@
     .burger span {
         width: 30px;
         height: 3px;
-        background-color: #ffffff;
     }
 
     .mobileMenu {

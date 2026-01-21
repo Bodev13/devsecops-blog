@@ -1,7 +1,7 @@
 .contactSection {
     background-color: #242b31;
     color: #ffffff;
-    padding: 40px 120px;
+    padding: 40px 0;
     box-sizing: border-box;
 }
 
@@ -70,10 +70,6 @@
 }
 
 @media (max-width: 768px) {
-    .contactSection {
-        padding: 40px 24px;
-    }
-
     .contactSection__content {
         flex-direction: column;
         gap: 40px;
@@ -85,12 +81,5 @@
 
     .right {
         font-size: 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    .contactSection__content {
-        max-width: 420px;
-        margin: 0 auto;
     }
 }

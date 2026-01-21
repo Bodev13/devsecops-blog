@@ -6,29 +6,28 @@ export default function Header() {
 
     return (
         <header className={styles.header}>
-            <div className={styles.header__content}>
-                <nav className={styles.nav}>
-                    <a href="#about">About me</a>
-                    <a href="#skills">My skills</a>
-                    <a href="#projects">My projects</a>
-                    <a href="#contact">Contact</a>
-                </nav>
+            <div className="contentContainer">
+                <div className={styles.header__content}>
+                    <nav className={styles.nav}>
+                        <a href="#about">About me</a>
+                        <a href="#skills">My skills</a>
+                        <a href="#projects">My projects</a>
+                        <a href="#contact">Contact</a>
+                    </nav>
 
-                <button
-                    className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ""}`}
-                    onClick={() => setMenuOpen((prev) => !prev)}
-                    aria-label="Toggle menu"
-                >
-                    <span />
-                    <span />
-                    <span />
-                </button>
+                    <button
+                        className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ""}`}
+                        onClick={() => setMenuOpen((prev) => !prev)}
+                        aria-label="Toggle menu"
+                    >
+                        <span />
+                        <span />
+                        <span />
+                    </button>
+                </div>
             </div>
 
-            <div
-                className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ""
-                    }`}
-            >
+            <div className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ""}`}>
                 <nav className={styles.mobileNav}>
                     <a href="#about" onClick={() => setMenuOpen(false)}>About me</a>
                     <a href="#skills" onClick={() => setMenuOpen(false)}>My skills</a>

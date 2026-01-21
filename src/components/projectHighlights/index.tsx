@@ -85,12 +85,10 @@ const projects: Project[] = [
 ];
 
 export default function ProjectHighlights() {
-    /* ✅ hook exactly once */
     const baseUrl = useBaseUrl("/");
 
     const resolve = (path: string) => `${baseUrl}${path.replace(/^\//, "")}`;
 
-    /* ✅ normalize data once */
     const resolvedProjects: ResolvedProject[] = projects.map((project) => ({
         ...project,
         image: resolve(project.image),
@@ -101,7 +99,7 @@ export default function ProjectHighlights() {
     }));
 
     const [activeProjectId, setActiveProjectId] = useState<number>(
-        resolvedProjects[0].id,
+        resolvedProjects[0].id
     );
 
     const activeProject =
@@ -110,7 +108,7 @@ export default function ProjectHighlights() {
 
     return (
         <section id="projects" className={styles.section}>
-            <div className="contentLayout">
+            <div className="contentContainer">
                 <div className={styles.container}>
                     <h2 className={styles.title}>My project highlights</h2>
 
@@ -148,7 +146,9 @@ export default function ProjectHighlights() {
                                                 alt={skill.name}
                                                 className={styles.skillIcon}
                                             />
-                                            <span className={styles.skillText}>{skill.name}</span>
+                                            <span className={styles.skillText}>
+                                                {skill.name}
+                                            </span>
                                         </span>
                                     ))}
                                 </div>
@@ -204,7 +204,9 @@ export default function ProjectHighlights() {
                                                     alt={skill.name}
                                                     className={styles.skillIcon}
                                                 />
-                                                <span className={styles.skillText}>{skill.name}</span>
+                                                <span className={styles.skillText}>
+                                                    {skill.name}
+                                                </span>
                                             </span>
                                         ))}
                                     </div>

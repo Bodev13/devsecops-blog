@@ -9,12 +9,18 @@ const Footer: React.FC = () => {
 
     return (
         <footer className={styles.siteFooter}>
-            <button className={styles.toTopBtn} onClick={scrollToTop} aria-label="Scroll to top" />
-            <div className={styles.footerInfo}>
-                <p className={styles.footerCopy}>© Bo 2025</p>
-                <a className={styles.footerLegal} href={useBaseUrl('/legal-notice')}>
-                    Legal notice
-                </a>
+            <div className="contentContainer">
+                <button
+                    className={styles.toTopBtn}
+                    onClick={scrollToTop}
+                    aria-label="Scroll to top"
+                />
+                <div className={styles.footerInfo}>
+                    <p className={styles.footerCopy}>© Bo 2025</p>
+                    <a className={styles.footerLegal} href={useBaseUrl('/legal-notice')}>
+                        Legal notice
+                    </a>
+                </div>
             </div>
         </footer>
     );

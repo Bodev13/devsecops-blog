@@ -1,11 +1,10 @@
 .hero {
     background-color: #266AD9;
-    padding: 140px 120px 72px;
+    padding: 140px 0 72px;
     box-sizing: border-box;
 }
 
 .hero__container {
-    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -52,35 +51,18 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-
     padding: 14px 20px;
     height: 52px;
-
     border-radius: 30px;
     background-color: #ffffff;
-
     font-family: var(--font-quick);
     font-weight: 600;
     font-size: 20px;
     line-height: 120%;
-    letter-spacing: 0;
-
     color: #266AD9;
     text-decoration: none;
-
     border: none;
     cursor: pointer;
-}
-
-.hero__button:hover,
-.hero__button:visited,
-.hero__button:active {
-    color: #266AD9;
-    text-decoration: none;
-}
-
-.hero__button:hover {
-    background-color: rgba(255, 255, 255, 0.85);
 }
 
 .hero__image {
@@ -91,57 +73,20 @@
 
 @media (max-width: 768px) {
     .hero {
-        padding: 80px 24px;
+        padding-top: 140px;
+        padding-bottom: 72px;
     }
-
-    @media (max-width: 768px) {
-        .hero {
-            padding-top: 140px;
-            padding-left: 24px;
-            padding-right: 24px;
-            padding-bottom: 72px;
-        }
-    }
-
 
     .hero__container {
         flex-direction: column;
         align-items: flex-start;
-        max-width: 420px;
-        margin: 0 auto;
         gap: 24px;
-    }
-
-    .hero__content {
-        max-width: 100%;
-        display: flex;
-        flex-direction: column;
-        text-align: left;
-    }
-
-    .hero__imageWrapper {
-        width: 100%;
-        max-width: 420px;
-        margin: 24px 0;
     }
 
     .hero__image {
         width: 100%;
         height: auto;
         aspect-ratio: 1 / 1;
-        border-radius: 24px;
         object-fit: cover;
     }
-
-
-    .hero__button {
-        height: 47px;
-        padding: 14px 20px;
-        border-radius: 30px;
-        gap: 10px;
-        margin: 0 auto;
-        width: fit-content;
-    }
-
-
 }

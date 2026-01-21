@@ -87,85 +87,89 @@ const groupedSkills = chunk(skills, 3);
 const Skills: React.FC = () => {
     return (
         <section id="skills" className={styles.skills}>
-            <div className={styles.skills__content}>
-                <h2 className={styles.skills__title}>My skills</h2>
+            <div className="contentContainer">
+                <div className={styles.skills__content}>
+                    <h2 className={styles.skills__title}>My skills</h2>
 
-                <div className={styles.skills__grid}>
-                    {skills.map((skill) => (
-                        <article key={skill.name} className={styles.skills__card}>
-                            <div className={styles.skills__cardInner}>
-                                <div className={styles.skills__cardFront}>
-                                    <div className={styles.skills__cardContent}>
-                                        <img
-                                            src={useBaseUrl(skill.icon)}
-                                            alt={skill.name}
-                                            className={styles.skills__icon}
-                                        />
-                                        <h3 className={styles.skills__label}>
-                                            {skill.name}
-                                        </h3>
+                    <div className={styles.skills__grid}>
+                        {skills.map((skill) => (
+                            <article key={skill.name} className={styles.skills__card}>
+                                <div className={styles.skills__cardInner}>
+                                    <div className={styles.skills__cardFront}>
+                                        <div className={styles.skills__cardContent}>
+                                            <img
+                                                src={useBaseUrl(skill.icon)}
+                                                alt={skill.name}
+                                                className={styles.skills__icon}
+                                            />
+                                            <h3 className={styles.skills__label}>
+                                                {skill.name}
+                                            </h3>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div className={styles.skills__cardBack}>
-                                    <div className={styles.skills__cardContent}>
-                                        <h3 className={styles.skills__label}>
-                                            {skill.name}
-                                        </h3>
-                                        <ul className={styles.skills__description}>
-                                            {skill.items.map((item, i) => (
-                                                <li key={i}>{item}</li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                    ))}
-                </div>
-
-                <div className={styles.skills__mobile}>
-                    <Swiper
-                        modules={[Pagination]}
-                        slidesPerView={1}
-                        spaceBetween={24}
-                        pagination={{
-                            el: `.${styles.skills__pagination}`,
-                            clickable: true,
-                        }}
-                    >
-                        {groupedSkills.map((group, index) => (
-                            <SwiperSlide key={index}>
-                                <div className={styles.skills__mobileCard}>
-                                    {group.map((skill) => (
-                                        <div
-                                            key={skill.name}
-                                            className={styles.skills__mobileItem}
-                                        >
-                                            <div className={styles.skills__mobileIconBlock}>
-                                                <img
-                                                    src={useBaseUrl(skill.icon)}
-                                                    alt={skill.name}
-                                                    className={styles.skills__icon}
-                                                />
-                                                <h3 className={styles.skills__label}>
-                                                    {skill.name}
-                                                </h3>
-                                            </div>
-
+                                    <div className={styles.skills__cardBack}>
+                                        <div className={styles.skills__cardContent}>
+                                            <h3 className={styles.skills__label}>
+                                                {skill.name}
+                                            </h3>
                                             <ul className={styles.skills__description}>
                                                 {skill.items.map((item, i) => (
                                                     <li key={i}>{item}</li>
                                                 ))}
                                             </ul>
                                         </div>
-                                    ))}
+                                    </div>
                                 </div>
-                            </SwiperSlide>
+                            </article>
                         ))}
-                    </Swiper>
+                    </div>
 
-                    <div className={styles.skills__pagination}></div>
+                    <div className={styles.skills__mobile}>
+                        <Swiper
+                            modules={[Pagination]}
+                            slidesPerView={1}
+                            spaceBetween={24}
+                            pagination={{
+                                el: `.${styles.skills__pagination}`,
+                                clickable: true,
+                            }}
+                        >
+                            {groupedSkills.map((group, index) => (
+                                <SwiperSlide key={index}>
+                                    <div className={styles.skills__mobileCard}>
+                                        {group.map((skill) => (
+                                            <div
+                                                key={skill.name}
+                                                className={styles.skills__mobileItem}
+                                            >
+                                                <div
+                                                    className={styles.skills__mobileIconBlock}
+                                                >
+                                                    <img
+                                                        src={useBaseUrl(skill.icon)}
+                                                        alt={skill.name}
+                                                        className={styles.skills__icon}
+                                                    />
+                                                    <h3 className={styles.skills__label}>
+                                                        {skill.name}
+                                                    </h3>
+                                                </div>
+
+                                                <ul className={styles.skills__description}>
+                                                    {skill.items.map((item, i) => (
+                                                        <li key={i}>{item}</li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+
+                        <div className={styles.skills__pagination}></div>
+                    </div>
                 </div>
             </div>
         </section>
