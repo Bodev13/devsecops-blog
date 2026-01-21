@@ -81,7 +81,7 @@
 .skills__label {
     font-family: var(--font-quick);
     font-weight: 500;
-    font-size: 24px;
+    font-size: 18px;
     line-height: 120%;
 }
 
@@ -137,8 +137,8 @@
     }
 
     .skills__icon {
-        width: 40px;
-        height: 45px;
+        width: 70px;
+        height: 80px;
     }
 
     .skills__label {
