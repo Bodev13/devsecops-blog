@@ -196,6 +196,13 @@
     text-decoration: none;
 }
 
+.primary:hover {
+    background-color: #5696FF;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+
 .secondary {
     border: 1px solid #ffffff;
     color: #ffffff;
@@ -298,11 +305,7 @@
     }
 }
 
-.primary:hover {
-    background-color: #266AD9;
-    color: #FFFFFF;
-    text-decoration: none;
-}
+
 
 .secondary:hover {
     background-color: rgba(255, 255, 255, 0.16);
