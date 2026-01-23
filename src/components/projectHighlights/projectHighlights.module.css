@@ -190,6 +190,12 @@
         flex-direction: column;
     }
 
+    .title {
+        font-size: 48px;
+        font-weight: 700;
+        margin: 0 0 32px 0;
+    }
+
     .cardLeft {
         order: 1;
     }
@@ -226,6 +232,12 @@
 @media (max-width: 768px) {
     .content {
         display: none;
+    }
+
+    .title {
+        font-size: 48px;
+        font-weight: 700;
+        margin: 0 0 32px 0;
     }
 
     .projectsMobile {
