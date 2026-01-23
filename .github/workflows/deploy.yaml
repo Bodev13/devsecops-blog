@@ -3,6 +3,15 @@ name: Deploy to GitHub Pages
 on:
   workflow_call:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+      - dev_branch
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   build:
@@ -23,25 +32,18 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Create .env config file
-        run: cp example.env .env || true
-
       - name: Build website
-        run: |
-          npm run build
-          mkdir github-pages
-          cp -r build/* github-pages/
+        run: npm run build
 
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: github-pages
+          path: build
 
   deploy:
     name: Deploy to GitHub Pages
     needs: build
 
-    # Allow deploy from main and dev_branch
     if: github.ref_name == 'main' || github.ref_name == 'dev_branch'
 
     environment:
