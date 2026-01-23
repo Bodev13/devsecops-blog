@@ -70,6 +70,13 @@
     text-decoration: underline;
     margin-top: 24px;
     color: #FFFFFF !important;
+    display: inline-block;
+}
+
+.more:hover {
+    font-weight: 600;
+    text-decoration: underline;
+    color: #FFFFFF !important;
 }
 
 .card {
@@ -178,7 +185,6 @@
     display: none;
 }
 
-/* ===== MIDDLE ===== */
 @media (max-width: 1100px) {
     .card {
         flex-direction: column;
@@ -217,7 +223,6 @@
     }
 }
 
-/* ===== MOBILE ===== */
 @media (max-width: 768px) {
     .content {
         display: none;
@@ -271,14 +276,12 @@
     }
 }
 
-/* ===== BUTTON HOVER FIX (no green underline) ===== */
 .primary:hover,
 .secondary:hover {
     text-decoration: none !important;
     color: #ffffff !important;
 }
 
-/* ===== MIDDLE: Title → SkillTags → Image ===== */
 @media (max-width: 1100px) {
     .card {
         display: flex;
@@ -318,7 +321,6 @@
     }
 }
 
-/* ===== MOBILE: Title → SkillTags → Image → Text → Buttons ===== */
 @media (max-width: 768px) {
 
     .cardLeft,
@@ -351,7 +353,6 @@
     }
 }
 
-/* ===== RESTORE BUTTON HOVER COLORS (NO UNDERLINE) ===== */
 .primary:hover {
     background-color: #5696FF;
     color: #ffffff;
@@ -364,7 +365,6 @@
     text-decoration: none !important;
 }
 
-/* ===== FIX MIDDLE ORDER: Title → SkillTags → Image ===== */
 @media (max-width: 1100px) {
     .card {
         display: flex;
@@ -400,5 +400,29 @@
         order: 5;
         justify-content: center;
         margin-top: 16px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .more {
+        text-align: center;
+        align-self: center;
+        width: 100%;
+        display: block;
+        font-family: var(--font-quick);
+        font-size: 18px;
+        font-weight: 500;
+    }
+}
+
+@media (max-width: 768px) {
+    .more {
+        text-align: center;
+        align-self: center;
+        width: 100%;
+        display: block;
+        font-family: var(--font-quick);
+        font-size: 18px;
+        font-weight: 500;
     }
 }
