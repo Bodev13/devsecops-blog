@@ -32,7 +32,7 @@ type ResolvedProject = Omit<Project, "skills" | "image"> & {
 };
 
 const skillConfig: Record<Skill, string> = {
-    YAML: "/img/portfolio/icons/propYaml.png",
+    YAML: "/img/portfolio/icons/proYaml.png",
     "Shell scripting": "/img/portfolio/icons/propShell.png",
     "IT Security": "/img/portfolio/icons/propITSec.png",
     Container: "/img/portfolio/icons/propContainer.png",
