@@ -60,9 +60,10 @@ http://localhost:3000
 
 ```bash
 pnpm build
-pnpm deploy
+pnpm run deploy
 ```
 ## How to start
+
 To run the project locally from scratch
 
 ```bash
@@ -121,7 +122,7 @@ pnpm build
 - Deploy to GitHub Pages
 
 ```bash
-pnpm deploy
+pnpm run deploy
 ```
 
 The generated `build/` folder can also be deployed using NGINX, Docker, or any static hosting provider
