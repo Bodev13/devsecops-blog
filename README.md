@@ -64,7 +64,7 @@ pnpm run deploy
 ```
 ## How to start
 
-To run the project locally from scratch
+- To run the project locally from scratch
 
 ```bash
 pnpm install
@@ -93,7 +93,7 @@ Portfolio content and layout are managed through React components located in `sr
 
 Each major section (Header, Hero, Skills, Projects, Contact, Footer) is implemented as a separate TypeScript component and styled using CSS Modules.
 
-You can customize the portfolio by:
+You can customize the portfolio by
 
 - Editing text content and layout in `src/components/*`
 - Updating project data in the Projects component
