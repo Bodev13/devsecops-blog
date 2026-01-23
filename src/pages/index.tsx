@@ -15,13 +15,14 @@ export default function Home(): JSX.Element {
     <Layout
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />"
+      noFooter
     >
       <Header />
       <Hero />
       <Skills />
       <ProjectHighlights />
       <Contact />
-      <Footer />
+      <Footer /> {/* твой футер */}
     </Layout>
   );
 }
