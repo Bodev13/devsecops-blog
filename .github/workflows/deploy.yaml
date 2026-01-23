@@ -10,24 +10,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
       - name: Install dependencies
-        run: npm install --frozen-lockfile
+        run: npm install
 
       - name: Create .env config file
-        run: cp example.env .env
+        run: cp example.env .env || true
 
       - name: Build website
-        run: npm run build && cp -r build github-pages
+        run: |
+          npm run build
+          mkdir github-pages
+          cp -r build/* github-pages/
 
-      - name: Upload Build Artifact
+      - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: github-pages
@@ -36,7 +41,7 @@ jobs:
     name: Deploy to GitHub Pages
     needs: build
 
-    # ✅ Allow deploy from main AND dev_branch
+    # Allow deploy from main and dev_branch
     if: github.ref_name == 'main' || github.ref_name == 'dev_branch'
 
     environment:
