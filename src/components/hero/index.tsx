@@ -39,7 +39,7 @@ export default function Hero() {
 
                     <div className={styles.hero__imageWrapperDesktop}>
                         <img
-                            src={useBaseUrl("/img/portfolio/Bo.png")}
+                            src={useBaseUrl("/img/portfolio/icons/bo.png")}
                             alt="Profile"
                             className={styles.hero__image}
                         />
