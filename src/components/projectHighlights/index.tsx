@@ -32,7 +32,7 @@ type ResolvedProject = Omit<Project, "skills" | "image"> & {
 };
 
 const skillConfig: Record<Skill, string> = {
-    YAML: "/img/portfolio/icons/proYaml.png",
+    YAML: "/img/portfolio/icons/propYaml.png",
     "Shell scripting": "/img/portfolio/icons/propShell.png",
     "IT Security": "/img/portfolio/icons/propITSec.png",
     Container: "/img/portfolio/icons/propContainer.png",
@@ -85,7 +85,7 @@ const projects: Project[] = [
 ];
 
 export default function ProjectHighlights() {
-    const resolve = (path: string) => useBaseUrl(path);
+    const resolve = useBaseUrl;
 
     const resolvedProjects: ResolvedProject[] = projects.map((project) => ({
         ...project,
@@ -210,7 +210,7 @@ export default function ProjectHighlights() {
 
                                     <div className={styles.imageBlock}>
                                         <img
-                                            src={project.image}
+                                            src={resolve(project.image)}
                                             alt={project.title}
                                             className={styles.projectImage}
                                         />
