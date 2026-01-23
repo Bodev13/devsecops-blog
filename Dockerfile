@@ -5,7 +5,7 @@ WORKDIR /app
 ARG BLOG_ENABLED=false
 ARG DEPLOYMENT_URL="https://bodev13.github.io"
 ARG DEPLOYMENT_BRANCH="main"
-ARG GITHUB_ORG="Bodev13"
+ARG GITHUB_ORG="bodev13"
 ARG GITHUB_PROJECT="devsecops-blog"
 
 COPY . $WORKDIR

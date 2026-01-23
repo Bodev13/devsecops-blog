@@ -12,9 +12,10 @@ const config: Config = {
   url: 'https://bodev13.github.io',
   baseUrl: '/devsecops-blog/',
 
-  organizationName: 'Bodev13',
+  organizationName: 'bodev13',
   projectName: 'devsecops-blog',
   deploymentBranch: 'gh-pages',
+
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
@@ -30,7 +31,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/Bodev13/devsecops-blog',
+          editUrl: 'https://github.com/bodev13/devsecops-blog',
         },
 
         blog: blogEnabled
@@ -40,7 +41,7 @@ const config: Config = {
               type: ['rss', 'atom'],
               xslt: true,
             },
-            editUrl: 'https://github.com/Bodev13/devsecops-blog',
+            editUrl: 'https://github.com/bodev13/devsecops-blog',
             onInlineTags: 'warn',
             onInlineAuthors: 'warn',
             onUntruncatedBlogPosts: 'warn',
