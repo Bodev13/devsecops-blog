@@ -195,7 +195,7 @@
 
 @media (max-width: 768px) {
     .header__content {
-        padding: 0 24px;
+        padding-top: 32px;
         justify-content: flex-end;
     }
 }
