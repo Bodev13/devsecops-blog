@@ -43,7 +43,7 @@ const config: Config = {
               type: ['rss', 'atom'],
               xslt: true,
             },
-            editUrl: 'https://github.com/spmse/dev-blog-template',
+            editUrl: 'https://github.com/Bodev13/devsecops-blog',
           }
           : false,
         theme: {
