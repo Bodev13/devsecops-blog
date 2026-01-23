@@ -17,7 +17,7 @@ The project is containerized using Docker and orchestrated with Docker Compose.
 - [Usage](#usage)
 - [Logs](#logs)
 - [Rebuilding containers](#rebuilding-containers)
-- [CI/CD Deployment](#ci/cd-deployment)
+- [CI/CD Deployment](#ci-cd-deployment)
 
 
 
