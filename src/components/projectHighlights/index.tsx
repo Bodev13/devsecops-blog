@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 import Link from "@docusaurus/Link";
 import styles from "./projectHighlights.module.css";
 
@@ -18,6 +19,16 @@ type Project = {
     skills: Skill[];
     documentationUrl: string;
     githubUrl: string;
+};
+
+type ResolvedSkill = {
+    name: Skill;
+    icon: string;
+};
+
+type ResolvedProject = Omit<Project, "skills" | "image"> & {
+    image: string;
+    skills: ResolvedSkill[];
 };
 
 const skillConfig: Record<Skill, string> = {
@@ -74,10 +85,27 @@ const projects: Project[] = [
 ];
 
 export default function ProjectHighlights() {
-    const [activeProjectId, setActiveProjectId] = useState<number>(projects[0].id);
+    const baseUrl = useBaseUrl("/");
+
+    const resolve = (path: string) =>
+        `${baseUrl}${path.replace(/^\//, "")}`;
+
+    const resolvedProjects: ResolvedProject[] = projects.map((project) => ({
+        ...project,
+        image: resolve(project.image),
+        skills: project.skills.map((skill) => ({
+            name: skill,
+            icon: resolve(skillConfig[skill]),
+        })),
+    }));
+
+    const [activeProjectId, setActiveProjectId] = useState<number>(
+        resolvedProjects[0].id
+    );
 
     const activeProject =
-        projects.find((p) => p.id === activeProjectId) ?? projects[0];
+        resolvedProjects.find((p) => p.id === activeProjectId) ??
+        resolvedProjects[0];
 
     return (
         <section id="projects" className={styles.section}>
@@ -87,11 +115,12 @@ export default function ProjectHighlights() {
 
                     <div className={styles.content}>
                         <nav className={styles.nav}>
-                            {projects.map((project) => (
+                            {resolvedProjects.map((project) => (
                                 <button
                                     key={project.id}
                                     type="button"
-                                    className={`${styles.navItem} ${project.id === activeProjectId ? styles.active : ""}`}
+                                    className={`${styles.navItem} ${project.id === activeProjectId ? styles.active : ""
+                                        }`}
                                     onClick={() => setActiveProjectId(project.id)}
                                 >
                                     {project.id}. {project.title}
@@ -105,7 +134,9 @@ export default function ProjectHighlights() {
 
                         <div className={styles.card}>
                             <div className={styles.cardLeft}>
-                                <h3 className={styles.cardTitle}>{activeProject.title}</h3>
+                                <h3 className={styles.cardTitle}>
+                                    {activeProject.title}
+                                </h3>
 
                                 <div className={styles.imageBlock}>
                                     <img
@@ -119,9 +150,14 @@ export default function ProjectHighlights() {
                             <div className={styles.cardRight}>
                                 <div className={styles.tags}>
                                     {activeProject.skills.map((skill) => (
-                                        <span key={skill} className={styles.skillTag}>
-                                            <img src={skillConfig[skill]} className={styles.skillIcon} />
-                                            <span className={styles.skillText}>{skill}</span>
+                                        <span key={skill.name} className={styles.skillTag}>
+                                            <img
+                                                src={skill.icon}
+                                                className={styles.skillIcon}
+                                            />
+                                            <span className={styles.skillText}>
+                                                {skill.name}
+                                            </span>
                                         </span>
                                     ))}
                                 </div>
@@ -131,7 +167,10 @@ export default function ProjectHighlights() {
                                 </div>
 
                                 <div className={styles.actions}>
-                                    <Link to={activeProject.documentationUrl} className={styles.primary}>
+                                    <Link
+                                        to={activeProject.documentationUrl}
+                                        className={styles.primary}
+                                    >
                                         Documentation
                                     </Link>
 
@@ -149,7 +188,7 @@ export default function ProjectHighlights() {
                     </div>
 
                     <div className={styles.projectsMobile}>
-                        {projects.map((project) => (
+                        {resolvedProjects.map((project) => (
                             <div key={project.id} className={styles.card}>
                                 <div className={styles.cardLeft}>
                                     <h3 className={styles.cardTitle}>
@@ -158,9 +197,14 @@ export default function ProjectHighlights() {
 
                                     <div className={styles.tags}>
                                         {project.skills.map((skill) => (
-                                            <span key={skill} className={styles.skillTag}>
-                                                <img src={skillConfig[skill]} className={styles.skillIcon} />
-                                                <span className={styles.skillText}>{skill}</span>
+                                            <span key={skill.name} className={styles.skillTag}>
+                                                <img
+                                                    src={skill.icon}
+                                                    className={styles.skillIcon}
+                                                />
+                                                <span className={styles.skillText}>
+                                                    {skill.name}
+                                                </span>
                                             </span>
                                         ))}
                                     </div>
@@ -178,7 +222,10 @@ export default function ProjectHighlights() {
                                     </div>
 
                                     <div className={styles.actions}>
-                                        <Link to={project.documentationUrl} className={styles.primary}>
+                                        <Link
+                                            to={project.documentationUrl}
+                                            className={styles.primary}
+                                        >
                                             Documentation
                                         </Link>
 

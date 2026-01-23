@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from '@docusaurus/Link';
 import styles from './footer.module.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -6,6 +7,8 @@ const Footer: React.FC = () => {
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
+
+    const impressumUrl = useBaseUrl('/docs/impressum');
 
     return (
         <footer className={styles.siteFooter}>
@@ -15,11 +18,13 @@ const Footer: React.FC = () => {
                     onClick={scrollToTop}
                     aria-label="Scroll to top"
                 />
+
                 <div className={styles.footerInfo}>
                     <p className={styles.footerCopy}>© Bo 2025</p>
-                    <a className={styles.footerLegal} href={useBaseUrl('/legal-notice')}>
+
+                    <Link to="/docs/impressum" className={styles.footerLegal}>
                         Legal notice
-                    </a>
+                    </Link>
                 </div>
             </div>
         </footer>
