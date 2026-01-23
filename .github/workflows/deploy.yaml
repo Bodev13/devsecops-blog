@@ -44,7 +44,7 @@ jobs:
     name: Deploy to GitHub Pages
     needs: build
 
-    if: github.ref_name == 'main' || github.ref_name == 'dev_branch'
+    if: github.ref_name == 'main'
 
     environment:
       name: github-pages

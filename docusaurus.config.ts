@@ -2,7 +2,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
-const blogEnabled = process.env.BLOG_ENABLED === 'true';
+const blogEnabled = 'true';
 
 const config: Config = {
   title: 'DSO Live Demo Docs',
@@ -58,7 +58,6 @@ const config: Config = {
   themeConfig: {
     image: 'img/docusaurus-social-card.jpg',
 
-    // Minimal navbar to ensure theme loads (visually unobtrusive)
     navbar: {
       title: '',
       logo: {
@@ -68,7 +67,6 @@ const config: Config = {
       items: [],
     },
 
-    // Footer present but visually empty (prevents theme crash)
     footer: {
       style: 'dark',
       links: [],
