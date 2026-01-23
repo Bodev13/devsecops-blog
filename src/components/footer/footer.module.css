@@ -7,7 +7,6 @@
     position: relative;
 }
 
-/* Центрируем весь контент футера */
 .siteFooter :global(.contentContainer) {
     display: flex;
     flex-direction: column;
@@ -31,7 +30,6 @@
     position: relative;
 }
 
-/* Линия стрелки */
 .toTopBtn::before {
     content: "";
     position: absolute;
@@ -43,7 +41,6 @@
     transform: translate(-50%, -50%);
 }
 
-/* Наконечник стрелки */
 .toTopBtn::after {
     content: "";
     position: absolute;
@@ -61,7 +58,6 @@
     background: rgba(255, 255, 255, 0.1);
 }
 
-/* Footer text */
 .footerInfo {
     display: flex;
     flex-direction: column;

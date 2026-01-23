@@ -6,19 +6,14 @@ const blogEnabled = process.env.BLOG_ENABLED === 'true';
 
 const config: Config = {
   title: 'DSO Live Demo Docs',
-  tagline: 'DevSecOps Portfolio & Documentation',
+  tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
 
-  // GitHub Pages URL
   url: 'https://bodev13.github.io',
-
-  // MUST match repo name exactly
   baseUrl: '/devsecops-blog/',
 
-  // GitHub repo config
   organizationName: 'Bodev13',
   projectName: 'devsecops-blog',
-
   deploymentBranch: 'gh-pages',
 
   onBrokenLinks: 'warn',
@@ -62,69 +57,23 @@ const config: Config = {
   themeConfig: {
     image: 'img/docusaurus-social-card.jpg',
 
+    // Minimal navbar to ensure theme loads (visually unobtrusive)
     navbar: {
-      title: 'DevSecOps Docs',
+      title: '',
       logo: {
-        alt: 'DevSecOps Logo',
+        alt: '',
         src: 'img/logo.svg',
       },
-      items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Docs',
-        },
-
-        ...(blogEnabled
-          ? [{ to: '/blog', label: 'Blog', position: 'left' }]
-          : []),
-
-        {
-          href: 'https://github.com/Bodev13/devsecops-blog',
-          label: 'GitHub',
-          position: 'right',
-        },
-      ],
+      items: [],
     },
 
+    // Footer present but visually empty (prevents theme crash)
     footer: {
       style: 'dark',
-      links: [
-        {
-          title: 'Docs',
-          items: [
-            { label: 'Guides', to: '/docs/intro' },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'GitHub',
-              href: 'https://github.com/Bodev13',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Repository',
-              href: 'https://github.com/Bodev13/devsecops-blog',
-            },
-            ...(blogEnabled
-              ? [{ label: 'Blog', to: '/blog' }]
-              : []),
-          ],
-        },
-      ],
-      copyright: `
-        © ${new Date().getFullYear()} Bodev13<br/>
-        DevSecOps Portfolio & Docs<br/>
-        Built with Docusaurus ❤️
-      `,
+      links: [],
+      copyright: ' ',
     },
+
 
     prism: {
       theme: prismThemes.github,
