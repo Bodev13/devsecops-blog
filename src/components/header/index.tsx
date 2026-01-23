@@ -28,6 +28,15 @@ export default function Header() {
             </div>
 
             <div className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ""}`}>
+
+                <button
+                    className={styles.closeButton}
+                    onClick={() => setMenuOpen(false)}
+                    aria-label="Close menu"
+                >
+                    ✕
+                </button>
+
                 <nav className={styles.mobileNav}>
                     <a href="#about" onClick={() => setMenuOpen(false)}>About me</a>
                     <a href="#skills" onClick={() => setMenuOpen(false)}>My skills</a>
