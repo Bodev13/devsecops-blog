@@ -2,47 +2,74 @@
 
 ## Description
 
-This repository contains my DevSecOps portfolio built with **Docusaurus, React, and TypeScript**.
+This repository contains my **DevSecOps portfolio**, built with **Docusaurus, React, and TypeScript**.
 
-It showcases my experience in **Linux, automation, CI/CD, infrastructure, and modern frontend development** through real projects and documented work.
+The project demonstrates my hands-on experience in **Linux systems, automation, CI/CD pipelines, infrastructure engineering, and modern frontend development**.  
+It serves as a **technical portfolio** showcasing real projects, clean component architecture, structured Git workflows, and responsive UI design.
+
+---
 
 ## Table of Contents
 
 - [Description](#description)
 - [Prerequisites](#prerequisites)
 - [Quickstart](#quickstart)
+- [How to Start](#how-to-start)
 - [Project Structure](#project-structure)
 - [Usage](#usage)
 - [Build & Deployment](#build--deployment)
+
+---
 
 ## Prerequisites
 
 - Node.js (18+ recommended)
 - pnpm
+- Git
 - Optional: V-Server for deployment
+
+---
 
 ## Quickstart
 
-1. Clone the repository:
+- Clone the repository:
 
 ```bash
 git clone git@github.com:Bodev13/devsecops-blog.git
 cd devsecops-blog
 ```
 
-2. Install dependencies and start locally
+- Install dependencies
 
 ```bash
 pnpm install
-pnpm start
 ```
 
-3. Build and deploy
+- Start local Dev Server
+
+```bash
+pnpm start
+```
+- The site will be available at
+
+```bash
+http://localhost:3000
+```
+
+- Build and deploy
 
 ```bash
 pnpm build
 pnpm deploy
 ```
+## How to start
+To run the project locally from scratch
+
+```bash
+pnpm install
+pnpm start
+```
+This launches Docusaurus in development mode with live reload enabled
 
 ## Project Structure
 
@@ -73,8 +100,15 @@ You can customize the portfolio by:
 - Adjusting global site settings in `docusaurus.config.ts`
 - Modifying routes and page structure in `src/pages/`
 
-The project follows clean component architecture, TypeScript typing (no `any` usage), and responsive design principles for desktop, tablet, and mobile layouts.
+The project follows best practices including
 
+- Fully typed TypeScript (no any)
+
+- Modular component architecture
+
+- Responsive design for Desktop, Tablet, and Mobile
+
+- Clean and maintainable code structure
 
 ## Build & Deployment
 
@@ -85,9 +119,10 @@ pnpm build
 ```
 
 - Deploy to GitHub Pages
+
 ```bash
 pnpm deploy
 ```
 
-The generated build/ folder can also be deployed using NGINX, Docker, or any static hosting provider
+The generated `build/` folder can also be deployed using NGINX, Docker, or any static hosting provider
 
