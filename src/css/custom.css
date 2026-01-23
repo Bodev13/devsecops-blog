@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Reddit+Sans:wght@300;400;500;600;700&display=swap");
 
+/* =========================
+   GLOBAL VARIABLES
+========================= */
 :root {
   --ifm-color-primary: #2e8555;
   --ifm-color-primary-dark: #29784c;
@@ -8,13 +11,20 @@
   --ifm-color-primary-light: #33925d;
   --ifm-color-primary-lighter: #359962;
   --ifm-color-primary-lightest: #3cad6e;
+
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
   --font-quick: "Quicksand", sans-serif;
   --font-red: "Reddit Sans", sans-serif;
+
+  /* Keep transparency but NOT invisible */
   --ifm-background-color: transparent;
 }
 
+/* =========================
+   DARK MODE
+========================= */
 [data-theme='dark'] {
   --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: #21af90;
@@ -23,37 +33,25 @@
   --ifm-color-primary-light: #29d5b0;
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
+
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-  --ifm-background-color: transparent;
 }
 
+/* =========================
+   BASE RESET
+========================= */
 html,
 body {
-  overflow-x: hidden;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
   background: transparent !important;
-}
-
-#__docusaurus,
-#__docusaurus>div,
-.main-wrapper,
-.main-wrapper>main,
-.theme-doc-layout,
-.theme-doc-layout main,
-.theme-doc-page,
-.theme-default-content {
-  background: transparent !important;
-}
-
-.main-wrapper>main {
-  padding-top: 0 !important;
-}
-
-body {
   font-family: var(--font-red);
 }
 
+/* =========================
+   HEADINGS
+========================= */
 h1,
 h2,
 h3,
@@ -63,25 +61,47 @@ h6 {
   font-family: var(--font-quick);
 }
 
-.navbar,
-.navbar__inner,
-.navbar__items,
-.navbar__brand {
-  display: none !important;
-  height: 0 !important;
-  min-height: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
+/* =========================
+   FIX MAIN LAYOUT VISIBILITY
+========================= */
+#__docusaurus,
+.main-wrapper,
+.main-wrapper>main,
+.theme-doc-layout,
+.theme-doc-layout main,
+.theme-doc-page,
+.theme-default-content {
+  background: transparent !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
-.main-wrapper {
+/* Ensure main always has height */
+.main-wrapper>main {
+  min-height: 100vh;
   padding-top: 0 !important;
 }
 
+/* =========================
+   NAVBAR — HIDDEN SAFELY
+========================= */
+.navbar {
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* =========================
+   CONTENT WRAPPER
+========================= */
 .layoutWrapper {
   width: 100%;
 }
 
+/* =========================
+   PAGE CONTAINER
+========================= */
 .contentContainer {
   max-width: 1440px;
   margin: 0 auto;
@@ -90,6 +110,9 @@ h6 {
   box-sizing: border-box;
 }
 
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 1440px) {
   .contentContainer {
     padding-left: 80px;
