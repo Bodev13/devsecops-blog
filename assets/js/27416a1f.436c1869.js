@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkdso_dev_blog=globalThis.webpackChunkdso_dev_blog||[]).push([[9013],{7552(o){o.exports=JSON.parse('{"metadata":{"permalink":"/devsecops-blog/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
