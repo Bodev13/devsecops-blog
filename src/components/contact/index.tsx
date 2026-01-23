@@ -38,7 +38,7 @@ const Contact = () => {
                                     </g>
                                 </svg>
                             </span>
-                            <a href="#" target="_blank" rel="noopener noreferrer">Profile Page</a>
+                            <a href="https://www.linkedin.com/in/bo-m-g-8097261ba/" target="_blank" rel="noopener noreferrer">Profile Page</a>
                         </div>
                     </div>
                 </div>
