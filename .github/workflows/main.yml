@@ -4,11 +4,9 @@ on:
   push:
     branches:
       - dev_branch
-      - main
   pull_request:
     branches:
       - dev_branch
-      - main
 
 permissions:
   contents: write
