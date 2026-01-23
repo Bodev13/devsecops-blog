@@ -22,7 +22,7 @@ export default function Hero() {
 
                         <div className={styles.hero__imageWrapperMobile}>
                             <img
-                                src={useBaseUrl("/img/portfolio/icons/bo.png")}
+                                src={useBaseUrl("img/portfolio/icons/bo.png")}
                                 alt="Profile"
                                 className={styles.hero__image}
                             />
@@ -39,7 +39,7 @@ export default function Hero() {
 
                     <div className={styles.hero__imageWrapperDesktop}>
                         <img
-                            src={useBaseUrl("/img/portfolio/icons/bo.png")}
+                            src={useBaseUrl("img/portfolio/icons/bo.png")}
                             alt="Profile"
                             className={styles.hero__image}
                         />
@@ -49,4 +49,3 @@ export default function Hero() {
         </section>
     );
 }
-
