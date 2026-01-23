@@ -12,8 +12,9 @@ const config: Config = {
   tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
 
-  url: process.env.DEPLOYMENT_URL ?? 'https://Bodev13.github.io',
-  baseUrl: process.env.BASE_URL ?? '/devsecops-blog/',
+  url: 'https://bodev13.github.io',
+  baseUrl: '/devsecops-blog/',
+
 
   organizationName: process.env.GITHUB_ORG ?? 'Bodev13',
   projectName: process.env.GITHUB_PROJECT ?? 'devsecops-blog',
