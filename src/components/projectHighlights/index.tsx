@@ -85,10 +85,7 @@ const projects: Project[] = [
 ];
 
 export default function ProjectHighlights() {
-    const baseUrl = useBaseUrl("/");
-
-    const resolve = (path: string) =>
-        `${baseUrl}${path.replace(/^\//, "")}`;
+    const resolve = (path: string) => useBaseUrl(path);
 
     const resolvedProjects: ResolvedProject[] = projects.map((project) => ({
         ...project,
@@ -154,6 +151,7 @@ export default function ProjectHighlights() {
                                             <img
                                                 src={skill.icon}
                                                 className={styles.skillIcon}
+                                                alt={skill.name}
                                             />
                                             <span className={styles.skillText}>
                                                 {skill.name}
@@ -199,8 +197,9 @@ export default function ProjectHighlights() {
                                         {project.skills.map((skill) => (
                                             <span key={skill.name} className={styles.skillTag}>
                                                 <img
-                                                    src={skill.icon}
+                                                    src={resolve(skillConfig[skill.name])}
                                                     className={styles.skillIcon}
+                                                    alt={skill.name}
                                                 />
                                                 <span className={styles.skillText}>
                                                     {skill.name}
