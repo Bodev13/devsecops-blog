@@ -1,105 +1,129 @@
-# My Developer Blog
+# Docusaurus DevSecOps Portfolio
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+## Description
 
-## Repository Description
+This repository contains my **DevSecOps portfolio**, built with **Docusaurus, React, and TypeScript**.
 
-This repository hosts a developer blog built with Docusaurus. It includes tools and scripts for creating, managing, and deploying static web content. The software supports rapid local development, customizable theming, and seamless deployment to platforms like GitHub Pages or NGINX.
+The project demonstrates my hands-on experience in **Linux systems, automation, CI/CD pipelines, infrastructure engineering, and modern frontend development**.  
+It serves as a **technical portfolio** showcasing real projects, clean component architecture, structured Git workflows, and responsive UI design.
+
+---
 
 ## Table of Contents
 
-- [My Developer Blog](#my-developer-blog)
-  - [Repository Description](#repository-description)
-  - [Table of Contents](#table-of-contents)
-  - [Quickstart](#quickstart)
-    - [Prerequisites](#prerequisites)
-  - [Repository Structure](#repository-structure)
-  - [Deployment](#deployment)
-    - [Deploy to Github Pages](#deploy-to-github-pages)
-    - [Deploying using NGINX](#deploying-using-nginx)
-    - [Contributing](#contributing)
+- [Description](#description)
+- [Prerequisites](#prerequisites)
+- [Quickstart](#quickstart)
+- [How to Start](#how-to-start)
+- [Project Structure](#project-structure)
+- [Usage](#usage)
+- [Build & Deployment](#build--deployment)
+
+---
+
+## Prerequisites
+
+- Node.js (18+ recommended)
+- pnpm
+- Git
+- Optional: V-Server for deployment
+
+---
 
 ## Quickstart
 
-### Prerequisites
+- Clone the repository:
 
-- [Node.js](https://nodejs.org/) (v16 or later recommended)
-- [pnpm](https://pnpm.io/) (package manager for faster and more efficient dependency handling)
-- [Docker](https://www.docker.com/products/docker-desktop) (only required if [deploying using NGINX](#deploying-using-nginx))
-
-1. Installation
-
-   ```
-   $ pnpm install
-   ```
-
-2. Local Development
-
-   ```
-   $ pnpm start
-   ```
-
-   This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-3. Build
-
-   ```
-   $ pnpm build
-   ```
-
-   This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-4. Deployment
-
-   In order to deploy onto Github Pages, ensure that your `docusaurus.config.ts` conforms with the [documentation guidelines](https://docusaurus.io/docs/deployment#deploying-to-github-pages). After that is ensured run the following command to deploy:
-
-   ```
-   $ USE_SSH=true pnpm deploy
-   ```
-
-For detailed information about deploying this Docusaurus project, refer to the [Deployment](#deployment) section below.
-
-## Repository Structure
-
-The repository is organized as follows:
-
-- `blog/`: Contains markdown files for blog posts. Blog-related metadata is automatically picked up by the Docusaurus configuration.
-- `docs/`: Contains markdown files for documentation. These files are referenced in `sidebars.ts` to define the sidebar structure.
-- `src/`: Contains custom React components, CSS, and JavaScript for additional functionality or theming.
-- `static/`: Stores static assets (e.g., images, icons) served directly without processing.
-- `sidebars.ts`: Configures the structure of sidebars in the documentation section.
-- `docusaurus.config.ts`: Main configuration file for customizing and managing Docusaurus behavior.
-- `build/`: Generated after running the `pnpm build` command. Contains the static website files ready for deployment.
-
-New content can be added as follows:
-
-- Add new documentation files to the `docs/` folder.
-- Add new blog posts to the `blog/` folder. No additional configuration is required.
-
-## Deployment
-
-### Deploy to Github Pages
-
-To deploy using SSH:
-
-```
-$ USE_SSH=true pnpm deploy
+```bash
+git clone git@github.com:Bodev13/devsecops-blog.git
+cd devsecops-blog
 ```
 
-To deploy without using SSH, run:
+- Install dependencies
 
+```bash
+pnpm install
 ```
-$ GIT_USER=<Your GitHub username> pnpm deploy
+
+- Start local Dev Server
+
+```bash
+pnpm start
+```
+- The site will be available at
+
+```bash
+http://localhost:3000
 ```
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+- Build and deploy
 
-### Deploying using NGINX
+```bash
+pnpm build
+pnpm run deploy
+```
+## How to start
 
-To deploy the site using NGINX and Docker, follow this [guide](./docs/guides/deploy-docusaurus-with-docker-and-nginx.md)
+- To run the project locally from scratch
 
-### Contributing
+```bash
+pnpm install
+pnpm start
+```
+This launches Docusaurus in development mode with live reload enabled
 
-Currently, this project does not seek collaborators, but we're open to suggestions regarding enhancements or guides to prepare.
-Open an issue with a detailed description on the change you suggest and elaborate why it's benefitial for the project and vast majority.
-If accepted in the discussion, open a pull request from your fork of this repository to contribute your changes.
+## Project Structure
+
+The repository is organized as follows
+
+`src/components/` — Contains reusable React components for portfolio sections such as Header, Hero, Skills, Projects, Contact, and Footer. Each component is written in TypeScript and styled using CSS Modules
+
+`src/pages/` — Defines page layouts and assembles components into the main site structure (including the homepage)
+
+`static/` — Stores static assets such as images, icons, and other media used across the portfolio
+
+`docusaurus.config.ts` — Main configuration file for Docusaurus, including site metadata, routing, theme settings, and deployment options
+
+`README.md` — Project documentation, setup instructions, and usage guidelines
+
+
+## Usage
+
+Portfolio content and layout are managed through React components located in `src/components/`.
+
+Each major section (Header, Hero, Skills, Projects, Contact, Footer) is implemented as a separate TypeScript component and styled using CSS Modules.
+
+You can customize the portfolio by
+
+- Editing text content and layout in `src/components/*`
+- Updating project data in the Projects component
+- Replacing images and icons in the `static/` directory
+- Adjusting global site settings in `docusaurus.config.ts`
+- Modifying routes and page structure in `src/pages/`
+
+The project follows best practices including
+
+- Fully typed TypeScript (no any)
+
+- Modular component architecture
+
+- Responsive design for Desktop, Tablet, and Mobile
+
+- Clean and maintainable code structure
+
+## Build & Deployment
+
+- Build the static site
+
+```bash
+pnpm build
+```
+
+- Deploy to GitHub Pages
+
+```bash
+pnpm run deploy
+```
+
+The generated `build/` folder can also be deployed using NGINX, Docker, or any static hosting provider
+

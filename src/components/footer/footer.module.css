@@ -1,0 +1,118 @@
+.siteFooter {
+    background: #242b31;
+    padding-top: 80px;
+    padding-bottom: 40px;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+}
+
+/* Центрируем весь контент футера */
+.siteFooter :global(.contentContainer) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Кнопка toTop — DESKTOP */
+.toTopBtn {
+    width: 40px;
+    height: 90px;
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+    background: transparent;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 40px;
+    position: relative;
+}
+
+/* Линия стрелки */
+.toTopBtn::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 50px;
+    background: #ffffff;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Наконечник стрелки */
+.toTopBtn::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 8px solid #ffffff;
+    left: 50%;
+    top: calc(50% - 29px);
+    transform: translateX(-50%);
+}
+
+.toTopBtn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Footer text */
+.footerInfo {
+    display: flex;
+    flex-direction: column;
+    row-gap: 14px;
+    align-items: center;
+}
+
+.footerCopy {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: var(--font-quick);
+    opacity: 0.8;
+}
+
+.footerLegal {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: var(--font-quick);
+    color: #F8F5EC;
+}
+
+.footerLegal:hover,
+.footerLegal:focus,
+.footerLegal:active {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* ===================== */
+/* 📱 MOBILE STYLES */
+/* ===================== */
+
+@media (max-width: 768px) {
+    .siteFooter {
+        padding-top: 60px;
+        padding-bottom: 32px;
+    }
+
+    .toTopBtn {
+        width: 40px;
+        height: 73px;
+        border-radius: 20px;
+        padding: 14px 10px;
+        margin-bottom: 24px;
+    }
+
+    .toTopBtn::before {
+        height: 45px;
+    }
+
+    .toTopBtn::after {
+        top: calc(50% - 26px);
+    }
+}
