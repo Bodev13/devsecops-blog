@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import useBaseUrl from "@docusaurus/useBaseUrl";
 import Link from "@docusaurus/Link";
 import styles from "./projectHighlights.module.css";
 
@@ -21,16 +20,6 @@ type Project = {
     githubUrl: string;
 };
 
-type ResolvedSkill = {
-    name: Skill;
-    icon: string;
-};
-
-type ResolvedProject = Omit<Project, "skills" | "image"> & {
-    image: string;
-    skills: ResolvedSkill[];
-};
-
 const skillConfig: Record<Skill, string> = {
     YAML: "/img/portfolio/icons/propYaml.png",
     "Shell scripting": "/img/portfolio/icons/propShell.png",
@@ -48,7 +37,7 @@ const projects: Project[] = [
             "This project demonstrates a containerized fullstack web application with a Python backend and an Angular frontend, orchestrated using Docker Compose.",
         image: "/img/portfolio/icons/conduit_fullstack.png",
         skills: ["Container", "Python", "CI/CD"],
-        documentationUrl: "/projects/conduit-container-deployment",
+        documentationUrl: "/docs/projects/conduit-container-deployment",
         githubUrl: "https://github.com/Bodev13/conduit-fullstack-app",
     },
     {
@@ -58,7 +47,7 @@ const projects: Project[] = [
             "This project demonstrates deploying a Django REST API together with a PostgreSQL database using Docker.",
         image: "/img/portfolio/icons/truckSigns.png",
         skills: ["Container", "Python"],
-        documentationUrl: "/projects/truck-signs-api",
+        documentationUrl: "/docs/projects/truck-signs-api",
         githubUrl: "https://github.com/Bodev13/truck_signs_api",
     },
     {
@@ -68,7 +57,7 @@ const projects: Project[] = [
             "This project documents selected OWASP Juice Shop challenges performed in a local test environment.",
         image: "/img/portfolio/icons/juiceShop.png",
         skills: ["IT Security"],
-        documentationUrl: "/projects/juice-shop-master",
+        documentationUrl: "/docs/projects/juice-shop-master",
         githubUrl:
             "https://github.com/Bodev13/devsecops-blog/tree/juice-shop-master",
     },
@@ -79,31 +68,16 @@ const projects: Project[] = [
             "This project demonstrates deploying a Minecraft Java Edition server using Docker and Docker Compose.",
         image: "/img/portfolio/icons/minecraft.png",
         skills: ["YAML", "Shell scripting", "Container"],
-        documentationUrl: "/projects/minecraft-server",
+        documentationUrl: "/docs/projects/minecraft-server",
         githubUrl: "https://github.com/Bodev13/Minecraft",
     },
 ];
 
 export default function ProjectHighlights() {
-    const baseUrl = useBaseUrl("/");
-    const resolve = (path: string) => `${baseUrl}${path.replace(/^\//, "")}`;
-
-    const resolvedProjects: ResolvedProject[] = projects.map((project) => ({
-        ...project,
-        image: resolve(project.image),
-        skills: project.skills.map((skill) => ({
-            name: skill,
-            icon: resolve(skillConfig[skill]),
-        })),
-    }));
-
-    const [activeProjectId, setActiveProjectId] = useState<number>(
-        resolvedProjects[0].id
-    );
+    const [activeProjectId, setActiveProjectId] = useState<number>(projects[0].id);
 
     const activeProject =
-        resolvedProjects.find((p) => p.id === activeProjectId) ??
-        resolvedProjects[0];
+        projects.find((p) => p.id === activeProjectId) ?? projects[0];
 
     return (
         <section id="projects" className={styles.section}>
@@ -113,7 +87,7 @@ export default function ProjectHighlights() {
 
                     <div className={styles.content}>
                         <nav className={styles.nav}>
-                            {resolvedProjects.map((project) => (
+                            {projects.map((project) => (
                                 <button
                                     key={project.id}
                                     type="button"
@@ -124,7 +98,7 @@ export default function ProjectHighlights() {
                                 </button>
                             ))}
 
-                            <Link to={resolvedProjects[0].documentationUrl} className={styles.more}>
+                            <Link to="/docs/projects/overview" className={styles.more}>
                                 → see more projects
                             </Link>
                         </nav>
@@ -145,9 +119,9 @@ export default function ProjectHighlights() {
                             <div className={styles.cardRight}>
                                 <div className={styles.tags}>
                                     {activeProject.skills.map((skill) => (
-                                        <span key={skill.name} className={styles.skillTag}>
-                                            <img src={skill.icon} className={styles.skillIcon} />
-                                            <span className={styles.skillText}>{skill.name}</span>
+                                        <span key={skill} className={styles.skillTag}>
+                                            <img src={skillConfig[skill]} className={styles.skillIcon} />
+                                            <span className={styles.skillText}>{skill}</span>
                                         </span>
                                     ))}
                                 </div>
@@ -175,7 +149,7 @@ export default function ProjectHighlights() {
                     </div>
 
                     <div className={styles.projectsMobile}>
-                        {resolvedProjects.map((project) => (
+                        {projects.map((project) => (
                             <div key={project.id} className={styles.card}>
                                 <div className={styles.cardLeft}>
                                     <h3 className={styles.cardTitle}>
@@ -184,9 +158,9 @@ export default function ProjectHighlights() {
 
                                     <div className={styles.tags}>
                                         {project.skills.map((skill) => (
-                                            <span key={skill.name} className={styles.skillTag}>
-                                                <img src={skill.icon} className={styles.skillIcon} />
-                                                <span className={styles.skillText}>{skill.name}</span>
+                                            <span key={skill} className={styles.skillTag}>
+                                                <img src={skillConfig[skill]} className={styles.skillIcon} />
+                                                <span className={styles.skillText}>{skill}</span>
                                             </span>
                                         ))}
                                     </div>
@@ -220,11 +194,13 @@ export default function ProjectHighlights() {
                                 </div>
                             </div>
                         ))}
+
+                        <Link to="/docs/projects/overview" className={styles.more}>
+                            → see more projects
+                        </Link>
                     </div>
                 </div>
             </div>
         </section>
     );
 }
-
-
