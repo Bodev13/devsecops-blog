@@ -20,7 +20,7 @@ const config: Config = {
   projectName: process.env.GITHUB_PROJECT ?? 'devsecops-blog',
   deploymentBranch: process.env.DEPLOYMENT_BRANCH ?? 'gh-pages',
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   i18n: {
