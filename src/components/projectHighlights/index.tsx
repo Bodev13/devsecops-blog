@@ -86,7 +86,6 @@ const projects: Project[] = [
 
 export default function ProjectHighlights() {
     const baseUrl = useBaseUrl("/");
-
     const resolve = (path: string) => `${baseUrl}${path.replace(/^\//, "")}`;
 
     const resolvedProjects: ResolvedProject[] = projects.map((project) => ({
@@ -118,43 +117,22 @@ export default function ProjectHighlights() {
                                 <button
                                     key={project.id}
                                     type="button"
-                                    className={`${styles.navItem} ${project.id === activeProjectId ? styles.active : ""
-                                        }`}
+                                    className={`${styles.navItem} ${project.id === activeProjectId ? styles.active : ""}`}
                                     onClick={() => setActiveProjectId(project.id)}
                                 >
                                     {project.id}. {project.title}
                                 </button>
                             ))}
 
-                            <Link
-                                to={resolvedProjects[0].documentationUrl}
-                                className={styles.more}
-                            >
+                            <Link to={resolvedProjects[0].documentationUrl} className={styles.more}>
                                 → see more projects
                             </Link>
                         </nav>
 
                         <div className={styles.card}>
-                            <div className={styles.cardHeader}>
-                                <h3>{activeProject.title}</h3>
+                            <div className={styles.cardLeft}>
+                                <h3 className={styles.cardTitle}>{activeProject.title}</h3>
 
-                                <div className={styles.tags}>
-                                    {activeProject.skills.map((skill) => (
-                                        <span key={skill.name} className={styles.skillTag}>
-                                            <img
-                                                src={skill.icon}
-                                                alt={skill.name}
-                                                className={styles.skillIcon}
-                                            />
-                                            <span className={styles.skillText}>
-                                                {skill.name}
-                                            </span>
-                                        </span>
-                                    ))}
-                                </div>
-                            </div>
-
-                            <div className={styles.cardBody}>
                                 <div className={styles.imageBlock}>
                                     <img
                                         src={activeProject.image}
@@ -162,27 +140,35 @@ export default function ProjectHighlights() {
                                         className={styles.projectImage}
                                     />
                                 </div>
+                            </div>
+
+                            <div className={styles.cardRight}>
+                                <div className={styles.tags}>
+                                    {activeProject.skills.map((skill) => (
+                                        <span key={skill.name} className={styles.skillTag}>
+                                            <img src={skill.icon} className={styles.skillIcon} />
+                                            <span className={styles.skillText}>{skill.name}</span>
+                                        </span>
+                                    ))}
+                                </div>
 
                                 <div className={styles.description}>
                                     <p>{activeProject.description}</p>
+                                </div>
 
-                                    <div className={styles.actions}>
-                                        <Link
-                                            to={activeProject.documentationUrl}
-                                            className={styles.primary}
-                                        >
-                                            Documentation
-                                        </Link>
+                                <div className={styles.actions}>
+                                    <Link to={activeProject.documentationUrl} className={styles.primary}>
+                                        Documentation
+                                    </Link>
 
-                                        <a
-                                            href={activeProject.githubUrl}
-                                            className={styles.secondary}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            GitHub
-                                        </a>
-                                    </div>
+                                    <a
+                                        href={activeProject.githubUrl}
+                                        className={styles.secondary}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        GitHub
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -191,28 +177,20 @@ export default function ProjectHighlights() {
                     <div className={styles.projectsMobile}>
                         {resolvedProjects.map((project) => (
                             <div key={project.id} className={styles.card}>
-                                <div className={styles.cardHeader}>
-                                    <h3>
+                                <div className={styles.cardLeft}>
+                                    <h3 className={styles.cardTitle}>
                                         {project.id}. {project.title}
                                     </h3>
 
                                     <div className={styles.tags}>
                                         {project.skills.map((skill) => (
                                             <span key={skill.name} className={styles.skillTag}>
-                                                <img
-                                                    src={skill.icon}
-                                                    alt={skill.name}
-                                                    className={styles.skillIcon}
-                                                />
-                                                <span className={styles.skillText}>
-                                                    {skill.name}
-                                                </span>
+                                                <img src={skill.icon} className={styles.skillIcon} />
+                                                <span className={styles.skillText}>{skill.name}</span>
                                             </span>
                                         ))}
                                     </div>
-                                </div>
 
-                                <div className={styles.cardBody}>
                                     <div className={styles.imageBlock}>
                                         <img
                                             src={project.image}
@@ -223,38 +201,30 @@ export default function ProjectHighlights() {
 
                                     <div className={styles.description}>
                                         <p>{project.description}</p>
+                                    </div>
 
-                                        <div className={styles.actions}>
-                                            <Link
-                                                to={project.documentationUrl}
-                                                className={styles.primary}
-                                            >
-                                                Documentation
-                                            </Link>
+                                    <div className={styles.actions}>
+                                        <Link to={project.documentationUrl} className={styles.primary}>
+                                            Documentation
+                                        </Link>
 
-                                            <a
-                                                href={project.githubUrl}
-                                                className={styles.secondary}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                            >
-                                                GitHub
-                                            </a>
-                                        </div>
+                                        <a
+                                            href={project.githubUrl}
+                                            className={styles.secondary}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            GitHub
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                         ))}
-
-                        <Link
-                            to={resolvedProjects[0].documentationUrl}
-                            className={styles.more}
-                        >
-                            → see more projects
-                        </Link>
                     </div>
                 </div>
             </div>
         </section>
     );
 }
+
+

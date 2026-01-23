@@ -15,8 +15,7 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px 0;
     width: 100%;
 }
 
@@ -55,7 +54,6 @@
 }
 
 .navItem:hover {
-    color: #FFFFFF;
     text-decoration: underline;
     font-weight: 600;
 }
@@ -63,11 +61,6 @@
 .navItem.active {
     color: #262E34;
     font-weight: 600;
-}
-
-.active {
-    font-weight: 600;
-    opacity: 1;
 }
 
 .more {
@@ -79,48 +72,51 @@
     color: #FFFFFF !important;
 }
 
-.more:hover,
-.more:active,
-.more:focus {
-    color: #FFFFFF !important;
-    font-weight: 600;
-    text-decoration: underline;
-}
-
 .card {
-    min-width: 0;
     flex: 1;
-    height: fit-content;
     background-color: #2f4563;
     border-radius: 30px;
     padding: 32px;
     display: flex;
-    justify-content: space-between;
+    gap: 32px;
+}
+
+/* LEFT */
+.cardLeft {
+    display: flex;
     flex-direction: column;
     gap: 16px;
+    flex: 1;
 }
 
-.cardHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: var(--font-quick);
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 120%;
-}
-
-.cardHeader h3 {
+.cardTitle {
     font-size: 40px;
-    font-family: var(--font-quick);
     font-weight: 700;
+}
+
+.imageBlock {
+    width: 355px;
+    height: 240px;
+}
+
+.projectImage {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+}
+
+/* RIGHT */
+.cardRight {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
 }
 
 .tags {
     display: flex;
-    width: 444px;
-    height: 44px;
     gap: 4px;
+    flex-wrap: wrap;
 }
 
 .skillTag {
@@ -132,56 +128,28 @@
     background-color: #ffffff;
     padding: 6px;
     border-radius: 10px;
-
 }
 
 .skillIcon {
     width: 32px;
     height: 32px;
-    flex-shrink: 0;
 }
 
 .skillText {
     font-size: 14px;
     color: #262e34;
-    font-family: var(--font-quick);
     font-weight: 500;
-    line-height: 120%;
-}
-
-.cardBody {
-    display: flex;
-    gap: 24px;
-    align-items: flex-start;
-}
-
-.imageBlock {
-    width: 355px;
-    height: 240px;
-    flex-shrink: 0;
-}
-
-.projectImage {
-    width: 100%;
-    width: 355px;
-    height: 240px;
-    height: 100%;
-    border-radius: 30px;
 }
 
 .description {
-    display: flex;
-    flex-direction: column;
-    height: 240px;
     font-size: 20px;
-    line-height: 125%;
 }
 
 .actions {
-    margin-top: auto;
     display: flex;
-    justify-content: flex-end;
     gap: 16px;
+    justify-content: flex-end;
+    margin-top: auto;
 }
 
 .primary {
@@ -193,15 +161,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
 }
-
-.primary:hover {
-    background-color: #5696FF;
-    color: #FFFFFF;
-    text-decoration: none;
-}
-
 
 .secondary {
     border: 1px solid #ffffff;
@@ -212,37 +172,56 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
 }
 
 .projectsMobile {
     display: none;
 }
 
+/* ===== MIDDLE ===== */
+@media (max-width: 1100px) {
+    .card {
+        flex-direction: column;
+    }
+
+    .cardLeft {
+        order: 1;
+    }
+
+    .cardRight {
+        order: 2;
+    }
+
+    .tags {
+        order: 2;
+    }
+
+    .imageBlock {
+        order: 3;
+        width: 100%;
+        height: auto;
+    }
+
+    .projectImage {
+        width: 100%;
+        height: auto;
+    }
+
+    .description {
+        order: 4;
+    }
+
+    .actions {
+        order: 5;
+        justify-content: center;
+    }
+}
+
+/* ===== MOBILE ===== */
 @media (max-width: 768px) {
     .content {
         display: none;
-
     }
-
-    .skillTag {
-        display: inline-flex;
-        width: 120px;
-        height: 44px;
-        align-items: center;
-        gap: 4px;
-        background-color: #ffffff;
-        padding: 6px;
-        border-radius: 10px;
-
-    }
-
-    .title {
-        font-size: 48px;
-        font-weight: 700;
-        font-family: var(--font-quick);
-    }
-
 
     .projectsMobile {
         display: flex;
@@ -253,70 +232,173 @@
 
     .card {
         width: 100%;
-        width: 364px;
-        height: 660px;
-
-    }
-
-    .cardHeader {
+        max-width: 364px;
+        margin: 0 auto;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
     }
 
-    .cardHeader h3 {
+    .cardLeft {
+        order: 1;
+    }
+
+    .cardRight {
+        order: 2;
+    }
+
+    .cardTitle {
         font-size: 32px;
-        font-family: var(--font-quick);
-        font-weight: 700;
-        width: 320px;
     }
 
     .tags {
-        display: flex;
-        width: 320px;
-        gap: 4px;
-    }
-
-    .cardBody {
-        flex-direction: column;
+        order: 2;
     }
 
     .imageBlock {
+        order: 3;
         width: 100%;
         height: auto;
     }
 
-    .projectImage {
-        width: 320px;
-        height: 216px;
-        border-radius: 30px;
-    }
-
     .description {
+        order: 4;
         font-size: 16px;
-        font-family: var(--font-quick);
-        font-weight: 400;
     }
 
     .actions {
-        justify-content: center;
-        width: 320px;
-        height: 52px;
+        order: 5;
+        justify-content: space-between;
+        width: 100%;
     }
 }
 
+/* ===== BUTTON HOVER FIX (no green underline) ===== */
+.primary:hover,
+.secondary:hover {
+    text-decoration: none !important;
+    color: #ffffff !important;
+}
 
+/* ===== MIDDLE: Title → SkillTags → Image ===== */
+@media (max-width: 1100px) {
+    .card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cardLeft {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cardRight {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cardTitle {
+        order: 1;
+    }
+
+    .tags {
+        order: 2;
+        margin-top: 8px;
+    }
+
+    .imageBlock {
+        order: 3;
+    }
+
+    .description {
+        order: 4;
+    }
+
+    .actions {
+        order: 5;
+        justify-content: center;
+    }
+}
+
+/* ===== MOBILE: Title → SkillTags → Image → Text → Buttons ===== */
+@media (max-width: 768px) {
+
+    .cardLeft,
+    .cardRight {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cardTitle {
+        order: 1;
+    }
+
+    .tags {
+        order: 2;
+        margin-top: 6px;
+    }
+
+    .imageBlock {
+        order: 3;
+    }
+
+    .description {
+        order: 4;
+    }
+
+    .actions {
+        order: 5;
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+
+/* ===== RESTORE BUTTON HOVER COLORS (NO UNDERLINE) ===== */
+.primary:hover {
+    background-color: #5696FF;
+    color: #ffffff;
+    text-decoration: none !important;
+}
 
 .secondary:hover {
     background-color: rgba(255, 255, 255, 0.16);
-    color: #FFFFFF;
-    text-decoration: none;
+    color: #ffffff;
+    text-decoration: none !important;
 }
 
-.more {
-    font-size: 18px;
-    font-family: var(--font-quick);
-    font-weight: 500;
-    color: #FFFFFF !important;
-    text-align: center;
+/* ===== FIX MIDDLE ORDER: Title → SkillTags → Image ===== */
+@media (max-width: 1100px) {
+    .card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cardLeft {
+        display: contents;
+    }
+
+    .cardRight {
+        display: contents;
+    }
+
+    .cardTitle {
+        order: 1;
+    }
+
+    .tags {
+        order: 2;
+        margin-top: 8px;
+    }
+
+    .imageBlock {
+        order: 3;
+    }
+
+    .description {
+        order: 4;
+    }
+
+    .actions {
+        order: 5;
+        justify-content: center;
+        margin-top: 16px;
+    }
 }
