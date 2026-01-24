@@ -14,7 +14,6 @@
     font-family: var(--font-quick);
     font-weight: 700;
     font-size: 64px;
-    /* DESKTOP */
 }
 
 /* =========================
@@ -127,7 +126,7 @@
 }
 
 /* =========================
-     MOBILE BIG CARD BASE
+     MOBILE BIG CARD
   ========================= */
 
 .skills__mobile {
@@ -139,56 +138,58 @@
 .skills__mobileCard {
     background-color: #2f3941;
     border-radius: 30px;
-    padding: 18px 16px 28px;
+    padding: 16px 14px 22px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    max-width: 560px;
+    gap: 16px;
+    max-width: 100%;
     margin: 0 auto;
-    overflow: hidden;
 }
 
+/* MOBILE ROW */
 .skills__mobileRow {
     display: grid;
-    grid-template-columns: 90px 1fr;
+    grid-template-columns: 72px minmax(0, 1fr);
     gap: 12px;
     align-items: start;
 }
 
-/* LEFT ICON STACK */
+/* LEFT ICON */
 .skills__mobileIconCol {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 6px;
-    margin-top: 18px;
+    margin-top: 14px;
 }
 
 .skills__mobileIcon {
-    width: 39, 7px;
+    width: 40px;
     height: 45px;
 }
 
 .skills__mobileLabel {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 600;
     line-height: 1.2;
 }
 
-/* RIGHT TEXT */
+/* RIGHT TEXT — FIXED WRAPPING */
 .skills__mobileText {
-    font-size: 16px;
+    font-size: 14px;
     font-family: var(--font-quick);
     font-weight: 400;
     line-height: 1.45;
+    min-width: 0;
+    white-space: normal;
     word-break: break-word;
     overflow-wrap: anywhere;
-    padding: 4px;
 }
 
 .skills__mobileText li {
     margin-bottom: 4px;
+    word-break: break-word;
 }
 
 /* =========================
@@ -213,7 +214,6 @@
     cursor: pointer;
 }
 
-/* Active — long pill */
 .skills__dotActive {
     width: 18px;
     height: 10px;
@@ -221,12 +221,10 @@
 }
 
 /* =========================
-     TABLET & MOBILE OVERRIDES
+     RESPONSIVE
   ========================= */
 
 @media (max-width: 1024px) {
-
-    /* Switch layouts */
     .skills__grid {
         display: none;
     }
@@ -235,53 +233,29 @@
         display: block;
     }
 
-    /* Title smaller */
     .skills__title {
         font-size: 48px;
     }
 }
 
 @media (max-width: 768px) {
-    .skills__mobileCard {
-        padding: 14px 14px 22px;
-    }
-
-    .skills__mobileRow {
-        width: 319px;
-        height: 92px;
-        gap: 4px;
-    }
-
-    .skills__mobileIconCol {
-        margin-top: 22px;
-    }
-
     .skills__mobileIcon {
         width: 36px;
         height: 40px;
     }
 
-    .skills__mobileLabel {
-        font-size: 14px;
-    }
-
     .skills__mobileText {
-        font-size: 16px;
-        font-family: var(--font-quick);
-        font-weight: 400;
-        width: 268px;
-        height: 92px;
-        padding-top: 10px;
+        font-size: 13px;
     }
 }
 
 @media (max-width: 420px) {
     .skills__mobileIcon {
-        width: 39, 7px;
-        height: 45px;
+        width: 32px;
+        height: 36px;
     }
 
     .skills__mobileText {
-        font-size: 13px;
+        font-size: 12px;
     }
 }
