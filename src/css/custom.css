@@ -127,3 +127,23 @@ footer.footer,
     padding-right: 40px;
   }
 }
+
+/* REMOVE DOCUSAURUS TOP BAR SPACE — MOBILE & TABLET */
+@media (max-width: 1024px) {
+
+  :root {
+    --ifm-navbar-height: 0px !important;
+  }
+
+  .main-wrapper {
+    padding-top: 0 !important;
+  }
+
+  main {
+    margin-top: 0 !important;
+  }
+
+  header+* {
+    margin-top: 0 !important;
+  }
+}

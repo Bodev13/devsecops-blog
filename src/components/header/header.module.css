@@ -205,3 +205,32 @@
         justify-content: flex-end;
     }
 }
+
+/* FORCE HIDE MOBILE MENU ON DESKTOP */
+@media (min-width: 769px) {
+    .mobileMenu {
+        display: none !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+    }
+}
+
+.hidden {
+    transform: translateY(-120%);
+    transition: transform 0.25s ease;
+}
+
+/* MIDDLE & MOBILE — HEADER SCROLLS WITH PAGE */
+@media (max-width: 1024px) {
+    .header {
+        position: relative;
+        top: auto;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+
+    .headerHidden {
+        transform: none !important;
+        opacity: 1 !important;
+    }
+}

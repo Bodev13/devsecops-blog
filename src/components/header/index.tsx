@@ -1,31 +1,33 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import styles from "./header.module.css";
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
-    const [hideHeader, setHideHeader] = useState(false);
-    const [lastScrollY, setLastScrollY] = useState(0);
+    const [hidden, setHidden] = useState(false);
+    const lastScrollY = useRef(0);
 
     useEffect(() => {
         const handleScroll = () => {
-            const currentScrollY = window.scrollY;
+            // ONLY DESKTOP
+            if (window.innerWidth < 1025) return;
 
-            // Hide when scrolling down, show when scrolling up
-            if (currentScrollY > lastScrollY && currentScrollY > 80) {
-                setHideHeader(true);
+            const currentScroll = window.scrollY;
+
+            if (currentScroll > lastScrollY.current && currentScroll > 80) {
+                setHidden(true); // scroll down → hide
             } else {
-                setHideHeader(false);
+                setHidden(false); // scroll up → show
             }
 
-            setLastScrollY(currentScrollY);
+            lastScrollY.current = currentScroll;
         };
 
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
-    }, [lastScrollY]);
+    }, []);
 
     return (
-        <header className={`${styles.header} ${hideHeader ? styles.headerHidden : ""}`}>
+        <header className={`${styles.header} ${hidden ? styles.headerHidden : ""}`}>
             <div className="contentContainer">
                 <div className={styles.header__content}>
                     <nav className={styles.nav}>
@@ -47,6 +49,7 @@ export default function Header() {
                 </div>
             </div>
 
+            {/* MOBILE MENU */}
             <div className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ""}`}>
                 <button
                     className={styles.closeButton}
