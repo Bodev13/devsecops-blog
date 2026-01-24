@@ -1,7 +1,7 @@
 .skills {
     padding: 72px 0;
     background-color: #242b31;
-    color: #ffffff;
+    color: white;
 }
 
 .skills__content {
@@ -14,75 +14,79 @@
     font-family: var(--font-quick);
     font-weight: 700;
     font-size: 64px;
-    line-height: 120%;
 }
 
 /* =========================
-   GRID LAYOUT
-========================= */
+     DESKTOP GRID
+  ========================= */
+
 .skills__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 34px;
 }
 
-/* =========================
-   CARD BASE
-========================= */
 .skills__card {
     width: 100%;
+    max-width: 520px;
     height: 260px;
-    perspective: 1200px;
+    overflow: hidden;
+    position: relative;
 }
 
+/* Card inner wrapper */
 .skills__cardInner {
-    position: relative;
     width: 100%;
     height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.6s ease;
+    position: relative;
 }
 
-/* Flip on hover (desktop) */
-.skills__card:hover .skills__cardInner {
-    transform: rotateY(180deg);
-}
-
-/* =========================
-   FRONT + BACK FACES
-========================= */
+/* BOTH SIDES — NO ROTATION */
 .skills__cardFront,
 .skills__cardBack {
     position: absolute;
     inset: 0;
     border-radius: 30px;
-    padding: 48px 56px;
+    padding: 56px 48px;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     text-align: center;
-    backface-visibility: hidden;
+    transition: opacity 0.12s ease;
+    /* FAST SNAP */
 }
 
 /* FRONT */
 .skills__cardFront {
     background-color: #2f3941;
+    opacity: 1;
+    z-index: 2;
 }
 
 /* BACK */
 .skills__cardBack {
-    background-color: rgba(121, 184, 255, 0.45);
-    transform: rotateY(180deg);
+    background-color: rgba(121, 184, 255, 0.4);
+    opacity: 0;
+    z-index: 1;
 }
 
-/* =========================
-   CARD CONTENT
-========================= */
+/* INSTANT SIDE SWITCH */
+.skills__card:hover .skills__cardFront {
+    opacity: 0;
+}
+
+.skills__card:hover .skills__cardBack {
+    opacity: 1;
+    z-index: 3;
+}
+
+/* CONTENT */
 .skills__cardContent {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 24px;
+    gap: 14px;
+    padding: 0 10px;
 }
 
 .skills__icon {
@@ -92,131 +96,136 @@
 
 .skills__label {
     font-family: var(--font-quick);
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 120%;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 1.25;
+    text-align: center;
+    max-width: 160px;
+    word-break: break-word;
+    overflow-wrap: anywhere;
 }
 
+/* DESCRIPTION TEXT */
 .skills__description {
     font-family: var(--font-quick);
-    font-size: 16px;
-    line-height: 140%;
+    font-size: 15px;
+    line-height: 1.45;
     max-width: 320px;
+    margin: 0;
+    padding-left: 18px;
+    text-align: left;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.skills__description li {
+    margin-bottom: 6px;
 }
 
 /* =========================
-   TABLET
-========================= */
-@media (max-width: 1024px) {
-    .skills__grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
+     MOBILE BIG CARD
+  ========================= */
 
-/* =========================
-   MOBILE MODE (Swiper)
-========================= */
 .skills__mobile {
     display: none;
-}
-
-@media (max-width: 768px) {
-    .skills {
-        padding: 48px 0;
-    }
-
-    .skills__content {
-        align-items: center;
-    }
-
-    .skills__title {
-        width: 100%;
-        text-align: left;
-        font-size: 40px;
-    }
-
-    .skills__grid {
-        display: none;
-    }
-
-    .skills__mobile {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    .skills__mobile :global(.swiper) {
-        width: 100%;
-    }
-
-    .skills__mobile :global(.swiper-slide) {
-        display: flex;
-        justify-content: center;
-    }
-
-    .skills__icon {
-        width: 40px;
-        height: 45px;
-    }
-
-    .skills__label {
-        font-size: 14px;
-        text-align: center;
-    }
-}
-
-/* =========================
-   MOBILE CARD STYLE
-========================= */
-.skills__mobileCard {
-    background-color: rgba(41, 154, 217, 0.1);
-    border-radius: 30px;
     width: 100%;
-    padding: 16px 12px;
+    margin-top: 10px;
+}
+
+.skills__mobileCard {
+    background-color: #2f3941;
+    border-radius: 30px;
+    padding: 22px 18px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 20px;
+    max-width: 560px;
     margin: 0 auto;
+    overflow: hidden;
 }
 
-.skills__mobileItem {
-    display: flex;
-    gap: 16px;
-    align-items: center;
+.skills__mobileRow {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 18px;
+    align-items: start;
 }
 
-.skills__mobileIconBlock {
+/* LEFT ICON STACK */
+.skills__mobileIconCol {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
-    min-width: 56px;
+    text-align: center;
+    gap: 6px;
+    margin-top: 6px;
+}
+
+.skills__mobileIcon {
+    width: 48px;
+    height: 54px;
+}
+
+.skills__mobileLabel {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+/* RIGHT TEXT */
+.skills__mobileText {
+    font-size: 14px;
+    line-height: 1.45;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+.skills__mobileText li {
+    margin-bottom: 4px;
 }
 
 /* =========================
-   PAGINATION DOTS
-========================= */
+     DOTS — FIGMA STYLE
+  ========================= */
+
 .skills__pagination {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    padding: 10px;
-    margin: 12px auto 0;
+    margin-top: 14px;
 }
 
-.skills__pagination :global(.swiper-pagination-bullet) {
+.skills__dot {
     width: 10px;
     height: 10px;
-    border-radius: 50px;
+    border-radius: 999px;
     background-color: #738398;
-    opacity: 1;
+    border: none;
+    transition: all 0.25s ease;
+    cursor: pointer;
 }
 
-.skills__pagination :global(.swiper-pagination-bullet-active) {
-    width: 18px;
+/* Active — long pill */
+.skills__dotActive {
+    width: 22px;
     height: 10px;
-    border-radius: 50px;
     background-color: #ffffff;
+}
+
+/* =========================
+     RESPONSIVE
+  ========================= */
+
+@media (max-width: 1024px) {
+    .skills__grid {
+        display: none;
+    }
+
+    .skills__mobile {
+        display: block;
+    }
 }
