@@ -14,6 +14,7 @@
     font-family: var(--font-quick);
     font-weight: 700;
     font-size: 64px;
+    /* DESKTOP */
 }
 
 /* =========================
@@ -41,7 +42,7 @@
     position: relative;
 }
 
-/* BOTH SIDES — NO ROTATION */
+/* BOTH SIDES — SNAP SWITCH */
 .skills__cardFront,
 .skills__cardBack {
     position: absolute;
@@ -53,7 +54,6 @@
     align-items: center;
     text-align: center;
     transition: opacity 0.12s ease;
-    /* FAST SNAP */
 }
 
 /* FRONT */
@@ -70,7 +70,7 @@
     z-index: 1;
 }
 
-/* INSTANT SIDE SWITCH */
+/* HOVER SWITCH */
 .skills__card:hover .skills__cardFront {
     opacity: 0;
 }
@@ -94,10 +94,11 @@
     height: 80px;
 }
 
+/* LABEL — DESKTOP */
 .skills__label {
     font-family: var(--font-quick);
-    font-weight: 600;
-    font-size: 17px;
+    font-weight: 500;
+    font-size: 18px;
     line-height: 1.25;
     text-align: center;
     max-width: 160px;
@@ -105,7 +106,7 @@
     overflow-wrap: anywhere;
 }
 
-/* DESCRIPTION TEXT */
+/* DESCRIPTION — DESKTOP */
 .skills__description {
     font-family: var(--font-quick);
     font-size: 15px;
@@ -126,7 +127,7 @@
 }
 
 /* =========================
-     MOBILE BIG CARD
+     MOBILE BIG CARD BASE
   ========================= */
 
 .skills__mobile {
@@ -138,8 +139,7 @@
 .skills__mobileCard {
     background-color: #2f3941;
     border-radius: 30px;
-    padding: 6px 18px;
-    padding-bottom: 34px;
+    padding: 18px 16px 28px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -149,11 +149,9 @@
 }
 
 .skills__mobileRow {
-    width: 319px;
-    height: 92px;
     display: grid;
     grid-template-columns: 90px 1fr;
-    gap: 4px;
+    gap: 12px;
     align-items: start;
 }
 
@@ -164,7 +162,7 @@
     align-items: center;
     text-align: center;
     gap: 6px;
-    margin-top: 30px;
+    margin-top: 18px;
 }
 
 .skills__mobileIcon {
@@ -181,20 +179,16 @@
 /* RIGHT TEXT */
 .skills__mobileText {
     font-size: 16px;
+    font-family: var(--font-quick);
+    font-weight: 400;
     line-height: 1.45;
     word-break: break-word;
     overflow-wrap: anywhere;
-    margin-top: 21px;
+    padding: 4px;
 }
 
 .skills__mobileText li {
     margin-bottom: 4px;
-}
-
-.skills__title {
-    font-family: var(--font-quick);
-    font-weight: 700;
-    font-size: 48px;
 }
 
 /* =========================
@@ -221,21 +215,73 @@
 
 /* Active — long pill */
 .skills__dotActive {
-    width: 22px;
+    width: 18px;
     height: 10px;
     background-color: #ffffff;
 }
 
 /* =========================
-     RESPONSIVE
+     TABLET & MOBILE OVERRIDES
   ========================= */
 
 @media (max-width: 1024px) {
+
+    /* Switch layouts */
     .skills__grid {
         display: none;
     }
 
     .skills__mobile {
         display: block;
+    }
+
+    /* Title smaller */
+    .skills__title {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 768px) {
+    .skills__mobileCard {
+        padding: 14px 14px 22px;
+    }
+
+    .skills__mobileRow {
+        width: 319px;
+        height: 92px;
+        gap: 4px;
+    }
+
+    .skills__mobileIconCol {
+        margin-top: 22px;
+    }
+
+    .skills__mobileIcon {
+        width: 36px;
+        height: 40px;
+    }
+
+    .skills__mobileLabel {
+        font-size: 14px;
+    }
+
+    .skills__mobileText {
+        font-size: 16px;
+        font-family: var(--font-quick);
+        font-weight: 400;
+        width: 268px;
+        height: 92px;
+        padding-top: 10px;
+    }
+}
+
+@media (max-width: 420px) {
+    .skills__mobileIcon {
+        width: 39, 7px;
+        height: 45px;
+    }
+
+    .skills__mobileText {
+        font-size: 13px;
     }
 }
