@@ -39,18 +39,8 @@ h6 {
   background: transparent !important;
 }
 
-.main-wrapper {
-  padding-top: 0 !important;
+section#about {
   margin-top: 0 !important;
-}
-
-.main-wrapper>main {
-  margin-top: 0 !important;
-}
-
-#__docusaurus {
-  position: relative;
-  z-index: 0;
 }
 
 .navbar {
@@ -65,6 +55,20 @@ footer.footer,
   display: none !important;
 }
 
+.main-wrapper {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+.main-wrapper>main {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+.main-wrapper>main>*:first-child {
+  margin-top: 0 !important;
+}
+
 .header {
   position: fixed !important;
   top: 0;
@@ -73,11 +77,6 @@ footer.footer,
   z-index: 99999 !important;
   border: none !important;
   box-shadow: none !important;
-  transform: translateZ(0);
-}
-
-.main-wrapper>main {
-  padding-top: 109px;
 }
 
 .contentContainer {
@@ -107,88 +106,19 @@ footer.footer,
   padding-top: 140px;
 }
 
+@media (max-width: 1024px) {
+  .hero {
+    padding-top: 110px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 96px !important;
+  }
+}
 
 .main-wrapper>main::before {
   content: none !important;
   display: none !important;
-}
-
-@media (max-width: 1024px) {
-
-  .main-wrapper>main {
-    padding-top: 0 !important;
-  }
-
-  .hero {
-    margin-top: 0 !important;
-    padding-top: 120px !important;
-  }
-
-  .main-wrapper>main>*:first-child {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-  }
-
-  section#about {
-    margin-top: 0 !important;
-  }
-}
-
-@media (max-width: 1024px) {
-  .main-wrapper {
-    padding-top: 0 !important;
-  }
-
-  main {
-    padding-top: 0 !important;
-    margin-top: 0 !important;
-  }
-
-  section:first-of-type,
-  .hero {
-    margin-top: 0 !important;
-  }
-}
-
-@media (max-width: 1024px) {
-  .main-wrapper>main>div:first-child {
-    display: none !important;
-  }
-
-  .main-wrapper {
-    padding-top: 0 !important;
-  }
-
-  main {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-  }
-
-  #about,
-  .hero {
-    margin-top: 0 !important;
-  }
-}
-
-@media (max-width: 1024px) {
-  .main-wrapper {
-    padding-top: 0 !important;
-    margin-top: 0 !important;
-  }
-
-  main {
-    padding-top: 0 !important;
-    margin-top: 0 !important;
-  }
-
-  #about,
-  .hero {
-    margin-top: 0 !important;
-  }
-
-  .mobileMenu {
-    display: block !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
-  }
 }
