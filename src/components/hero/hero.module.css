@@ -2,6 +2,7 @@
     background-color: #266AD9;
     padding: 140px 0 72px;
     box-sizing: border-box;
+    margin-top: -2px;
 }
 
 .hero__container {
@@ -96,17 +97,13 @@
     object-fit: cover;
 }
 
-/* Desktop image */
 .hero__imageWrapperDesktop {
     flex-shrink: 0;
 }
 
-/* Mobile image hidden on desktop */
 .hero__imageWrapperMobile {
     display: none;
 }
-
-/* ===================== MIDDLE ===================== */
 
 @media (max-width: 1024px) {
     .hero__container {
@@ -146,8 +143,6 @@
         border-radius: 30px;
     }
 }
-
-/* ===================== MOBILE ===================== */
 
 @media (max-width: 768px) {
     .hero {
