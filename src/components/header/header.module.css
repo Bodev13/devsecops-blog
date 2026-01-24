@@ -64,7 +64,9 @@
     background: none;
     border: none;
     cursor: pointer;
-    padding: 8px;
+    width: 30px;
+    height: 32px;
+
 }
 
 .burger span {
@@ -99,6 +101,8 @@
 
 .closeButton {
     position: absolute;
+    width: 35px;
+    height: 32px;
     top: 32px;
     right: 24px;
     background: none;
