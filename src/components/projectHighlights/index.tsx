@@ -82,6 +82,16 @@ const projects: Project[] = [
         documentationUrl: "/docs/projects/minecraft-server",
         githubUrl: "https://github.com/Bodev13/Minecraft",
     },
+    {
+        id: 5,
+        title: "Baby Tools",
+        description:
+            "This project provides a Dockerized setup for a Django-based Baby Tools Shop, enabling easy deployment and a reproducible development environment.",
+        image: "/img/portfolio/icons/babyTools.png",
+        skills: ["Shell scripting", "Container", "Python"],
+        documentationUrl: "/docs/projects/baby-tools-shop",
+        githubUrl: "https://github.com/Bodev13/baby-tools-shop",
+    },
 ];
 
 export default function ProjectHighlights() {
