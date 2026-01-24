@@ -26,6 +26,7 @@
 .left ul {
     font-family: var(--font-quick);
     font-weight: 400;
+    font-size: 18px;
     padding-left: 18px;
 }
 
@@ -84,6 +85,7 @@
     .left ul {
         font-family: var(--font-quick);
         font-weight: 400;
+        font-size: 16px;
         padding-left: 16px;
     }
 
