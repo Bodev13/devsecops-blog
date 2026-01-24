@@ -17,55 +17,67 @@
     line-height: 120%;
 }
 
+/* =========================
+   GRID LAYOUT
+========================= */
 .skills__grid {
     display: grid;
-    grid-template-columns: repeat(3, 33%);
+    grid-template-columns: repeat(3, 1fr);
     gap: 34px;
 }
 
+/* =========================
+   CARD BASE
+========================= */
 .skills__card {
     width: 100%;
-    max-width: 520px;
     height: 260px;
+    perspective: 1200px;
 }
 
 .skills__cardInner {
     position: relative;
     width: 100%;
     height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
 }
 
+/* Flip on hover (desktop) */
+.skills__card:hover .skills__cardInner {
+    transform: rotateY(180deg);
+}
+
+/* =========================
+   FRONT + BACK FACES
+========================= */
 .skills__cardFront,
 .skills__cardBack {
     position: absolute;
     inset: 0;
     border-radius: 30px;
-    padding: 56px 71px;
+    padding: 48px 56px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    backface-visibility: hidden;
 }
 
+/* FRONT */
 .skills__cardFront {
     background-color: #2f3941;
-    z-index: 2;
 }
 
+/* BACK */
 .skills__cardBack {
-    background-color: #79b8ff80;
-    opacity: 0;
-    z-index: 1;
+    background-color: rgba(121, 184, 255, 0.45);
+    transform: rotateY(180deg);
 }
 
-.skills__card:hover .skills__cardFront {
-    opacity: 0;
-}
-
-.skills__card:hover .skills__cardBack {
-    opacity: 1;
-}
-
+/* =========================
+   CARD CONTENT
+========================= */
 .skills__cardContent {
     display: flex;
     flex-direction: column;
@@ -88,26 +100,24 @@
 .skills__description {
     font-family: var(--font-quick);
     font-size: 16px;
-    line-height: 120%;
+    line-height: 140%;
     max-width: 320px;
 }
 
+/* =========================
+   TABLET
+========================= */
 @media (max-width: 1024px) {
     .skills__grid {
-        grid-template-columns: repeat(2, minmax(360px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
+/* =========================
+   MOBILE MODE (Swiper)
+========================= */
 .skills__mobile {
     display: none;
-}
-
-@media (max-width: 768px) {
-    .skills__description {
-        font-family: var(--font-quick);
-        font-size: 16px;
-        font-weight: 400;
-    }
 }
 
 @media (max-width: 768px) {
@@ -123,8 +133,6 @@
         width: 100%;
         text-align: left;
         font-size: 40px;
-        font-weight: 700;
-        font-family: var(--font-quick);
     }
 
     .skills__grid {
@@ -148,7 +156,7 @@
     }
 
     .skills__icon {
-        width: 39.7px;
+        width: 40px;
         height: 45px;
     }
 
@@ -158,11 +166,12 @@
     }
 }
 
+/* =========================
+   MOBILE CARD STYLE
+========================= */
 .skills__mobileCard {
     background-color: rgba(41, 154, 217, 0.1);
     border-radius: 30px;
-    width: 340px;
-    height: 388px;
     width: 100%;
     padding: 16px 12px;
     display: flex;
@@ -185,6 +194,9 @@
     min-width: 56px;
 }
 
+/* =========================
+   PAGINATION DOTS
+========================= */
 .skills__pagination {
     display: flex;
     justify-content: center;
