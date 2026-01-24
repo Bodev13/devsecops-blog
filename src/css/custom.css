@@ -44,7 +44,8 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background: transparent !important;
+  background: #242b31 !important;
+  /* MATCH YOUR SITE BG */
   font-family: var(--font-red);
 }
 
@@ -61,24 +62,26 @@ h6 {
 }
 
 /* =========================
-   LAYOUT VISIBILITY FIX
+   DOCUSAURUS LAYOUT FIX
 ========================= */
 #__docusaurus,
 .main-wrapper,
-.main-wrapper>main,
-.theme-doc-layout,
-.theme-doc-layout main,
-.theme-doc-page,
-.theme-default-content {
+.main-wrapper>main {
   background: transparent !important;
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
 }
 
-.main-wrapper>main {
-  min-height: 100vh;
-  padding-top: 0 !important;
+/* Prevent extra bottom space */
+.main-wrapper {
+  min-height: auto !important;
+}
+
+/* =========================
+   REMOVE DEFAULT FOOTER
+========================= */
+footer.footer,
+.theme-doc-footer,
+.theme-doc-footer-edit-meta-row {
+  display: none !important;
 }
 
 /* =========================
