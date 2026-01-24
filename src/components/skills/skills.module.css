@@ -138,7 +138,8 @@
 .skills__mobileCard {
     background-color: #2f3941;
     border-radius: 30px;
-    padding: 22px 18px;
+    padding: 6px 18px;
+    padding-bottom: 34px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -148,9 +149,11 @@
 }
 
 .skills__mobileRow {
+    width: 319px;
+    height: 92px;
     display: grid;
     grid-template-columns: 90px 1fr;
-    gap: 18px;
+    gap: 4px;
     align-items: start;
 }
 
@@ -161,30 +164,37 @@
     align-items: center;
     text-align: center;
     gap: 6px;
-    margin-top: 6px;
+    margin-top: 30px;
 }
 
 .skills__mobileIcon {
-    width: 48px;
-    height: 54px;
+    width: 39, 7px;
+    height: 45px;
 }
 
 .skills__mobileLabel {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 600;
     line-height: 1.2;
 }
 
 /* RIGHT TEXT */
 .skills__mobileText {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.45;
     word-break: break-word;
     overflow-wrap: anywhere;
+    margin-top: 21px;
 }
 
 .skills__mobileText li {
     margin-bottom: 4px;
+}
+
+.skills__title {
+    font-family: var(--font-quick);
+    font-weight: 700;
+    font-size: 48px;
 }
 
 /* =========================
