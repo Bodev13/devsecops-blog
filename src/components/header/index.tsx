@@ -1,11 +1,31 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./header.module.css";
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [hideHeader, setHideHeader] = useState(false);
+    const [lastScrollY, setLastScrollY] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+
+            // Hide when scrolling down, show when scrolling up
+            if (currentScrollY > lastScrollY && currentScrollY > 80) {
+                setHideHeader(true);
+            } else {
+                setHideHeader(false);
+            }
+
+            setLastScrollY(currentScrollY);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [lastScrollY]);
 
     return (
-        <header className={styles.header}>
+        <header className={`${styles.header} ${hideHeader ? styles.headerHidden : ""}`}>
             <div className="contentContainer">
                 <div className={styles.header__content}>
                     <nav className={styles.nav}>
@@ -28,7 +48,6 @@ export default function Header() {
             </div>
 
             <div className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ""}`}>
-
                 <button
                     className={styles.closeButton}
                     onClick={() => setMenuOpen(false)}
