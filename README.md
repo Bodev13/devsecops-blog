@@ -26,7 +26,6 @@ It serves as a **technical portfolio** showcasing real projects, clean component
 - Node.js (18+ recommended)
 - pnpm
 - Git
-- Optional: V-Server for deployment
 
 ---
 
