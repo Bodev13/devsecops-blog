@@ -17,7 +17,6 @@
     padding-top: 0 !important;
 }
 
-
 .hero__content {
     max-width: 620px;
     color: #ffffff;
@@ -39,9 +38,8 @@
 }
 
 .hero__subtitle {
-    font-size: 32px;
-    font-family: var(--font-quick);
     font-size: 24px;
+    font-family: var(--font-quick);
     margin-bottom: 24px;
 }
 
@@ -59,6 +57,7 @@
     justify-content: center;
 
     width: fit-content;
+    max-width: 100%;
     padding: 14px 28px;
     height: 56px;
 
@@ -67,7 +66,7 @@
 
     font-family: var(--font-quick);
     font-weight: 600;
-    font-size: 20px;
+    font-size: clamp(14px, 2vw, 20px);
     line-height: 120%;
 
     color: #266AD9;
@@ -75,6 +74,10 @@
 
     border: none;
     cursor: pointer;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     transition: background-color 0.2s ease, transform 0.05s ease;
 }
@@ -95,7 +98,6 @@
 .hero__button:active {
     transform: scale(0.98);
 }
-
 
 .hero__image {
     width: 441px;
@@ -150,6 +152,14 @@
         height: auto;
         border-radius: 30px;
     }
+
+    .hero__button {
+        font-size: clamp(13px, 3.5vw, 16px);
+        width: 129px;
+        height: 47px;
+        padding: 12px 22px;
+        white-space: nowrap;
+    }
 }
 
 @media (max-width: 768px) {
@@ -163,19 +173,16 @@
 
     .hero__subtitle {
         font-size: 24px;
-        font-family: var(--font-quick);
         font-weight: 500;
     }
 
     .hero__intro {
         font-size: 24px;
-        font-family: var(--font-quick);
         font-weight: 400;
     }
 
     .hero__text {
         font-size: 16px;
-        font-family: var(--font-quick);
         font-weight: 500;
     }
 
@@ -186,28 +193,10 @@
     }
 
     .hero__button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-
-        width: fit-content;
-        padding: 14px 28px;
+        font-size: clamp(13px, 4vw, 16px);
+        width: 129px;
         height: 47px;
-
-        border-radius: 30px;
-        background-color: #ffffff;
-
-        font-family: var(--font-quick);
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 120%;
-
-        color: #266AD9;
-        text-decoration: none;
-
-        border: none;
-        cursor: pointer;
-
-        transition: none;
+        padding: 12px 20px;
+        white-space: nowrap;
     }
 }
