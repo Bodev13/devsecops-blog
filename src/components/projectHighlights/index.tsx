@@ -70,7 +70,7 @@ const projects: Project[] = [
         skills: ["IT Security"],
         documentationUrl: "/docs/projects/juice-shop-master",
         githubUrl:
-            "https://github.com/Bodev13/devsecops-blog/tree/juice-shop-master",
+            "https://github.com/Bodev13/devsecops-blog/blob/main/docs/projects/juice-shop-master/README.md",
     },
     {
         id: 4,
