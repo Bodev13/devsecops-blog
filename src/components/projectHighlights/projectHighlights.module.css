@@ -245,6 +245,9 @@
     .projectImage {
         width: 100%;
         height: auto;
+        width: 320px;
+        height: 216px;
+        border-radius: 30px;
     }
 
     .description {
