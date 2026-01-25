@@ -175,7 +175,7 @@
 
 /* LABEL */
 .skills__mobileLabel {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 600;
     line-height: 1.2;
 }
@@ -209,22 +209,24 @@
 .skills__dot {
     width: 10px;
     height: 10px;
+    min-width: 10px;
+    min-height: 10px;
     border-radius: 999px;
     background-color: #738398;
     border: none;
-    transition: all 0.25s ease;
     cursor: pointer;
+    transition: width 0.18s ease, background-color 0.18s ease;
 }
 
 .skills__dotActive {
     width: 18px;
     height: 10px;
+    min-width: 18px;
+    min-height: 10px;
     background-color: #ffffff;
+    border-radius: 999px;
 }
 
-/* =========================
-     RESPONSIVE
-  ========================= */
 
 @media (max-width: 1200px) {
     .skills__grid {
@@ -242,17 +244,53 @@
     }
 
     .skills__title {
-        font-size: 48px;
+        font-size: 40px;
     }
 }
 
 @media (max-width: 768px) {
     .skills__mobileIcon {
-        width: 36px;
-        height: 40px;
+        width: 39px;
+        height: 45px;
     }
 
     .skills__mobileText {
-        font-size: 13px;
+        font-size: 16px;
     }
+
+
+}
+
+.skills__pagination :global(.swiper-pagination-bullet) {
+    width: 10px !important;
+    height: 10px !important;
+    min-width: 10px !important;
+    min-height: 10px !important;
+    border-radius: 999px !important;
+    background-color: #738398 !important;
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+.skills__pagination :global(.swiper-pagination-bullet-active) {
+    width: 18px !important;
+    height: 10px !important;
+    min-width: 18px !important;
+    min-height: 10px !important;
+    border-radius: 999px !important;
+    background-color: #ffffff !important;
+}
+
+.skills__dot {
+    width: 10px !important;
+    height: 10px !important;
+    min-width: 10px !important;
+    min-height: 10px !important;
+}
+
+.skills__dotActive {
+    width: 18px !important;
+    height: 10px !important;
+    min-width: 18px !important;
+    min-height: 10px !important;
 }
