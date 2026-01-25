@@ -94,8 +94,9 @@
 
 /* ICON */
 .skills__icon {
-    width: 70px;
+    width: 80px;
     height: 80px;
+    object-fit: contain;
 }
 
 /* LABEL */
@@ -239,6 +240,7 @@
         display: none;
     }
 
+
     .skills__mobile {
         display: block;
     }
@@ -252,6 +254,7 @@
     .skills__mobileIcon {
         width: 39px;
         height: 45px;
+        object-fit: contain;
     }
 
     .skills__mobileText {
