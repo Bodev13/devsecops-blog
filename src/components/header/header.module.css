@@ -165,6 +165,7 @@
 
 @media (max-width: 1024px) {
     .header {
+
         position: relative;
         transform: none !important;
         opacity: 1 !important;
