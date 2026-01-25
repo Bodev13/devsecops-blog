@@ -27,7 +27,7 @@ const Contact = () => {
                                     <path d="M0.5 3.5L11.5 11L22.5 3.5" stroke="white" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
                             </span>
-                            <a href="mailto:bo.test@gmail.com">bo.test@gmail.com</a>
+                            <a href="mailto:bo.sadriddin@gmail.com">bo.sadriddin@gmail.com</a>
                         </div>
 
                         <div className={styles.contactItem}>
