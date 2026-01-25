@@ -1,21 +1,26 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import { config as dotenvconfig } from 'dotenv';
+
+dotenvconfig();
 
 const blogEnabled = 'true';
+
+const DEPLOYMENT_URL = process.env.DEPLOYMENT_URL ?? 'https://bodev13.github.io';
+const BASE_URL = process.env.BASE_URL ?? '/devsecops-blog/';
 
 const config: Config = {
   title: 'DSO Live Demo Docs',
   tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
 
-  url: 'https://bodev13.github.io',
-  baseUrl: '/devsecops-blog/',
+  url: DEPLOYMENT_URL,
+  baseUrl: BASE_URL,
 
-  organizationName: 'bodev13',
-  projectName: 'devsecops-blog',
-  deploymentBranch: 'gh-pages',
-
+  organizationName: process.env.GITHUB_ORG ?? 'bodev13',
+  projectName: process.env.GITHUB_PROJECT ?? 'devsecops-blog',
+  deploymentBranch: process.env.DEPLOYMENT_BRANCH ?? 'gh-pages',
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
@@ -72,7 +77,6 @@ const config: Config = {
       links: [],
       copyright: ' ',
     },
-
 
     prism: {
       theme: prismThemes.github,
