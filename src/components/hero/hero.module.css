@@ -115,15 +115,24 @@
 }
 
 @media (max-width: 1024px) {
+    .hero {
+        padding-top: 24px;
+    }
+
     .hero__container {
-        padding-top: 80px;
+        padding: 0 0 72px;
         flex-direction: column;
         text-align: center;
-        gap: 40px;
+        gap: 26px;
     }
 
     .hero__imageWrapperDesktop {
         display: none;
+    }
+
+    .hero :global(.contentContainer) {
+        padding-left: 26px !important;
+        padding-right: 26px !important;
     }
 
     .hero__imageWrapperMobile {
@@ -164,7 +173,15 @@
 
 @media (max-width: 768px) {
     .hero {
-        padding: 72px;
+        padding-top: 24px;
+    }
+
+    .hero__container {
+        padding: 0px 0 72px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 26px;
     }
 
     .hero__title {
