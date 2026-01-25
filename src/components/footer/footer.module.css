@@ -96,6 +96,20 @@
         padding-bottom: 32px;
     }
 
+    .footerCopy {
+        font-size: 14px;
+        font-weight: 400;
+        font-family: var(--font-quick);
+        opacity: 0.8;
+    }
+
+    .footerLegal {
+        font-size: 14px;
+        font-weight: 400;
+        font-family: var(--font-quick);
+        color: #F8F5EC;
+    }
+
     .toTopBtn {
         width: 40px;
         height: 73px;
