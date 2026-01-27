@@ -1,37 +1,35 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
-import type * as Preset from '@docusaurus/preset-classic';
-import {config as dotenvconfig}  from "dotenv";
+import { themes as prismThemes } from 'prism-react-renderer'
+import type { Config } from '@docusaurus/types'
+import type * as Preset from '@docusaurus/preset-classic'
+import { config as dotenvconfig } from 'dotenv'
 
-dotenvconfig();
+dotenvconfig()
 
-/* TODO: change to read configuration from environment */
-const blogEnabled = Boolean(process.env.BLOG_ENABLED === 'true')
+const BLOG_ENABLED = process.env.BLOG_ENABLED === 'true'
+
+const DEPLOYMENT_URL = process.env.DEPLOYMENT_URL || 'http://localhost:3000'
+const BASE_URL = process.env.BASE_URL || '/'
+const DEPLOYMENT_BRANCH = process.env.DEPLOYMENT_BRANCH || 'gh-pages'
+const GITHUB_ORG = process.env.GITHUB_ORG || 'bodev13'
+const GITHUB_PROJECT = process.env.GITHUB_PROJECT || 'devsecops-blog'
 
 const config: Config = {
   title: 'DSO Live Demo Docs',
   tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
 
-  // Set the production url of your site here
-  url: process.env.DEPLOYMENT_URL ?? "https://spmse.github.io",
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: process.env.BASE_URL ?? "/",
+  url: DEPLOYMENT_URL,
+  baseUrl: BASE_URL,
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: process.env.GITHUB_ORG, // Usually your GitHub org/user name.
-  projectName: process.env.GITHUB_PROJECT, // Usually your repo name.
+  organizationName: GITHUB_ORG,
+  projectName: GITHUB_PROJECT,
+  deploymentBranch: DEPLOYMENT_BRANCH,
 
-  deploymentBranch: process.env.DEPLOYMENT_BRANCH,
+  trailingSlash: false,
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -43,28 +41,23 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/spmse/dev-blog-template',
+          editUrl: `https://github.com/${GITHUB_ORG}/${GITHUB_PROJECT}`,
         },
-        blog: blogEnabled ? 
-          {
+
+        blog: BLOG_ENABLED
+          ? {
             showReadingTime: true,
             feedOptions: {
               type: ['rss', 'atom'],
               xslt: true,
             },
-            // Please change this to your repo.
-            // Remove this to remove the "edit this page" links.
-            editUrl:
-              'https://github.com/spmse/dev-blog-template',
-            // Useful options to enforce blogging best practices
+            editUrl: `https://github.com/${GITHUB_ORG}/${GITHUB_PROJECT}`,
             onInlineTags: 'warn',
             onInlineAuthors: 'warn',
             onUntruncatedBlogPosts: 'warn',
           }
           : false,
+
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -73,98 +66,35 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
+    colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
+    },
+
     image: 'img/docusaurus-social-card.jpg',
+
     navbar: {
-      title: 'My Site',
+      title: '',
       logo: {
-        alt: 'My Site Logo',
+        alt: '',
         src: 'img/logo.svg',
       },
-      items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Docs',
-        },
-        {
-          href: 'https://github.com/spmse/dev-blog-template',
-          label: 'Github',
-          position: 'right',
-        },
-      ],
+      items: [],
     },
+
     footer: {
       style: 'dark',
-      links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Tutorial',
-              to: '/docs/guides/intro',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            }
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} Sven Patrick Meier (spmse). Built with Docusaurus and 💚.`,
+      links: [],
+      copyright: ' ',
     },
+
     prism: {
       theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      darkTheme: prismThemes.github,
       additionalLanguages: ['powershell', 'hcl'],
-      magicComments: [
-        // Remember to extend the default highlight class name as well!
-        {
-          className: 'theme-code-block-highlighted-line',
-          line: 'highlight-next-line',
-          block: {start: 'highlight-start', end: 'highlight-end'},
-        },
-        {
-          className: 'code-block-error-line',
-          line: 'This will error',
-        },
-      ],
     },
   } satisfies Preset.ThemeConfig,
-};
-
-
-if (blogEnabled) {
-  (config.themeConfig.navbar as any).items.push({to: '/blog', label: 'Blog', position: 'left'});
-  (
-    config.themeConfig.footer as any
-  ).links[2].items.push({
-    to: '/blog',
-    label: 'Blog',
-  });
 }
 
-export default config;
+export default config
