@@ -1,15 +1,14 @@
-import { themes as prismThemes } from 'prism-react-renderer';
-import type { Config } from '@docusaurus/types';
-import type * as Preset from '@docusaurus/preset-classic';
-import { config as dotenvconfig } from 'dotenv';
+import { themes as prismThemes } from 'prism-react-renderer'
+import type { Config } from '@docusaurus/types'
+import type * as Preset from '@docusaurus/preset-classic'
+import { config as dotenvconfig } from 'dotenv'
 
-dotenvconfig();
+dotenvconfig()
 
-const blogEnabled = process.env.BLOG_ENABLED === 'true';
+const blogEnabled = process.env.BLOG_ENABLED === 'true'
 
-
-const DEPLOYMENT_URL = process.env.DEPLOYMENT_URL ?? 'https://bodev13.github.io';
-const BASE_URL = process.env.BASE_URL ?? '/devsecops-blog/';
+const DEPLOYMENT_URL = process.env.DEPLOYMENT_URL ?? 'https://bodev13.github.io'
+const BASE_URL = process.env.BASE_URL ?? '/devsecops-blog/'
 
 const config: Config = {
   title: 'DSO Live Demo Docs',
@@ -62,6 +61,12 @@ const config: Config = {
   ],
 
   themeConfig: {
+    colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
+    },
+
     image: 'img/docusaurus-social-card.jpg',
 
     navbar: {
@@ -81,7 +86,7 @@ const config: Config = {
 
     prism: {
       theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      darkTheme: prismThemes.github,
       additionalLanguages: ['powershell', 'hcl'],
       magicComments: [
         {
@@ -96,6 +101,6 @@ const config: Config = {
       ],
     },
   } satisfies Preset.ThemeConfig,
-};
+}
 
-export default config;
+export default config

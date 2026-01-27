@@ -20,7 +20,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background: var(--site-bg) !important;
+  background: var(--site-bg);
   font-family: var(--font-red);
 }
 
@@ -34,8 +34,7 @@ h6 {
 }
 
 #__docusaurus,
-.main-wrapper,
-.main-wrapper>main {
+.main-wrapper {
   background: transparent !important;
 }
 
@@ -121,4 +120,51 @@ footer.footer,
 .main-wrapper>main::before {
   content: none !important;
   display: none !important;
+}
+
+/* =============================== */
+/* DOCS — FORCE LIGHT CONTRAST    */
+/* =============================== */
+
+html[data-theme='dark'] .theme-doc-page {
+  background: #ffffff !important;
+}
+
+html[data-theme='dark'] .theme-doc-page main {
+  background: #ffffff !important;
+  color: #111111 !important;
+}
+
+html[data-theme='dark'] .theme-doc-page .markdown {
+  color: #111111 !important;
+}
+
+html[data-theme='dark'] .theme-doc-page .markdown p,
+html[data-theme='dark'] .theme-doc-page .markdown li,
+html[data-theme='dark'] .theme-doc-page .markdown span {
+  color: #111111 !important;
+}
+
+html[data-theme='dark'] .theme-doc-page .markdown h1,
+html[data-theme='dark'] .theme-doc-page .markdown h2,
+html[data-theme='dark'] .theme-doc-page .markdown h3,
+html[data-theme='dark'] .theme-doc-page .markdown h4 {
+  color: #000000 !important;
+}
+
+html[data-theme='dark'] .theme-doc-sidebar-container {
+  background: #f6f7f8 !important;
+}
+
+html[data-theme='dark'] .menu__link {
+  color: #222222 !important;
+}
+
+html[data-theme='dark'] .menu__link--active {
+  color: #2e8555 !important;
+}
+
+html[data-theme='dark'] .theme-code-block {
+  background: #f3f3f3 !important;
+  color: #111111 !important;
 }
