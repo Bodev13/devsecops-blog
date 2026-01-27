@@ -6,7 +6,7 @@ on:
   push:
     branches:
       - main
-      - dev_branch
+      - dev_reopen
 
 permissions:
   contents: read
