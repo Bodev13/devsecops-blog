@@ -7,23 +7,23 @@ dotenvconfig()
 
 const BLOG_ENABLED = process.env.BLOG_ENABLED === 'true'
 
-const DEPLOYMENT_URL = process.env.DEPLOYMENT_URL!
-const BASE_URL = process.env.BASE_URL!
-const DEPLOYMENT_BRANCH = process.env.DEPLOYMENT_BRANCH!
-const GITHUB_ORG = process.env.GITHUB_ORG!
-const GITHUB_PROJECT = process.env.GITHUB_PROJECT!
+if (!process.env.DEPLOYMENT_URL) throw new Error('DEPLOYMENT_URL is missing')
+if (!process.env.BASE_URL) throw new Error('BASE_URL is missing')
+if (!process.env.DEPLOYMENT_BRANCH) throw new Error('DEPLOYMENT_BRANCH is missing')
+if (!process.env.GITHUB_ORG) throw new Error('GITHUB_ORG is missing')
+if (!process.env.GITHUB_PROJECT) throw new Error('GITHUB_PROJECT is missing')
 
 const config: Config = {
   title: 'DSO Live Demo Docs',
   tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
 
-  url: DEPLOYMENT_URL,
-  baseUrl: BASE_URL,
+  url: process.env.DEPLOYMENT_URL,
+  baseUrl: process.env.BASE_URL,
 
-  organizationName: GITHUB_ORG,
-  projectName: GITHUB_PROJECT,
-  deploymentBranch: DEPLOYMENT_BRANCH,
+  organizationName: process.env.GITHUB_ORG,
+  projectName: process.env.GITHUB_PROJECT,
+  deploymentBranch: process.env.DEPLOYMENT_BRANCH,
 
   trailingSlash: false,
 
@@ -41,7 +41,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl: `https://github.com/${GITHUB_ORG}/${GITHUB_PROJECT}`,
+          editUrl: `https://github.com/${process.env.GITHUB_ORG}/${process.env.GITHUB_PROJECT}`,
         },
 
         blog: BLOG_ENABLED
@@ -51,7 +51,7 @@ const config: Config = {
               type: ['rss', 'atom'],
               xslt: true,
             },
-            editUrl: `https://github.com/${GITHUB_ORG}/${GITHUB_PROJECT}`,
+            editUrl: `https://github.com/${process.env.GITHUB_ORG}/${process.env.GITHUB_PROJECT}`,
             onInlineTags: 'warn',
             onInlineAuthors: 'warn',
             onUntruncatedBlogPosts: 'warn',
@@ -66,13 +66,13 @@ const config: Config = {
   ],
 
   themeConfig: {
+    image: 'img/docusaurus-social-card.jpg',
+
     colorMode: {
       defaultMode: 'dark',
       disableSwitch: true,
       respectPrefersColorScheme: false,
     },
-
-    image: 'img/docusaurus-social-card.jpg',
 
     navbar: {
       title: '',
