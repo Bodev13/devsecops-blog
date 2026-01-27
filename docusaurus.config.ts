@@ -5,7 +5,8 @@ import { config as dotenvconfig } from 'dotenv';
 
 dotenvconfig();
 
-const blogEnabled = 'true';
+const blogEnabled = process.env.BLOG_ENABLED === 'true';
+
 
 const DEPLOYMENT_URL = process.env.DEPLOYMENT_URL ?? 'https://bodev13.github.io';
 const BASE_URL = process.env.BASE_URL ?? '/devsecops-blog/';
