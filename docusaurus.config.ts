@@ -5,10 +5,13 @@ import { config as dotenvconfig } from 'dotenv'
 
 dotenvconfig()
 
-const blogEnabled = process.env.BLOG_ENABLED === 'true'
+const BLOG_ENABLED = process.env.BLOG_ENABLED === 'true'
 
-const DEPLOYMENT_URL = process.env.DEPLOYMENT_URL ?? 'https://bodev13.github.io'
-const BASE_URL = process.env.BASE_URL ?? '/devsecops-blog/'
+const DEPLOYMENT_URL = process.env.DEPLOYMENT_URL!
+const BASE_URL = process.env.BASE_URL!
+const DEPLOYMENT_BRANCH = process.env.DEPLOYMENT_BRANCH!
+const GITHUB_ORG = process.env.GITHUB_ORG!
+const GITHUB_PROJECT = process.env.GITHUB_PROJECT!
 
 const config: Config = {
   title: 'DSO Live Demo Docs',
@@ -18,9 +21,11 @@ const config: Config = {
   url: DEPLOYMENT_URL,
   baseUrl: BASE_URL,
 
-  organizationName: process.env.GITHUB_ORG ?? 'bodev13',
-  projectName: process.env.GITHUB_PROJECT ?? 'devsecops-blog',
-  deploymentBranch: process.env.DEPLOYMENT_BRANCH ?? 'gh-pages',
+  organizationName: GITHUB_ORG,
+  projectName: GITHUB_PROJECT,
+  deploymentBranch: DEPLOYMENT_BRANCH,
+
+  trailingSlash: false,
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
@@ -36,17 +41,17 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/bodev13/devsecops-blog',
+          editUrl: `https://github.com/${GITHUB_ORG}/${GITHUB_PROJECT}`,
         },
 
-        blog: blogEnabled
+        blog: BLOG_ENABLED
           ? {
             showReadingTime: true,
             feedOptions: {
               type: ['rss', 'atom'],
               xslt: true,
             },
-            editUrl: 'https://github.com/bodev13/devsecops-blog',
+            editUrl: `https://github.com/${GITHUB_ORG}/${GITHUB_PROJECT}`,
             onInlineTags: 'warn',
             onInlineAuthors: 'warn',
             onUntruncatedBlogPosts: 'warn',
@@ -88,17 +93,6 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.github,
       additionalLanguages: ['powershell', 'hcl'],
-      magicComments: [
-        {
-          className: 'theme-code-block-highlighted-line',
-          line: 'highlight-next-line',
-          block: { start: 'highlight-start', end: 'highlight-end' },
-        },
-        {
-          className: 'code-block-error-line',
-          line: 'This will error',
-        },
-      ],
     },
   } satisfies Preset.ThemeConfig,
 }
