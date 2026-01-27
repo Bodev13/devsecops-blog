@@ -218,6 +218,16 @@
         flex-direction: column;
     }
 
+    .projectImage {
+        width: 100%;
+        height: auto;
+        width: 320px;
+        height: 216px;
+        border-radius: 30px;
+        object-fit: contain;
+    }
+
+
     .title {
         font-size: 48px;
         font-weight: 700;
@@ -263,6 +273,10 @@
 @media (max-width: 768px) {
     .content {
         display: none;
+    }
+
+    .projectImage {
+        object-fit: contain;
     }
 
     .title {
@@ -510,5 +524,19 @@
     .actions {
         gap: 8px;
         justify-content: center;
+    }
+}
+
+@media (max-width: 1024px) {
+    :global(.contentContainer) {
+        padding-left: 13px !important;
+        padding-right: 13px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    :global(.contentContainer) {
+        padding-left: 13px !important;
+        padding-right: 13px !important;
     }
 }
